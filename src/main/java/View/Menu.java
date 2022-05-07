@@ -20,16 +20,8 @@ public enum Menu {
         current = menu;
     }
 
-    public static Matcher getCommand(String regex) {
-        String input = in.nextLine().trim();
-        Pattern p = Pattern.compile(regex);
-        Matcher m = p.matcher(input);
-        if (m.matches()) {
-            return m;
-        }
-        else {
-            return null;
-        }
+    public static String input() {
+        return in.nextLine().trim();
     }
 
     public static Matcher getCommand(String regex, String input) {

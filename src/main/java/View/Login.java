@@ -10,14 +10,12 @@ public class Login {
     public void run() {
         do {
             Matcher m;
-            if ((Menu.getCommand(LoginRegex.EXIT)) != null) {
+            String cmd = Menu.input();
+            if ((Menu.getCommand(LoginRegex.EXIT, cmd)) != null) {
                 System.out.println(loginController.exitGame());
             }
-            else if ((m = Menu.getCommand(LoginRegex.LOGIN)) != null) {
+            else if ((m = Menu.getCommand(LoginRegex.LOGIN, cmd)) != null) {
                 System.out.println(loginController.LoginToGame(m));
-            }
-            else if (false) {
-//                   to do
             }
             else {
                 System.out.println("invalid Command");
