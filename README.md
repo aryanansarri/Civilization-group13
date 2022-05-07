@@ -19,6 +19,6 @@ Mahdi Mohammadi 400105239
     -  Register: ***user register --username     "username"     --nickname     "nickname"     --password     "password"***
     -  Register as shorter: ***user register -u "username" -n "nickname" -p "password"***
     -  Login: ***user login --username "username" --password "password"***
-    -  Login as shorte: ***user login -u "username" -p "password"***
+    -  Login as shorter: ***user login -u "username" -p "password"***
     -  show current menu: ***menu show-current***
     -  exit: ***exit menu***
