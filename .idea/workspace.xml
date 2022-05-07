@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9810f39-5d86-49af-a702-931c6688d413" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/Regexes/LoginRegex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CommandsTest/simpleCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CommandsTest/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ExampleToWriteTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ExampleToWriteTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Regexes/LoginRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Regexes/LoginRegex.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +30,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="28pLBCVqtjmtHnMfxfv4I04CsuW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -46,10 +47,10 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "settings.editor.selected.configurable": "vcs.Git"
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.simpleCommandTest.simpleTester">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Civilization" />
@@ -108,8 +109,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.simpleCommandTest.simpleTester" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.simpleCommandTest.simpleTester" />
         <item itemvalue="JUnit.ExampleToWriteTest.MainFunctionTest" />
         <item itemvalue="JUnit.ExampleToWriteTest.testFunction" />
         <item itemvalue="Application.Test" />

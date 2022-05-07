@@ -1,15 +1,13 @@
+import View.Login;
 import View.Menu;
 
-import java.util.regex.Matcher;
-
 public class Main {
-    public static void main(String[] args) {
 
-        while (Menu.getMenu() != Menu.E)
-        {
-            // to do
-            break;
-        }
+    private static Login login = new Login();
+    public static void main(String[] args) {
+        do {
+            login.run();
+        }while (Menu.getMenu() != Menu.E);
     }
 }
 
