@@ -1,6 +1,13 @@
+import View.Menu;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello Civilization!");
+
+        while (Menu.getMenu() != Menu.E)
+        {
+            // to do
+            break;
+        }
     }
 }
 
