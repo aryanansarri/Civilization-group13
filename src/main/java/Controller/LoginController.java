@@ -10,6 +10,9 @@ public class LoginController {
         return "You have successfully exited the game!";
     }
 
+    public String showCurrentMenu() {
+        return "Main Menu";
+    }
     public String LoginToGame(Matcher matcher) {
         String first = matcher.group(5);
         String second = matcher.group(9);
@@ -41,5 +44,59 @@ public class LoginController {
         else {
             return "Username and password didn’t match!";
         }
+    }
+
+    public String RegisterToGame(Matcher matcher) {
+        String name = "";
+        String nickname = "";
+        String password = "";
+        String first = matcher.group(5);
+        String second = matcher.group(9);
+        String third = matcher.group(13);
+        if (first.equals("--username") || first.equals("-u")) {
+            name = matcher.group(7);
+        }
+        else if (second.equals("--username") || second.equals("-u")) {
+            name = matcher.group(11);
+        }
+        else if (third.equals("--username") || third.equals("-u")) {
+            name = matcher.group(15);
+        }
+
+        if (first.equals("--nickname") || first.equals("-n")) {
+            nickname = matcher.group(7);
+        }
+        else if (second.equals("--nickname") || second.equals("-n")) {
+            nickname = matcher.group(11);
+        }
+        else if (third.equals("--nickname") || third.equals("-n")) {
+            nickname = matcher.group(15);
+        }
+
+        if (first.equals("--password") || first.equals("-p")) {
+            password = matcher.group(7);
+        }
+        else if (second.equals("--password") || second.equals("-p")) {
+            password = matcher.group(11);
+        }
+        else if (third.equals("--password") || third.equals("-p")) {
+            password = matcher.group(15);
+        }
+
+        if (name.equals("") || nickname.equals("") || password.equals("")) {
+            return "invalid command";
+        }
+
+        if (PlayerDatabase.getPlayerDatabase().getUser(name) != null) {
+            return "user with username " + name + " already exists";
+        }
+
+        if (PlayerDatabase.getPlayerDatabase().getUserByNickname(nickname) != null) {
+            return "user with nickname " + nickname + " already exists";
+        }
+
+        PlayerDatabase.getPlayerDatabase().addUser(new User(name, nickname, password));
+        PlayerDatabase.getPlayerDatabase().saveData();
+        return "user created successfully!";
     }
 }
