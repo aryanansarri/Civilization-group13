@@ -13,7 +13,6 @@ Mahdi Mohammadi 400105239
 
 - to Play the Game run src/main/java/Main.java
  
--------------------------------------------------------------------
 **Commands**
 
 ***will be added in the future...***
