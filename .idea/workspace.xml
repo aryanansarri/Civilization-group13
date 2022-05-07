@@ -7,6 +7,7 @@
     <list default="true" id="a9810f39-5d86-49af-a702-931c6688d413" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/Controller/LoginController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/View/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Regexes/LoginRegex.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/CommandsTest/simpleCommandTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/README" beforeDir="false" />
