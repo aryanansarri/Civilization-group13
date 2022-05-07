@@ -11,8 +11,8 @@ Mahdi Mohammadi 400105239
 
 **instruction to Play Game**
 
-- to Play the Game run src/main/java/Main.java
+- **Run the game** : to Play the Game run src/main/java/Main.java
  
-**Commands**
+- **Commands**
 
-***will be added in the future...***
+  - ***will be added in the future...***
