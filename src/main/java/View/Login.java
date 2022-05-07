@@ -30,7 +30,7 @@ public class Login {
                 System.out.println(loginController.showCurrentMenu());
             }
             else {
-                System.out.println("invalid Command");
+                System.out.println(loginController.invalidMassage());
             }
         }
     }

@@ -13,6 +13,11 @@ public class LoginController {
     public String showCurrentMenu() {
         return "Main Menu";
     }
+
+    public String invalidMassage() {
+        return "invalid Command";
+    }
+
     public String LoginToGame(Matcher matcher) {
         String first = matcher.group(5);
         String second = matcher.group(9);
