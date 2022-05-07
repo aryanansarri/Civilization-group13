@@ -16,7 +16,4 @@ public class ExampleToWriteTest {
         Assert.assertEquals(1, 1);
         //and we can use other function of assert class
     }
-
-
-
 }
