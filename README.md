@@ -8,7 +8,12 @@ Mohammad Lotfi 400105228
 Mahdi Mohammadi 400105239
 
 -------------------------------------------------------------------
-**.::instruction to Play Game::.**
 
+**instruction to Play Game**
 
-***Will be completed in the future...***
+- to Play the Game run Main file.
+ 
+-------------------------------------------------------------------
+**Commands**
+
+***will be added in the future...***
