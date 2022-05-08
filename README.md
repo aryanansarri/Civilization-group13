@@ -11,8 +11,14 @@ Mahdi Mohammadi 400105239
 
 **instruction to Play Game**
 
-- **Run the game** : to Play the Game run src/main/java/Main.java
+- **Run the game**: to Play the Game run src/main/java/Main.java
  
 - **Commands**
 
-  - ***will be added in the future...***
+  - Login Page Menu:
+    -  Register: ***user register --username     "username"     --nickname     "nickname"     --password     "password"***
+    -  Register as shorter: ***user register -u "username" -n "nickname" -p "password"***
+    -  Login: ***user login --username "username" --password "password"***
+    -  Login as shorter: ***user login -u "username" -p "password"***
+    -  show current menu: ***menu show-current***
+    -  exit: ***exit menu***
