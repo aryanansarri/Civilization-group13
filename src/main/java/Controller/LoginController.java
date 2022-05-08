@@ -38,7 +38,6 @@ public class LoginController {
         if (first.equals("") || second.equals("")) {
             return "invalid command";
         }
-        PlayerDatabase.getPlayerDatabase().loadData();
         User user = PlayerDatabase.getPlayerDatabase().getUser(username);
         if (user == null) {
             return "Username and password didn’t match!";
@@ -103,7 +102,6 @@ public class LoginController {
         }
 
         PlayerDatabase.getPlayerDatabase().addUser(new User(name, nickname, password));
-        PlayerDatabase.getPlayerDatabase().saveData();
         return "user created successfully!";
     }
     public String goToMenu(Matcher matcher) {

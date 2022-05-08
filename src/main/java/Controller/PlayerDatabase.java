@@ -7,7 +7,7 @@ import com.google.gson.reflect.TypeToken;
 
 public class PlayerDatabase {
     private ArrayList<User> users;
-    private User loggedInUser;
+    private User loggedInUser = null;
 
     private static PlayerDatabase playerDatabase = null;
     public static PlayerDatabase getPlayerDatabase() {
@@ -89,6 +89,6 @@ public class PlayerDatabase {
     }
 
     public void Login(User user) {
-        this.loggedInUser = user;
+        setLoggedInUser(user);
     }
 }
