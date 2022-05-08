@@ -10,6 +10,10 @@ public enum Menu {
 
     private static Menu current = Menu.LOGIN;
     private static Matcher matcher;
+
+    private static Login login = new Login();
+    private static MainView mainView = new MainView();
+    private static ProfileMenu profileMenu = new ProfileMenu();
     private static Scanner in = new Scanner(System.in);
 
 
@@ -33,5 +37,11 @@ public enum Menu {
 
     public static Matcher getMatcher() {
         return matcher;
+    }
+
+    public static void run() {
+        login.run();
+        mainView.run();
+        profileMenu.run();
     }
 }
