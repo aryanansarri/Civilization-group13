@@ -1,6 +1,6 @@
 package View;
 
-import Controller.MainViewController;
+import Controller.MenuController.MainViewController;
 import View.Regexes.MainMenuRegex;
 
 public class MainView {
@@ -20,6 +20,9 @@ public class MainView {
             }
             else if (Menu.checkMatching(MainMenuRegex.goToMenu, cmd)) {
                 System.out.println(mainViewController.goToNextMenu(Menu.getMatcher()));
+            }
+            else if (Menu.checkMatching(MainMenuRegex.playGame, cmd)) {
+                System.out.println(mainViewController.PlayGame(Menu.getMatcher()));
             }
             else {
                 System.out.println(mainViewController.invalidMessage());

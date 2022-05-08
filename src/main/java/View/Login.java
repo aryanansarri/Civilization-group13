@@ -1,6 +1,6 @@
 package View;
 
-import Controller.LoginController;
+import Controller.MenuController.LoginController;
 import View.Regexes.LoginRegex;
 
 public class Login {

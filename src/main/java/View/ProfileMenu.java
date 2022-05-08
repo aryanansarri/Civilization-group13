@@ -1,6 +1,6 @@
 package View;
 
-import Controller.ProfileController;
+import Controller.MenuController.ProfileController;
 import View.Regexes.ProfileMenuRegex;
 
 public class ProfileMenu {
