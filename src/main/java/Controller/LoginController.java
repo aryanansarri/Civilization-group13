@@ -104,4 +104,16 @@ public class LoginController {
         PlayerDatabase.getPlayerDatabase().saveData();
         return "user created successfully!";
     }
+    public String goToMenu(Matcher matcher) {
+        String menu = matcher.group(5);
+        if (PlayerDatabase.getPlayerDatabase().getLoggedInUser() == null) {
+            return "please login first";
+        }
+        if (menu.equals("Main Menu"))
+        {
+            Menu.goToMenu(Menu.MAIN);
+            return "go to Main Menu";
+        }
+        return "invalid command";
+    }
 }

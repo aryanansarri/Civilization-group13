@@ -26,6 +26,9 @@ public class Login {
             else if (Menu.checkMatching(LoginRegex.showCurrentMenu, cmd)) {
                 System.out.println(loginController.showCurrentMenu());
             }
+            else if (Menu.checkMatching(LoginRegex.goToMenu, cmd)) {
+                System.out.println(loginController.goToMenu(Menu.getMatcher()));
+            }
             else {
                 System.out.println(loginController.invalidMassage());
             }
