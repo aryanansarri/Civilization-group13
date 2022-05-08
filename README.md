@@ -35,4 +35,4 @@ Mahdi Mohammadi 400105239
     -  change nick name: ***profile change --nickname "new nickname"***
     -  change nick name as shorter: ***profile change -n "new nickname"***
     -  change password: ***profile change password --current "current password" --new "new password"***
-    -  change password: ***profile change password -c "current password" -n "new password"***
+    -  change password as shorter: ***profile change password -c "current password" -n "new password"***
