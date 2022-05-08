@@ -83,4 +83,12 @@ public class PlayerDatabase {
     public void setUsers(ArrayList<User> users) {
         this.users = users;
     }
+
+    public void Logout() {
+        setLoggedInUser(null);
+    }
+
+    public void Login(User user) {
+        this.loggedInUser = user;
+    }
 }

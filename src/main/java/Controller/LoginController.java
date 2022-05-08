@@ -11,7 +11,7 @@ public class LoginController {
     }
 
     public String showCurrentMenu() {
-        return "Main Menu";
+        return "Login Menu";
     }
 
     public String invalidMassage() {
@@ -38,12 +38,14 @@ public class LoginController {
         if (first.equals("") || second.equals("")) {
             return "invalid command";
         }
+        PlayerDatabase.getPlayerDatabase().loadData();
         User user = PlayerDatabase.getPlayerDatabase().getUser(username);
         if (user == null) {
             return "Username and password didn’t match!";
         }
         if (user.getPassword().equals(password)) {
             Menu.goToMenu(Menu.MAIN);
+            PlayerDatabase.getPlayerDatabase().Login(user);
             return "user logged in successfully!";
         }
         else {
