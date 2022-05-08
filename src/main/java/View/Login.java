@@ -9,7 +9,6 @@ public class Login {
     private LoginController loginController = new LoginController();
     public void run() {
         while (Menu.getMenu() == Menu.LOGIN) {
-            Matcher m;
             String cmd = Menu.input();
             if (Menu.checkMatching(LoginRegex.EXIT, cmd)) {
                 System.out.println(loginController.exitGame());
