@@ -23,3 +23,8 @@ Mahdi Mohammadi 400105239
     -  show current menu: ***menu show-current***
     -  go to next menu: ***menu enter "Menu name(Main Menu)"***
     -  exit: ***exit menu***
+  - Main Menu:
+    - back: ***menu exit***
+    -  show current menu: ***menu show-current***
+    -  logout: ***user logout***
+    -  go to next menu: ***menu enter "Menu name(Profile Menu|Game Menu)"***
