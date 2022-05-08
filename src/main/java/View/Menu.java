@@ -9,6 +9,7 @@ public enum Menu {
     LOGIN, MAIN, PROFILE, GAME, E;
 
     private static Menu current = Menu.LOGIN;
+    private static Matcher matcher;
     private static Scanner in = new Scanner(System.in);
 
 
@@ -24,14 +25,13 @@ public enum Menu {
         return in.nextLine().trim();
     }
 
-    public static Matcher getCommand(String regex, String input) {
+    public static boolean checkMatching(String regex, String input) {
         Pattern p = Pattern.compile(regex);
-        Matcher m = p.matcher(input);
-        if (m.matches()) {
-            return m;
-        }
-        else {
-            return null;
-        }
+        matcher = p.matcher(input);
+        return matcher.matches();
+    }
+
+    public static Matcher getMatcher() {
+        return matcher;
     }
 }
