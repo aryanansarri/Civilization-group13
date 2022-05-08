@@ -15,7 +15,7 @@ Mahdi Mohammadi 400105239
  
 - **Commands**
 
-  - Login Page Menu:
+  - Login Menu:
     -  Register: ***user register --username     "username"     --nickname     "nickname"     --password     "password"***
     -  Register as shorter: ***user register -u "username" -n "nickname" -p "password"***
     -  Login: ***user login --username "username" --password "password"***
