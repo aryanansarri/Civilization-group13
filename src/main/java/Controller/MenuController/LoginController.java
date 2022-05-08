@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 
 public class LoginController {
     public String exitGame() {
-        Menu.goToMenu(Menu.E);
+        Menu.goToMenu(Menu.NULL);
         return "You have successfully exited the game!";
     }
 

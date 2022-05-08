@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public enum Menu {
 //    states
-    LOGIN, MAIN, PROFILE, GAME, E;
+    LOGIN, MAIN, PROFILE, GAME, NULL;
 
     private static Menu current = Menu.LOGIN;
     private static Matcher matcher;
