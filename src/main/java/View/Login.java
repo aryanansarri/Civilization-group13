@@ -3,8 +3,6 @@ package View;
 import Controller.LoginController;
 import View.Regexes.LoginRegex;
 
-import java.util.regex.Matcher;
-
 public class Login {
     private LoginController loginController = new LoginController();
     public void run() {
