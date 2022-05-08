@@ -24,7 +24,15 @@ Mahdi Mohammadi 400105239
     -  go to next menu: ***menu enter "Menu name(Main Menu)"***
     -  exit: ***exit menu***
   - Main Menu:
-    - back: ***menu exit***
+    -  back: ***menu exit***
     -  show current menu: ***menu show-current***
     -  logout: ***user logout***
     -  go to next menu: ***menu enter "Menu name(Profile Menu|Game Menu)"***
+  - Profile Menu:
+    -  back: ***menu exit***
+    -  show current menu: ***menu show-current***
+    -  go to next menu: ***menu enter "Menu name"***
+    -  change nick name: ***profile change --nickname "new nickname"***
+    -  change nick name as shorter: ***profile change -n "new nickname"***
+    -  change password: ***profile change password --current "current password" --new "new password"***
+    -  change password: ***profile change password -c "current password" -n "new password"***
