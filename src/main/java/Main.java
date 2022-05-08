@@ -13,7 +13,6 @@ public class Main {
         PlayerDatabase.getPlayerDatabase().loadData();
         while (Menu.getMenu() != Menu.E)
             RUN();
-        PlayerDatabase.getPlayerDatabase().saveData();
     }
 
     private static void RUN() {
