@@ -10,7 +10,7 @@ public class Main {
     private static MainView mainView = new MainView();
     private static ProfileMenu profileMenu = new ProfileMenu();
     public static void main(String[] args) {
-        PlayerDatabase.getPlayerDatabase().Logout();
+        PlayerDatabase.getPlayerDatabase().loadData();
         while (Menu.getMenu() != Menu.E)
             RUN();
         PlayerDatabase.getPlayerDatabase().saveData();

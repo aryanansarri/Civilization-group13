@@ -16,6 +16,7 @@ public class MainViewController {
 
     public String Logout() {
         PlayerDatabase.getPlayerDatabase().Logout();
+        Menu.goToMenu(Menu.LOGIN);
         return "user logged out successfully!";
     }
 
