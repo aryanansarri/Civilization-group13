@@ -14,6 +14,7 @@ public enum Menu {
     private static Login login = new Login();
     private static MainView mainView = new MainView();
     private static ProfileMenu profileMenu = new ProfileMenu();
+    private static GameView gameView = new GameView();
     private static Scanner in = new Scanner(System.in);
 
 
@@ -43,5 +44,6 @@ public enum Menu {
         login.run();
         mainView.run();
         profileMenu.run();
+        gameView.run();
     }
 }
