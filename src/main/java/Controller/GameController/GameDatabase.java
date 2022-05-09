@@ -31,4 +31,8 @@ public class GameDatabase {
         baseMap = new BaseMap();
         // to do something
     }
+
+    public void nextTurn() {
+//        to do
+    }
 }

@@ -10,4 +10,9 @@ public class GameRegex {
     public static String selectCityByCoordinate = "(select){1}(\\s+)(city){1}(\\s+)(--coordinates|-c){1}(\\s+)" + "(-x){1}(\\s+)(?<x>-?[\\d]+)(\\s+)(-y){1}(\\s+)(?<y>-?[\\d]+)";
     public static String selectCityByCoordinateType2 = "(select){1}(\\s+)(city){1}(\\s+)(--coordinates|-c){1}(\\s+)" + "(-y){1}(\\s+)(?<y>-?[\\d]+)(\\s+)(-x){1}(\\s+)(?<x>-?[\\d]+)";
     public static String selectMilitaryUnit = "^select military unit (--coordinates|-c) -x (?<x>-?[\\\\d]+) -y (?<y>-?[\\\\d]+)$";
+    public static String selectSettler = "";
+    public static String selectWorker = "";
+    public static String technologyMenu = "";
+    public static String cheatMenu = "";
+    public static String nextTurn = "";
 }

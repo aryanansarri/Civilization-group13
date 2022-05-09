@@ -15,4 +15,13 @@ public class GameViewController {
     public String goToNextMenu() {
         return "menu navigation is not possible";
     }
+
+    public String nextTurn() {
+//        to do
+        return "next turn was done!";
+    }
+
+    public String invalidMessage() {
+        return "invalid command";
+    }
 }
