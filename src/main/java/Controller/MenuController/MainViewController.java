@@ -1,5 +1,6 @@
 package Controller.MenuController;
 
+import Controller.GameController.GameDatabase;
 import Controller.PlayerDatabase;
 import Controller.User;
 import View.Menu;
@@ -29,11 +30,10 @@ public class MainViewController {
             Menu.goToMenu(Menu.PROFILE);
             return "go to Profile Menu";
         }
-//        if (menu.equals("Game Menu"))
-//        {
-//            Menu.goToMenu(Menu.GAME);
-//            return "go to Game Menu";
-//        }
+        if (menu.equals("Game Menu"))
+        {
+            return "You can use play game command";
+        }
         return invalidMessage();
     }
 
@@ -48,7 +48,8 @@ public class MainViewController {
             }
         }
         if (players.size() > 1) {
-            // to do
+            GameDatabase.getGameDatabase().PlayGame(players);
+            Menu.goToMenu(Menu.GAME);
             return "Game started successfully!";
         }
         return invalidMessage();
