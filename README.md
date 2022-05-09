@@ -22,7 +22,7 @@ Mahdi Mohammadi 400105239
     -  Login as shorter: ***user login -u "username" -p "password"***
     -  show current menu: ***menu show-current***
     -  go to next menu: ***menu enter "Menu name(Main Menu)"***
-    -  exit: ***exit menu***
+    -  exit: ***menu exit***
   - Main Menu:
     -  back: ***menu exit***
     -  show current menu: ***menu show-current***
@@ -36,3 +36,10 @@ Mahdi Mohammadi 400105239
     -  change nick name as shorter: ***profile change -n "new nickname"***
     -  change password: ***profile change password --current "current password" --new "new password"***
     -  change password as shorter: ***profile change password -c "current password" -n "new password"***
+  - Game Menu:
+    -  back: ***menu exit***
+    -  show current menu: ***menu show-current***
+    -  go to next menu: ***menu enter "Menu name"***
+    -  to show map: ***show map***
+    -  select city: ***select city --coordinates -x "x pos" -y "y pos"***
+    -  select city as shorter: ***select city -c -x "x pos" -y "y pos"***
