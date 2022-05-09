@@ -2,7 +2,6 @@ package View;
 
 import Controller.GameController.GameViewController;
 import View.Regexes.GameRegex;
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 
 import java.util.regex.Matcher;
 
@@ -21,16 +20,16 @@ public class GameView {
             else if (Menu.checkMatching(GameRegex.goToMenu, cmd)) {
                 System.out.println(gameViewController.goToNextMenu());
             }
-            else if (Menu.checkMatching(GameRegex.SHOW_MAP, cmd)) {
+            else if (Menu.checkMatching(GameRegex.showMap, cmd)) {
                 showMap(Menu.getMatcher());
             }
-            else if (Menu.checkMatching(GameRegex.SHOW_INFO, cmd)) {
+            else if (Menu.checkMatching(GameRegex.showInfo, cmd)) {
                showInfo(Menu.getMatcher());
             }
-            else if (Menu.checkMatching(GameRegex.SELECT_CITY_BY_COORDINATE, cmd)) {
+            else if (Menu.checkMatching(GameRegex.selectCityByCoordinate, cmd)) {
                 selectCity(Menu.getMatcher());
             }
-            else if (Menu.checkMatching(GameRegex.SELECT_CITY_BY_COORDINATE_yFirst, cmd)) {
+            else if (Menu.checkMatching(GameRegex.selectCityByCoordinateType2, cmd)) {
                 selectCity(Menu.getMatcher());
             }
 

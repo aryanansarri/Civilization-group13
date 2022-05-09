@@ -5,8 +5,9 @@ public class GameRegex {
     public static String showCurrentMenu = "(menu){1}(\\s+)(show-current){1}";
     public static String goToMenu = "(menu){1}(\\s+)(enter){1}(\\s+)([a-zA-Z ]+)";
 
-    public static String SHOW_MAP = "(show){1}(\\s+)(map){1}";
-    public static String SHOW_INFO = "(show){1}(\\s+)(info){1}";
-    public static String SELECT_CITY_BY_COORDINATE = "^select city (--coordinates|-c) -x (?<x>-?[\\d]+) -y (?<y>-?[\\d]+)$";
-    public static String SELECT_CITY_BY_COORDINATE_yFirst = "^select city (--coordinates|-c) -y (?<y>-?[\\d]+)-x (?<x>-?[\\d]+)$";
+    public static String showMap = "(show){1}(\\s+)(map){1}";
+    public static String showInfo = "(show){1}(\\s+)(info){1}";
+    public static String selectCityByCoordinate = "(select){1}(\\s+)(city){1}(\\s+)(--coordinates|-c){1}(\\s+)" + "(-x){1}(\\s+)(?<x>-?[\\d]+)(\\s+)(-y){1}(\\s+)(?<y>-?[\\d]+)";
+    public static String selectCityByCoordinateType2 = "(select){1}(\\s+)(city){1}(\\s+)(--coordinates|-c){1}(\\s+)" + "(-y){1}(\\s+)(?<y>-?[\\d]+)(\\s+)(-x){1}(\\s+)(?<x>-?[\\d]+)";
+    public static String selectMilitaryUnit = "^select military unit (--coordinates|-c) -x (?<x>-?[\\\\d]+) -y (?<y>-?[\\\\d]+)$";
 }
