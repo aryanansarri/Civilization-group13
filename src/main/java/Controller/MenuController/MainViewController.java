@@ -10,8 +10,7 @@ import java.util.regex.Matcher;
 
 public class MainViewController {
     public String exit() {
-        Menu.goToMenu(Menu.LOGIN);
-        return "You are taken to the Login Menu";
+        return "You can use 'user logout' command";
     }
 
     public String showCurrentMenu() {
@@ -44,7 +43,16 @@ public class MainViewController {
             User player = PlayerDatabase.getPlayerDatabase().getUser(subCommands[i]);
             if (player == null){
                 return "player " + subCommands[i] + " was not exist!";
-
+            }
+            players.add(player);
+        }
+        for (int i = 0; i < players.size(); i++) {
+            for (int j = 0; j < players.size(); j++) {
+                if (i != j) {
+                    if (players.get(i).getUsername().equals(players.get(j).getUsername())) {
+                        return "user " + players.get(i).getUsername() + " was occur mote than 1 time!";
+                    }
+                }
             }
         }
         if (players.size() > 1) {

@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a9810f39-5d86-49af-a702-931c6688d413" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameController/GameDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameController/GameDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameController/GameViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameController/GameViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Regexes/GameRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Regexes/GameRegex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/MenuController/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/MenuController/MainViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
