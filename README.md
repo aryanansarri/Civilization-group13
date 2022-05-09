@@ -22,7 +22,7 @@ Mahdi Mohammadi 400105239
     -  Login as shorter: ***user login -u "username" -p "password"***
     -  show current menu: ***menu show-current***
     -  go to next menu: ***menu enter "Menu name(Main Menu)"***
-    -  exit: ***exit menu***
+    -  exit: ***menu exit***
   - Main Menu:
     -  back: ***menu exit***
     -  show current menu: ***menu show-current***
