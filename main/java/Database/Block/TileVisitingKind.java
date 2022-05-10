@@ -1,4 +1,4 @@
-package Models;
+package Database.Block;
 
 public enum TileVisitingKind{
     Visible,
