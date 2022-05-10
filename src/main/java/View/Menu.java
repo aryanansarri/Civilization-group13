@@ -46,4 +46,8 @@ public enum Menu {
         profileMenu.run();
         gameView.run();
     }
+
+    public static GameView getGameView() {
+        return gameView;
+    }
 }

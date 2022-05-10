@@ -88,4 +88,8 @@ public class GameView {
     private void cheatMenu(Matcher matcher) {
 //        to do
     }
+
+    public GameViewController getGameViewController() {
+        return gameViewController;
+    }
 }
