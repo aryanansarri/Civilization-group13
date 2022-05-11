@@ -17,6 +17,7 @@ public class City {
     private int production;
     private int health;
     private int fightingPower;
+    private double scienceValue;
     private boolean isCapital;
     private String name;
     //////////////////////////
@@ -36,9 +37,10 @@ public class City {
 
 
 
-    public City(int gold, int food, Tile location) {
+    public City(int gold, int food,double science, Tile location) {
         this.gold = gold;
         this.food = food;
+        this.scienceValue = science;
         this.location = location;
         this.fightingPower=0;
         ///////still labouring doubts about fighting power
@@ -101,6 +103,14 @@ public class City {
         return location;
     }
 
+    public double getScienceValue() {
+        return scienceValue;
+    }
+
+    public void setScienceValue(double scienceValue) {
+        this.scienceValue = scienceValue;
+    }
+
     public int getFightingPower() {
         return fightingPower;
     }
@@ -147,4 +157,20 @@ public class City {
         citizen.assignToTile(tile);
     }
     //////////////////////////////////////////
+
+    public String getDemographic() {
+        String Demographic = "";
+        int id = 0;
+        for (Citizen citizen : citizens) {
+            if (citizen == null) {
+                Demographic += "citizen " + id + " now have work to do";
+            }
+            else {
+                Demographic += "citizen " + id + " on " + citizen.getonTile().getX() + ", " + citizen.getonTile().getY();
+//                Demographic += " pay: " + citizen.showGoldProductFood();
+            }
+            ++id;
+        }
+        return Demographic;
+    }
 }

@@ -2,6 +2,7 @@ package Controller.GameController;
 
 import Controller.User;
 import Models.Civilization.Civilization;
+import Models.Info.CivilizationHappiness;
 import Models.OriginalMap;
 import Models.Select;
 
@@ -30,6 +31,15 @@ public class GameDatabase {
         return civilizations.get(currentPlayerID % civilizations.size());
     }
 
+    public Civilization getCivilizationByHappiness(CivilizationHappiness civilizationHappiness) {
+        for (int i = 0; i < civilizations.size(); i++) {
+            Civilization now = civilizations.get(i);
+            if (now.getCivilizationHappiness() == civilizationHappiness) {
+                return now;
+            }
+        }
+        return null;
+    }
     public ArrayList<User> getPlayers() {
         return players;
     }
@@ -73,4 +83,6 @@ public class GameDatabase {
 
         }
     }
+
+
 }
