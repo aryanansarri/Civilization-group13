@@ -183,7 +183,7 @@ public class Civilization {
 
     public void refreshGold() {
         civilizationGold.setGoldAmount(0);
-        civilizationGold.increaseGoldAmount(civilizationGold.getCheatedGoldAmount());
+        civilizationGold.increaseAddedGoldAmount(civilizationGold.getCheatedGoldAmount());
         for (City city : cities) {
             civilizationGold.increaseGoldAmount(city.getGold());
         }
@@ -229,5 +229,16 @@ public class Civilization {
             Demographic += "Demographic: " + city.getDemographic() + "\n";
         }
         return Demographic;
+    }
+
+    public void nextTurn() {
+        Refresh();
+        civilizationHappiness.nextTurn();
+        civilizationGold.increaseGoldAmount(civilizationGold.getAddedGoldAmount());
+        if (civilizationGold.getAddedGoldAmount() < 0)
+        {
+            civilizationScience.increaseScienceValue(getCivilizationGold().getAddedGoldAmount());
+            getCivilizationGold().setGoldAmount(0);
+        }
     }
 }
