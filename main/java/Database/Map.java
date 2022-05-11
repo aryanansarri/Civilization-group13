@@ -5,17 +5,20 @@ import Database.Civilization.Civilization;
 import static Database.Block.TileVisitingKind.*;
 
 
-public class Map{
-    private final static int columns =20 , rows = 20;
+public class Map {
+    private OriginalMap instanceOfOriginalMap = new OriginalMap();
+    private final static int columns = 20, rows = 20;
     private TileVisitingKind[][] tileVisitingKinds = new TileVisitingKind[columns][rows];
     private final Civilization civilization;
-
+    public Map(){
+        this.civilization = null;
+    }
     //initialization of map :
     // if it is original map then it is visible
     // if it is not original map then it is fog of war at first to discover it
-    public Map(Civilization civilization){
+    public Map(Civilization civilization) {
         this.civilization = civilization;
-        if(this instanceof OriginalMap)
+        if (this instanceof OriginalMap)
             for (int i = 0; i < columns; i++) {
                 for (int j = 0; j < rows; j++) {
                     tileVisitingKinds[i][j] = Visible;
@@ -28,6 +31,7 @@ public class Map{
                 }
             }
     }
+
     public int getColumns() {
         return columns;
     }
@@ -47,20 +51,21 @@ public class Map{
     // this updates map as the units move
     // first we set all visible terrains to once visible then :
     // if any unit is there or terrain belongs to civilization , it is visible
-    public void updateExploration(){
-        Tile[][] tiles = OriginalMap.getTiles;
+    public void updateExploration() {
+        Tile[][] tiles = instanceOfOriginalMap.getAllTiles();
         for (int i = 0; i < columns; i++) {
             for (int j = 0; j < rows; j++) {
-                if(tileVisitingKinds[i][j] == Visible)
+                if (tileVisitingKinds[i][j] == Visible)
                     tileVisitingKinds[i][j] = OnceVisible;
-            if(this.civilization == tiles[i][j].getOwner())
-                tileVisitingKinds[i][j]= Visible;
-            if(tiles[i][j].getCivilianUnit()!=null&&
-                    tiles[i][j].getOwner()==tiles[i][j].getCivilianUnit().getCivilization())
-                tileVisitingKinds[i][j]= Visible;
-                if(tiles[i][j].getMilitaryUnit()!=null&&
-                        tiles[i][j].getOwner()==tiles[i][j].getMilitaryUnit().getCivilization())
-                    tileVisitingKinds[i][j]= Visible;
+                if (this.civilization == tiles[i][j].getOwner())
+                    tileVisitingKinds[i][j] = Visible;
+                if (tiles[i][j].getCivilianUnit() != null &&
+                        tiles[i][j].getOwner() == tiles[i][j].getCivilianUnit().getCivilization())
+                    tileVisitingKinds[i][j] = Visible;
+                if (tiles[i][j].getMilitaryUnit() != null &&
+                        tiles[i][j].getOwner() == tiles[i][j].getMilitaryUnit().getCivilization())
+                    tileVisitingKinds[i][j] = Visible;
+            }
         }
     }
 }
