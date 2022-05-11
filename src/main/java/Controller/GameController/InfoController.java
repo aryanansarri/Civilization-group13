@@ -1,4 +1,4 @@
-package Controller;
+package Controller.GameController;
 
 public class InfoController {
     public String getExploreInformation() {
