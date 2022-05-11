@@ -152,4 +152,12 @@ public class Tile {
     public void setResources(ArrayList<Resource> resources) {
         this.resources = resources;
     }
+
+    public Improvement getImprovement() {
+        return improvement;
+    }
+
+    public void setImprovement(Improvement improvement) {
+        this.improvement = improvement;
+    }
 }

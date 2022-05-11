@@ -169,7 +169,9 @@ public class Civilization {
         for (City city : cities) {
             for (Tile tile : city.getTiles()) {
                 for (Resource resource : tile.getResources()) {
-                    if (civilizationTechnology)
+                    if (civilizationTechnology.getPassedTechnology().contains(resource.getRequiredTechnology()) && tile.getImprovement() == resource.getRequiredImprovement()) {
+                        resources.add(resource);
+                    }
                 }
             }
         }
