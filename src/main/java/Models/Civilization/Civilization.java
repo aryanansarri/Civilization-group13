@@ -204,6 +204,13 @@ public class Civilization {
         }
     }
 
+    public void Refresh() {
+        refreshGold();
+        refreshHappiness();
+        refreshResource();
+        refreshResearch();
+        refreshScience();
+    }
     @Override
     public String toString() {
         return "Civilization{" +
