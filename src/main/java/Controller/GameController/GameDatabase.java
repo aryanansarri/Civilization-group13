@@ -30,6 +30,38 @@ public class GameDatabase {
         return civilizations.get(currentPlayerID % civilizations.size());
     }
 
+    public ArrayList<User> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(ArrayList<User> players) {
+        this.players = players;
+    }
+
+    public ArrayList<Civilization> getCivilizations() {
+        return civilizations;
+    }
+
+    public void setCivilizations(ArrayList<Civilization> civilizations) {
+        this.civilizations = civilizations;
+    }
+
+    public OriginalMap getOriginalMap() {
+        return originalMap;
+    }
+
+    public void setOriginalMap(OriginalMap originalMap) {
+        this.originalMap = originalMap;
+    }
+
+    public Select getSelected() {
+        return selected;
+    }
+
+    public void setSelected(Select selected) {
+        this.selected = selected;
+    }
+
     public void backstageOfGame(ArrayList<User> players) {
         players = players;
         civilizations = new ArrayList<>();
