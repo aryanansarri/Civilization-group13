@@ -1,5 +1,6 @@
 package Models.Info;
 
+import Controller.GameController.GameDatabase;
 import Models.Building.Technology;
 
 import java.util.ArrayList;
@@ -97,5 +98,34 @@ public class CivilizationTechnology {
 
     public void setRemind(int remind) {
         this.remind = remind;
+    }
+
+    @Override
+    public String toString() {
+        CivilizationTechnology civilizationTechnology = GameDatabase.getGameDatabase().getCurrentCivilization().getCivilizationTechnology();
+        String str;
+        str = "Researched" + '\n' ;
+        for (Technology technology : civilizationTechnology.getPassedTechnology()) {
+            str += technology.getType() + '\n';
+        }
+        str += "in progress" + '\n';
+        for (Technology technology : civilizationTechnology.getTechnologyMap().keySet()) {
+            str += technology.getType() + '\n';
+        }
+        str += "Unavailable" + '\n';
+        for (Technology technology : civilizationTechnology.getNotPassedTechnology()) {
+            str += technology.getType() + ' ';
+            str += "requirements: ";
+            for (Technology req : technology.getPrerequisiteTechs()) {
+                if (req == null) {
+                    str += "null ";
+                }
+                else {
+                    str += req.getType() + " ";
+                }
+            }
+            str += '\n';
+        }
+        return str;
     }
 }

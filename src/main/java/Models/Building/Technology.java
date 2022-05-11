@@ -119,4 +119,8 @@ public enum Technology{
         }
         return unit;
     }
+
+    public String getType() {
+        return type;
+    }
 }

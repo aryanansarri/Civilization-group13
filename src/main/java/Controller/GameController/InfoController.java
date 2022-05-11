@@ -2,7 +2,7 @@ package Controller.GameController;
 
 public class InfoController {
     public String getExploreInformation() {
-        return "";
+        return GameDatabase.getGameDatabase().getCurrentCivilization().getCivilizationTechnology().toString();
     }
 
     public String getUnitsListPanel() {
