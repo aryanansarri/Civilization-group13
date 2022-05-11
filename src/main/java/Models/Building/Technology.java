@@ -86,7 +86,7 @@ public enum Technology{
     public ArrayList<Technology> getPrerequisiteTechs(){
         return this.prerequisiteTechs;
     }
-    public ArrayList<Technology> getAllTechs(){
+    public static ArrayList<Technology> getAllTechs(){
         return new ArrayList<>(Arrays.asList(Technology.class.getEnumConstants()));
     }
     public ArrayList<Technology> getTechHasUnlocked (){
@@ -119,7 +119,4 @@ public enum Technology{
         }
         return unit;
     }
-
-
-
 }
