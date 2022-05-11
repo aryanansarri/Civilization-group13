@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25779730-4de1-4a8c-ad4e-eadfcfaacb57" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Info/CityGold.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Info/CivilizationHappiness.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameController/GameDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameController/GameDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/Civilization/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Civilization/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Civilization/Civilization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Civilization/Civilization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Info/CivilizationScience.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Info/CivilizationScience.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/OriginalMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/OriginalMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Units/SettlerUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Units/SettlerUnit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

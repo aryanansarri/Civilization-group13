@@ -36,7 +36,6 @@ public class City {
 
 
 
-
     public City(int gold, int food,double science, Tile location) {
         this.gold = gold;
         this.food = food;

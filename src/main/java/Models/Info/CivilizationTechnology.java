@@ -58,4 +58,44 @@ public class CivilizationTechnology {
     public void currentTeachTechnologyProgress() {
 //        to do
     }
+
+    public ArrayList<Technology> getPassedTechnology() {
+        return passedTechnology;
+    }
+
+    public void setPassedTechnology(ArrayList<Technology> passedTechnology) {
+        this.passedTechnology = passedTechnology;
+    }
+
+    public ArrayList<Technology> getNotPassedTechnology() {
+        return notPassedTechnology;
+    }
+
+    public void setNotPassedTechnology(ArrayList<Technology> notPassedTechnology) {
+        this.notPassedTechnology = notPassedTechnology;
+    }
+
+    public HashMap<Technology, Integer> getTechnologyMap() {
+        return technologyMap;
+    }
+
+    public void setTechnologyMap(HashMap<Technology, Integer> technologyMap) {
+        this.technologyMap = technologyMap;
+    }
+
+    public Technology getCurrentTeachTechnology() {
+        return currentTeachTechnology;
+    }
+
+    public void setCurrentTeachTechnology(Technology currentTeachTechnology) {
+        this.currentTeachTechnology = currentTeachTechnology;
+    }
+
+    public int getRemind() {
+        return remind;
+    }
+
+    public void setRemind(int remind) {
+        this.remind = remind;
+    }
 }

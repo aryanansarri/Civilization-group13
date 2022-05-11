@@ -2,6 +2,7 @@ package Models.Civilization;
 
 import Models.Block.TerrainFeature;
 import Models.Block.TerrainType;
+import Models.Block.Tile;
 import Models.Block.TileVisitingKind;
 import Models.Info.CivilizationGold;
 import Models.Info.CivilizationHappiness;
@@ -166,7 +167,11 @@ public class Civilization {
     public void refreshResource() {
         resources = new ArrayList<>();
         for (City city : cities) {
-
+            for (Tile tile : city.getTiles()) {
+                for (Resource resource : tile.getResources()) {
+                    if (civilizationTechnology)
+                }
+            }
         }
     }
 

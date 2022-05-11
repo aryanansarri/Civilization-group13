@@ -6,6 +6,7 @@ import Models.Building.Improvement;
 import Models.Civilization.Citizen;
 import Models.Civilization.City;
 import Models.Civilization.Civilization;
+import Models.Resources.Resource;
 import Models.Units.CivilianUnit;
 import Models.Units.MilitaryUnit;
 import Models.Units.Unit;
@@ -13,7 +14,7 @@ import Models.Units.Worker;
 
 public class Tile {
     private ArrayList<Border> borders=new ArrayList<Border>();
-
+    private ArrayList<Resource> resources;
     private TerrainType terraintype;
     private Improvement improvement;
 
@@ -144,6 +145,11 @@ public class Tile {
         this.workingCitizen = workingCitizen;
     }
 
+    public ArrayList<Resource> getResources() {
+        return resources;
+    }
 
-
+    public void setResources(ArrayList<Resource> resources) {
+        this.resources = resources;
+    }
 }

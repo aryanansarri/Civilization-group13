@@ -9,6 +9,6 @@ public class SettlerUnit extends CivilianUnit {
         super(HP, mana, tile, combatStrength, COST);
     }
     public void searchForCity(Tile tile) {
-        City city = new City(tile.getGold(),tile.getFood(),tile);
+
     }
 }
