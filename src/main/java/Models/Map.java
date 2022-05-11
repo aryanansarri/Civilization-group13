@@ -2,6 +2,9 @@ package Models;
 
 import Models.Block.*;
 import Models.Civilization.Civilization;
+
+import java.util.ArrayList;
+
 import static Models.Block.TileVisitingKind.*;
 
 
@@ -29,6 +32,10 @@ public class Map {
             }
     }
 
+    public Map() {
+        civilization = null;
+    }
+
     public int getColumns() {
         return columns;
     }
@@ -44,6 +51,7 @@ public class Map {
     public TileVisitingKind[][] getTileVisitingKinds() {
         return tileVisitingKinds;
     }
+
 
     // this updates map as the units move
     // first we set all visible terrains to once visible then :

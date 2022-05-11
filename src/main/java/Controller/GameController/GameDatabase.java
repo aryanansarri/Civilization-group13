@@ -1,12 +1,15 @@
 package Controller.GameController;
 
 import Controller.User;
+import Models.Block.TileVisitingKind;
 import Models.Civilization.Civilization;
+import Models.Cordination;
 import Models.Info.CivilizationHappiness;
 import Models.OriginalMap;
 import Models.Select;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class GameDatabase {
     private static GameDatabase gameDatabase;
@@ -19,7 +22,7 @@ public class GameDatabase {
 
     private ArrayList<User> players;
     private ArrayList<Civilization> civilizations;
-    private int currentPlayerID;
+    private int currentPlayerID = 0;
     private OriginalMap originalMap;
     private Select selected;
 
@@ -75,14 +78,26 @@ public class GameDatabase {
     public void backstageOfGame(ArrayList<User> players) {
         players = players;
         civilizations = new ArrayList<>();
+        currentPlayerID = 0;
         loadData();
     }
 
     public void loadData() {
         for (int i = 0; i < players.size(); i++) {
-
+            civilizations.add(new Civilization(players.get(i).getUsername()));
+        }
+        originalMap = new OriginalMap();
+        Random rnd = new Random();
+        for (Civilization civilization : civilizations) {
+            // to do
         }
     }
 
+    public void setCurrentPlayerID(int id) {
+        this.currentPlayerID = id;
+    }
 
+    public void nextTurn() {
+        currentPlayerID = (currentPlayerID + 1) % players.size();
+    }
 }
