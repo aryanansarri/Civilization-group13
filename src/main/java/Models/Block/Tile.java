@@ -15,7 +15,7 @@ import Models.Units.Worker;
 public class Tile {
     private ArrayList<Border> borders=new ArrayList<Border>();
     private ArrayList<Resource> resources;
-    private TerrainType terraintype;
+    private Terrain terraintype;
     private Improvement improvement;
 
     private int X;

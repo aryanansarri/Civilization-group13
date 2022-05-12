@@ -2,10 +2,17 @@ package Models.Block;
 
 
 import Models.Building.Improvement;
+import Models.Civilization.City;
+import Models.Resources.Resource;
+import Models.Units.MilitaryUnit;
+import Models.Units.Unit;
+
+import java.util.ArrayList;
 
 public class Terrain {
-    private final Pair<Improvement, Boolean> improvement; // boolean salem boodan roo mide ke age kharabe bayad repair beshe
     private boolean hasRoad;
+    private Improvement improvement;
+    private boolean improvementhale;
     private TerrainType type;
     private ArrayList<TerrainFeature> terrainFeatures;
     private ArrayList<Resource> resources;
@@ -13,7 +20,7 @@ public class Terrain {
     private MilitaryUnit militaryUnit;
 
     public Terrain() {
-        this.improvement = new Pair<>(null, true);
+        this.improvement = null;
         this.hasRoad = false;
         this.type = null;
         this.terrainFeatures = new ArrayList<>();
@@ -23,7 +30,7 @@ public class Terrain {
     }
 
     public Terrain(Terrain terrain) {
-        this.improvement = terrain.getImprovementPair();
+        this.improvement = terrain.getImprovement();
         this.hasRoad = terrain.isHasRoad();
         this.type = terrain.getType();
         this.terrainFeatures = terrain.getTerrainFeatures();
@@ -146,15 +153,12 @@ public class Terrain {
         for (Civilization civilization1 : GameDataBase.getCivilizations()) {
             for (City city : civilization1.getCities()) {
                 if (city.isCapital()) {
-                    city.addTerrain(this);
+                    city.add(this);
                     return;
                 }
             }
         }
-        System.err.println("ERROR! setCivilization-Terrain(civilization ma paytakht nadare!)");
-        throw new RuntimeException();
-
-    }
+        System.out.println("Oops! There doesn't seem to be a capital.");
 
     public ArrayList<Terrain> getSurroundingTerrain() {
         ArrayList<Terrain> terrains = new ArrayList<>();
@@ -250,7 +254,7 @@ public class Terrain {
         gold += getType().getGold();
         for (TerrainFeature terrainFeature : getTerrainFeatures()) {
             food += terrainFeature.getFood();
-            product += terrainFeature.getProduct();
+            product += terrainFeature.getProduction();
             gold += terrainFeature.getGold();
         }
         if (getImprovement() != null) {
@@ -263,9 +267,6 @@ public class Terrain {
                 "product : " + product;
     }
 
-    public Pair<Improvement, Boolean> getImprovementPair() {
-        return improvement;
-    }
 
     public double getCombatModifier() {
         int mao = 0;

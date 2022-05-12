@@ -11,6 +11,7 @@ public enum TerrainFeature {
     Oasis(1, 1, 3, 0, 33 / 100, true);
     private int movementcost;
     int gold;
+    int MP;
     private int food;
     private int production;
     private double combatmodifier;
@@ -26,8 +27,11 @@ public enum TerrainFeature {
         this.ismovingpossible = ismovingpossible;
     }
 
+    public int getMP() {
+        return MP;
+    }
 
-    public double getCombatmodifier() {
+    public double getCombatModifier() {
         return combatmodifier;
     }
 
