@@ -3,6 +3,8 @@ package Controller.GameController;
 import View.Menu;
 
 public class GameViewController {
+
+    private InfoController infoController = new InfoController();
     public String exitGameMenu() {
         Menu.goToMenu(Menu.MAIN);
         return "You are taken to the Main Menu";
@@ -25,47 +27,8 @@ public class GameViewController {
         return "invalid command";
     }
 
-    public String researchInformation() {
-        return "";
+    public InfoController getInfoController() {
+        return infoController;
     }
 
-    public String unitsInformation() {
-        return "";
-    }
-
-    public String citiesInformation() {
-        return "";
-    }
-
-    public String diplomacyInformation() {
-        return "";
-    }
-
-    public String victoryInformation() {
-        return "";
-    }
-
-    public String demographicInformation() {
-        return "";
-    }
-
-    public String militaryInformation() {
-        return "";
-    }
-
-    public String notification() {
-        return "";
-    }
-
-    public String diplomaticInformation() {
-        return "";
-    }
-
-    public String economicInformation() {
-        return "";
-    }
-
-    public String dealInformation() {
-        return "";
-    }
 }

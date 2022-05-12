@@ -2,6 +2,7 @@ package View;
 
 import Controller.GameController.GameDatabase;
 import Controller.GameController.GameViewController;
+import Controller.GameController.InfoController;
 import Models.Civilization.Civilization;
 import View.Regexes.GameRegex;
 import View.Regexes.InfoGameRegex;
@@ -69,40 +70,41 @@ public class GameView {
         current.Refresh();
         String State = "Info";
         System.out.println(current);
+        InfoController infoController = getGameViewController().getInfoController();
         while (State.equals("Info")) {
             String cmd = Menu.input();
             if (Menu.checkMatching(InfoGameRegex.research, cmd)) {
-                System.out.println(gameViewController.researchInformation());
+                System.out.println(infoController.getExploreInformation());
             }
             else if (Menu.checkMatching(InfoGameRegex.units, cmd)) {
-                System.out.println(gameViewController.unitsInformation());
+                System.out.println(infoController.getUnitsListPanel());
             }
             else if (Menu.checkMatching(InfoGameRegex.cities, cmd)) {
-                System.out.println(gameViewController.citiesInformation());
+                System.out.println(infoController.getCitiesListPanel());
             }
             else if (Menu.checkMatching(InfoGameRegex.diplomacy, cmd)) {
-                System.out.println(gameViewController.diplomacyInformation());
+                System.out.println(infoController.getDiplomacyInformationPanel());
             }
             else if (Menu.checkMatching(InfoGameRegex.victory, cmd)) {
-                System.out.println(gameViewController.victoryInformation());
+                System.out.println(infoController.getVictoryProcess());
             }
             else if (Menu.checkMatching(InfoGameRegex.demographic, cmd)) {
-                System.out.println(gameViewController.demographicInformation());
+                System.out.println(infoController.getDemographics());
             }
             else if (Menu.checkMatching(InfoGameRegex.military, cmd)) {
-                System.out.println(gameViewController.militaryInformation());
+                System.out.println(infoController.getMilitary());
             }
             else if (Menu.checkMatching(InfoGameRegex.notification, cmd)) {
-                System.out.println(gameViewController.notification());
+                System.out.println(infoController.getNotification());
             }
             else if (Menu.checkMatching(InfoGameRegex.diplomatic, cmd)) {
-                System.out.println(gameViewController.diplomaticInformation());
+                System.out.println(infoController.getDiplomatics());
             }
             else if (Menu.checkMatching(InfoGameRegex.economic, cmd)) {
-                System.out.println(gameViewController.economicInformation());
+                System.out.println(infoController.getEconomy());
             }
             else if (Menu.checkMatching(InfoGameRegex.deal, cmd)) {
-                System.out.println(gameViewController.dealInformation());
+                System.out.println(infoController.getDeal());
             }
             else if (Menu.checkMatching(InfoGameRegex.back, cmd)) {
                 State = "back";
