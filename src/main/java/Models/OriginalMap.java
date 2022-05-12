@@ -150,23 +150,19 @@ public class OriginalMap extends Map{
         return allTiles[x][y];
     }
 
-    public int getXpositionTerrain(Tile terrain) {
-        int horizontal = allTiles[0].length;
-        int vertical = allTiles.length;
-        for (int i = 0; i < vertical; i++)
-            for (int j = 0; j < horizontal; j++) {
+    public int getYpositionTerrain(Tile terrain) {
+        for (int i = 0; i < allTiles.length; i++)
+            for (int j = 0; j < allTiles[0].length; j++) {
                 if (allTiles[i][j] == terrain)
                     return i;
             }
         return -1;
     }
 
-    public int getYpositionTerrain(Tile terrain) {
-        int horizontal = allTiles[0].length;
-        int vertical = allTiles.length;
-        for (Tile[] value : allTiles)
-            for (int j = 0; j < horizontal; j++) {
-                if (value[j] == terrain)
+    public int getXpositionTerrain(Tile terrain) {
+        for (int i = 0; i < allTiles.length; i++) {
+            for (int j = 0; j < allTiles[i].length; j++) {
+                if(terrain == allTiles[i][j])
                     return j;
             }
 
@@ -174,12 +170,11 @@ public class OriginalMap extends Map{
     }
 
     public boolean isValidTerrian(Tile terrain) {
-        int horizental = allTiles[0].length;
-        int vertical = allTiles.length;
-        for (Tile[] value : allTiles)
-            for (int j = 0; j < horizental; j++) {
-                if (value[j] == terrain)
+        for (int i = 0; i < allTiles.length; i++) {
+            for (int j = 0; j < allTiles[i].length; j++) {
+                if(terrain == allTiles[i][j])
                     return true;
+            }
             }
         return false;
     }
