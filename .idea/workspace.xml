@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25779730-4de1-4a8c-ad4e-eadfcfaacb57" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Block/Terrain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Block/TerrainType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Block/TerrainType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Block/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Block/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Building/Improvement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Building/Improvement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Civilization/Civilization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Civilization/Civilization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Units/CivilianUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Units/CivilianUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Units/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Units/Unit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Units/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Units/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Block/TerrainFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Block/TerrainFeature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Block/TerrainType.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -41,7 +37,9 @@
     </option>
   </component>
   <component name="ProjectId" id="28pLBCVqtjmtHnMfxfv4I04CsuW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -130,7 +128,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651908445222</updated>
-      <workItem from="1652344131800" duration="5313000" />
+      <workItem from="1652344131800" duration="10206000" />
     </task>
     <servers />
   </component>

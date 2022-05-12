@@ -1,87 +1,159 @@
 package Models.Block;
 
-public class TerrainType {
-    protected String state;
-    protected int movementcost;
-    protected int gold;
-    protected int food;
-    protected int production;
-    protected double combatmodifier;
-    protected boolean ismovingpossible;
-    protected boolean isvisible=true;
-    protected boolean hasroad;
-    protected TerrainFeature terrainfeature;
-    public TerrainType(String state,TerrainFeature terrainfeature) {
-        this.state = state;
-        if (state.equals("Ocean"))
-            this.setFields(700, 0, 0, 0, 0, false);
-        else if (state.equals("Desert"))
-            this.setFields(1, 0, 0, 0, 33 / 100, true);
-        else if (state.equals("GrassLand"))
-            this.setFields(1, 0, 2, 0, 33 / 100, true);
-        else if (state.equals("Meadows"))
-            this.setFields(2, 0, 0, 2, -25 / 100, true);
-        else if (state.equals("Mountain"))
-            this.setFields(700, 0, 0, 0, 0, false);
-        else if (state.equals("Plains"))
-            this.setFields(1, 0, 1, 1, 33 / 100, true);
-        else if (state.equals("Antarctica"))
-            this.setFields(1, 0, 0, 0, 33 / 100, true);
-        else if (state.equals("Tundra"))
-            this.setFields(1, 0, 1, 0, 33 / 100, true);
-        this.terrainfeature=terrainfeature;
-    }
+import Models.Resources.Resource;
 
-    public void setFields(int movementcost, int gold, int food, int production, float combatmodifier,
-                          boolean ismovingpossible) {
-        this.movementcost = movementcost;
-        this.gold = gold;
-        this.food = food;
-        this.production = production;
-        this.combatmodifier = combatmodifier;
-        this.ismovingpossible = ismovingpossible;
-    }
-    public double getCombatmodifier() {
-        return combatmodifier;
-    }
+import java.util.ArrayList;
+    public enum TerrainType {
+        DESERT(0, 0, 0, -33, 1, new ArrayList<TerrainFeature>() {
+            {
+                add(TerrainFeature.RIVER); ////  ------>  ////////Sobhan jan add this;
+                add(TerrainFeature.Oasis);
+                add(TerrainFeature.FloodPlains);
+            }
+        }, new ArrayList<Resource>() {
+            {
+                add(Resource.Iron);
+                add(Resource.Gold);
+                add(Resource.Silver);
+                add(Resource.Jewel);
+                add(Resource.Marble);
+                add(Resource.Cotton);
+                add(Resource.Incense);
+                add(Resource.Sheep);
+            }
+        }),
+        GRASSLLAND(2, 0, 0, -33, 1, new ArrayList<TerrainFeature>() {
+            {
+                add(TerrainFeature.RIVER);    ////  ------>  ////////Sobhan jan add this;
+                add(TerrainFeature.Forest);
+                add(TerrainFeature.Marsh);
+            }
+        }, new ArrayList<Resource>() {
+            {
+                add(Resource.Iron);
+                add(Resource.Horse);
+                add(Resource.Coal);
+                add(Resource.Cow);
+                add(Resource.Gold);
+                add(Resource.Jewel);
+                add(Resource.Marble);
+                add(Resource.Cotton);
+                add(Resource.Sheep);
+            }
+        }),
+        HILLS(0, 2, 0, 25, 2, new ArrayList<TerrainFeature>() {
+            {
+                add(TerrainFeature.River); ////  ------>  ////////Sobhan jan add this;
+                add(TerrainFeature.Forest);
+                add(TerrainFeature.Jungle);
+            }
+        }, new ArrayList<Resource>() {
+            {
+                add(Resource.Iron);
+                add(Resource.Coal);
+                add(Resource.Gazelle);
+                add(Resource.Gold);
+                add(Resource.Silver);
+                add(Resource.Jewel);
+                add(Resource.Marble);
+                add(Resource.Sheep);
+            }
+        }),
+        MOUNTAIN(0, 0, 0, 25, Integer.MAX_VALUE,  new ArrayList<TerrainFeature>(),  new ArrayList<Resource>()),
+        OCEAN(1, 0, 1, 0, Integer.MAX_VALUE, new ArrayList<TerrainFeature>() {
+            {
+                add(TerrainFeature.Ice);
+            }
+        }, new ArrayList<Resource>() {
+            {
 
-    public int getFood() {
-        return food;
-    }
+            }
+        }),
+        PLAIN(1, 1, 0, -33, 1, new ArrayList<TerrainFeature>() {
+            {
+                add(TerrainFeature.River);////  ------>  ////////Sobhan jan add this;
+                add(TerrainFeature.Forest);
+                add(TerrainFeature.Jungle);
+            }
+        }, new ArrayList<Resource>() {
+            {
+                add(Resource.Iron);
+                add(Resource.Horse);
+                add(Resource.Coal);
+                add(Resource.Wheat);
+                add(Resource.Gold);
+                add(Resource.Jewel);
+                add(Resource.Marble);
+                add(Resource.Ivory);
+                add(Resource.Cotton);
+                add(Resource.Incense);
+                add(Resource.Sheep);
+            }
+        }),
+        SNOW(0, 0, 0, -33, 1, new ArrayList<TerrainFeature>(), new ArrayList<Resource>() {
+            {
+                add(Resource.Iron);
+            }
+        }),
+        TUNDRA(1, 0, 0, -33, 1, new ArrayList<TerrainFeature>() {
+            {
+                add(TerrainFeature.Forest);
+            }
+        }, new ArrayList<Resource>() {
+            {
+                add(Resource.Iron);
+                add(Resource.Horse);
+                add(Resource.Gazelle);
+                add(Resource.Silver);
+                add(Resource.Jewel);
+                add(Resource.Marble);
+                add(Resource.Fur);
+            }
+        });
 
-    public int getGold() {
-        return gold;
-    }
+        TerrainType(int food, int product, int gold, int combatModifier, int MP, ArrayList<TerrainFeature> possibleFeatures, ArrayList<Resource> possibleResources) {
+            this.food = food;
+            this.product = product;
+            this.gold = gold;
+            this.MP = MP;
+            this.combatModifier = combatModifier;
+            this.possibleFeatures = possibleFeatures;
+            this.possibleResources = possibleResources;
+        }
 
-    public int getMovementcost() {
-        return movementcost;
-    }
+        final int food;
+        final int product;
+        final int gold;
+        final int MP;
+        final int combatModifier;
+        final ArrayList<TerrainFeature> possibleFeatures;
+        final ArrayList<Resource> possibleResources;
 
-    public int getProduction() {
-        return production;
-    }
+        public int getFood() {
+            return food;
+        }
 
-    public String getType() {
-        return state;
-    }
+        public int getProduct() {
+            return product;
+        }
 
-    public TerrainFeature getTerrainfeature() {
-        return terrainfeature;
-    }
+        public int getGold() {
+            return gold;
+        }
 
-    public boolean getIsmovingpossible() {
-        return ismovingpossible;
-    }
+        public int getMP() {
+            return MP;
+        }
 
-    public boolean getIsvisible() {
-        return isvisible;
-    }
+        public int getCombatModifier() {
+            return combatModifier;
+        }
 
-    public boolean isHasroad() {
-        return hasroad;
-    }
+        public ArrayList<TerrainFeature> getPossibleFeatures() {
+            return possibleFeatures;
+        }
 
-    public void setHasroad(boolean hasroad) {
-        this.hasroad = hasroad;
+        public ArrayList<Resource> getPossibleResources() {
+            return possibleResources;
+        }
     }
-}

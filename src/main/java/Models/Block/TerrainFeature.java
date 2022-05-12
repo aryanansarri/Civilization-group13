@@ -9,7 +9,6 @@ public enum TerrainFeature {
     Jungle(2, 0, 1, 1, -25 / 100, true),
     Marsh(2, 0, -1, 0, 33/100, true),
     Oasis(1, 1, 3, 0, 33 / 100, true);
-
     private int movementcost;
     int gold;
     private int food;
