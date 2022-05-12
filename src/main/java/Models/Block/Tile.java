@@ -161,6 +161,46 @@ public class Tile {
         this.improvement = improvement;
     }
 
+    public ArrayList<Border> getBorders() {
+        return borders;
+    }
+
+    public void setBorders(ArrayList<Border> borders) {
+        this.borders = borders;
+    }
+
+    public TerrainType getTerraintype() {
+        return terraintype;
+    }
+
+    public void setTerraintype(TerrainType terraintype) {
+        this.terraintype = terraintype;
+    }
+
+    public void setX(int x) {
+        X = x;
+    }
+
+    public void setY(int y) {
+        Y = y;
+    }
+
+    public void setWorkingCitizen(Citizen workingCitizen) {
+        this.workingCitizen = workingCitizen;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public boolean isIsmovingpossible() {
+        return ismovingpossible;
+    }
+
+    public void setIsmovingpossible(boolean ismovingpossible) {
+        this.ismovingpossible = ismovingpossible;
+    }
+
     @Override
     public String toString() {
         return "Tile{" +
@@ -178,4 +218,5 @@ public class Tile {
                 ", ismovingpossible=" + ismovingpossible +
                 '}';
     }
+
 }
