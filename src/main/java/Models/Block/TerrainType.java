@@ -1,6 +1,15 @@
 package Models.Block;
 
 public class TerrainType {
+    public static String DESERT = "Desert";
+    public static String OCEAN = "Ocean";
+    public static String PLAIN = "Plains";
+    public static String TUNDRA = "Tundra";
+    public static String SNOW = "Meadows";
+    public static String MOUNTAIN = "Mountain";
+    public static String GRASSLAND = "GrassLand";
+    public static String HILL = "Antarctica";
+
     protected String state;
     protected int movementcost;
     protected int gold;
