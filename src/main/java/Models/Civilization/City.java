@@ -172,4 +172,25 @@ public class City {
         }
         return Demographic;
     }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "happiness=" + happiness +
+                ", food=" + food +
+                ", gold=" + gold +
+                ", production=" + production +
+                ", health=" + health +
+                ", fightingPower=" + fightingPower +
+                ", scienceValue=" + scienceValue +
+                ", isCapital=" + isCapital +
+                ", name='" + name + '\'' +
+                ", ownership=" + ownership +
+                ", garrisonUnit=" + garrisonUnit +
+                ", location=" + location +
+                ", citizens=" + citizens +
+                ", tiles=" + tiles +
+                ", beingcapital=" + beingcapital +
+                '}';
+    }
 }

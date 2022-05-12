@@ -21,4 +21,13 @@ public class Border {
     public boolean getisRiver() {
         return isriver;
     }
+
+    @Override
+    public String toString() {
+        return "Border{" +
+                "neigh1=" + neigh1 +
+                ", neigh2=" + neigh2 +
+                ", isriver=" + isriver +
+                '}';
+    }
 }

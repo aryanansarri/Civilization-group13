@@ -2,11 +2,14 @@ package Models.Units;
 
 import Models.Block.Tile;
 import Models.Civilization.Civilization;
+import Models.Cordination;
+import Models.Select;
 
 import java.util.ArrayList;
 
-public class Unit {
+public class Unit implements Select, Combatble {
     private int MovementPoint;
+    private int xp;
     private double HP;
     private int mana;
     private Tile tile;
@@ -17,10 +20,12 @@ public class Unit {
     protected boolean isOnFortify;
     private boolean isOnAlert;
     protected boolean isOnGarrison;
+    private boolean workDone;
+    private ArrayList<Cordination> path = new ArrayList<>();
     private String type;
     public int lastDutyTurn;
 
-
+    private int remindMove;
 
     public Unit(String type, Tile tile, Civilization civilization) {
         this.type=type;
@@ -32,7 +37,8 @@ public class Unit {
         return tile;
     }
 
-    public Unit(int HP, int mana, Tile tile, int COST, int combatStrength) {
+    public Unit(int xp, int HP, int mana, Tile tile, int COST, int combatStrength) {
+        this.xp = xp;
         this.HP = HP;
         this.mana =mana;
         this.tile = tile;
@@ -88,7 +94,13 @@ public class Unit {
         return MovementPoint;
     }
 
+    public int getXp() {
+        return xp;
+    }
 
+    public void setXp(int xp) {
+        this.xp = xp;
+    }
 
     public void setCOST(int COST) {
         this.COST = COST;
@@ -110,5 +122,97 @@ public class Unit {
     }
     public void setMana(int mana) {
         this.mana = mana;
+    }
+
+    public void setHP(double HP) {
+        this.HP = HP;
+    }
+
+    public void setCombatStrength(int combatStrength) {
+        this.combatStrength = combatStrength;
+    }
+
+    public boolean isSleep() {
+        return isSleep;
+    }
+
+    public void setSleep(boolean sleep) {
+        isSleep = sleep;
+    }
+
+    public boolean isOnFortify() {
+        return isOnFortify;
+    }
+
+    public void setOnFortify(boolean onFortify) {
+        isOnFortify = onFortify;
+    }
+
+    public boolean isOnAlert() {
+        return isOnAlert;
+    }
+
+    public void setOnAlert(boolean onAlert) {
+        isOnAlert = onAlert;
+    }
+
+    public boolean isOnGarrison() {
+        return isOnGarrison;
+    }
+
+    public void setOnGarrison(boolean onGarrison) {
+        isOnGarrison = onGarrison;
+    }
+
+    public boolean isWorkDone() {
+        return workDone;
+    }
+
+    public void setWorkDone(boolean workDone) {
+        this.workDone = workDone;
+    }
+
+    public ArrayList<Cordination> getPath() {
+        return path;
+    }
+
+    public void setPath(ArrayList<Cordination> path) {
+        this.path = path;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getRemindMove() {
+        return remindMove;
+    }
+
+    public void setRemindMove(int remindMove) {
+        this.remindMove = remindMove;
+    }
+
+    @Override
+    public void attack(Combatble combatble) {
+//        to do
+    }
+
+    @Override
+    public void defence(Combatble combatble) {
+//        to do
+    }
+
+    @Override
+    public String toString() {
+        String str = "";
+        str += type + " at " + tile.getX() + ", " + tile.getY() + " ";
+        str += "sleep: " + isSleep + " " + "on alert: " + isOnAlert + " ";
+        str += "work done: " + workDone + " " + "hp: " + getHP() + " " ;
+        str += "remind mp" + remindMove + " " + "path size: " + path.size();
+        return str;
     }
 }

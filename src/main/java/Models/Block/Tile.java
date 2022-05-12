@@ -160,4 +160,22 @@ public class Tile {
     public void setImprovement(Improvement improvement) {
         this.improvement = improvement;
     }
+
+    @Override
+    public String toString() {
+        return "Tile{" +
+                "borders=" + borders +
+                ", resources=" + resources +
+                ", terraintype=" + terraintype +
+                ", improvement=" + improvement +
+                ", X=" + X +
+                ", Y=" + Y +
+                ", owner=" + owner +
+                ", militaryUnit=" + militaryUnit +
+                ", civilianUnit=" + civilianUnit +
+                ", workingCitizen=" + workingCitizen +
+                ", city=" + city +
+                ", ismovingpossible=" + ismovingpossible +
+                '}';
+    }
 }

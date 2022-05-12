@@ -101,4 +101,10 @@ public enum UnitType {
         return new ArrayList<>(Arrays.asList(UnitType.class.getEnumConstants()));
     }
 
+    public static ArrayList<UnitType> getSiegeMilitaryUnit() {
+        ArrayList<UnitType> Siege = new ArrayList<>();
+        Siege.add(Artillery);Siege.add(CATAPULT);Siege.add(Canon);Siege.add(Trebuchet);
+        return Siege;
+    }
+
 }
