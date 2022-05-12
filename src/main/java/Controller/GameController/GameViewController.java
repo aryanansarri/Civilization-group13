@@ -24,4 +24,48 @@ public class GameViewController {
     public String invalidMessage() {
         return "invalid command";
     }
+
+    public String researchInformation() {
+        return "";
+    }
+
+    public String unitsInformation() {
+        return "";
+    }
+
+    public String citiesInformation() {
+        return "";
+    }
+
+    public String diplomacyInformation() {
+        return "";
+    }
+
+    public String victoryInformation() {
+        return "";
+    }
+
+    public String demographicInformation() {
+        return "";
+    }
+
+    public String militaryInformation() {
+        return "";
+    }
+
+    public String notification() {
+        return "";
+    }
+
+    public String diplomaticInformation() {
+        return "";
+    }
+
+    public String economicInformation() {
+        return "";
+    }
+
+    public String dealInformation() {
+        return "";
+    }
 }
