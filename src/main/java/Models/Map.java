@@ -32,7 +32,7 @@ public class Map {
             }
     }
 
-    public int getColumns() {
+    public static int getColumns() {
         return columns;
     }
 
@@ -40,7 +40,7 @@ public class Map {
         return civilization;
     }
 
-    public int getRows() {
+    public static int getRows() {
         return rows;
     }
 
