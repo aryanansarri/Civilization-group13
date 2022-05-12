@@ -2,17 +2,17 @@ package Models;
 
 import Models.Block.*;
 import Models.Civilization.Civilization;
-
-import java.util.ArrayList;
-
 import static Models.Block.TileVisitingKind.*;
 
 
 public class Map {
+    private OriginalMap instanceOfOriginalMap = new OriginalMap();
     private final static int columns = 20, rows = 20;
     private TileVisitingKind[][] tileVisitingKinds = new TileVisitingKind[columns][rows];
     private final Civilization civilization;
-
+    public Map(){
+        this.civilization = null;
+    }
     //initialization of map :
     // if it is original map then it is visible
     // if it is not original map then it is fog of war at first to discover it
@@ -32,10 +32,6 @@ public class Map {
             }
     }
 
-    public Map() {
-        civilization = null;
-    }
-
     public int getColumns() {
         return columns;
     }
@@ -52,12 +48,11 @@ public class Map {
         return tileVisitingKinds;
     }
 
-
     // this updates map as the units move
     // first we set all visible terrains to once visible then :
     // if any unit is there or terrain belongs to civilization , it is visible
     public void updateExploration() {
-        Tile[][] tiles = OriginalMap.getTiles();
+        Tile[][] tiles = instanceOfOriginalMap.getAllTiles();
         for (int i = 0; i < columns; i++) {
             for (int j = 0; j < rows; j++) {
                 if (tileVisitingKinds[i][j] == Visible)
