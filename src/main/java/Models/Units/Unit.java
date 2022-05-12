@@ -22,13 +22,13 @@ public class Unit implements Select, Combatble {
     private boolean isOnAlert;
     protected boolean isOnGarrison;
     private boolean workDone;
-    private ArrayList<Cordination> path = new ArrayList<>();
-    private String type;
+    private ArrayList<Coordination> path = new ArrayList<>();
+    private UnitType type;
     public int lastDutyTurn;
 
     private int remindMove;
 
-    public Unit(String type, Tile tile, Civilization civilization) {
+    public Unit(UnitType type, Tile tile, Civilization civilization) {
         this.type=type;
         this.tile=tile;
         this.civilization=civilization;

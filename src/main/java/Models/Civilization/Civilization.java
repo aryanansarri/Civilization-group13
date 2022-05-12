@@ -230,7 +230,6 @@ public class Civilization {
         }
         return Demographic;
     }
-
     public void nextTurn() {
         Refresh();
         civilizationHappiness.nextTurn();

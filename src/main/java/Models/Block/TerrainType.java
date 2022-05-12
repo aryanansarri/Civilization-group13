@@ -9,6 +9,7 @@ public class TerrainType {
     protected double combatmodifier;
     protected boolean ismovingpossible;
     protected boolean isvisible=true;
+    protected boolean hasroad;
     protected TerrainFeature terrainfeature;
     public TerrainType(String state,TerrainFeature terrainfeature) {
         this.state = state;
@@ -74,5 +75,13 @@ public class TerrainType {
 
     public boolean getIsvisible() {
         return isvisible;
+    }
+
+    public boolean isHasroad() {
+        return hasroad;
+    }
+
+    public void setHasroad(boolean hasroad) {
+        this.hasroad = hasroad;
     }
 }

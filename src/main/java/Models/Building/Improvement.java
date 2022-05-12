@@ -24,6 +24,7 @@ public enum Improvement {
     private  int food;
     private  int gold;
     private  int production;
+    private int neededturns;
     private  Technology neededTech;
     private    ArrayList<TerrainType> possibleTerrains;
     private String type;
@@ -63,5 +64,9 @@ public enum Improvement {
 
     public Technology getNeededTech() {
         return neededTech;
+    }
+
+    public int getNeededturns() {
+        return neededturns;
     }
 }

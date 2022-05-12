@@ -1,23 +1,112 @@
 package Models.Units;
 
+import Models.Block.TerrainType;
 import Models.Block.Tile;
+import Models.Building.Improvement;
+import Models.Civilization.Civilization;
+import javafx.util.Pair;
 
-public class Worker extends CivilianUnit {
-    Worker(int HP, int MP, Tile tile, int combatStrength, int COST) {
-        super(HP, MP, tile, combatStrength, COST);
+import java.util.HashMap;
+
+public class Worker extends Unit {
+    private Improvement improvement;
+    private int neededturns;
+
+    public Worker(Tile tile, Civilization civilization) {
+        super(UnitType.WORKER, tile, civilization);
+        this.improvement = null;
     }
-    public void creatRoad(Tile tile) {}
-    public void creatFarm(Tile tile) {}
-    public void leaveOlderAndCreatNewer(Tile tile) {}
-    public void repairRoad(Tile tile) {}
-    public void createMine(Tile tile) {}
-    public void createTradingPost(Tile tile) {}
-    public void createWoodFactory(Tile tile) {}
-    public void createCamp(Tile tile) {}
-    public void createPasture(Tile tile) {}
-    public void removeRoad(Tile tile) {}
-    public void removeForest(Tile tile) {}
-    public void removeJungle(Tile tile) {}
-    public void removeMarsh(Tile tile) {}
-    public void createQuarry(Tile tile) {}
+
+    public void makeImprovement(Improvement improvement) {
+        if (!(getCivilization().getCivilizationTechnology().getPassedTechnology().contains(improvement.getNeededTech()) || improvement.getNeededTech() == null)) {
+            System.out.println("The necessary technology for making this improvement doesn't exist");
+        }
+        if (improvement != null) {
+            System.out.println("you could make only one improvement in a time, have patience friend!");
+        }
+        this.improvement = improvement;
+        setWorkDone(true);
+    }
+
+    private void removeRoad() {
+        getTile().getTerraintype().setHasroad(false);
+        setWorkDone(true);
+    }
+
+
+    private void removeMarsh() {
+        getTerrain().getTerrainFeatures().remove(TerrainFeature.MARSH);
+        setWorkDone(true);
+    }
+
+
+    private void removeJungle() {
+        getTile().getTerraintype().getTerrainfeature().remove(TerrainFeature.JUNGLE);
+        setWorkDone(true);
+    }
+
+    private void removeForest() {
+        getTile().getTerraintype().getTerrainfeature().remove(TerrainFeature.FOREST);
+        setWorkDone(true);
+    }
+
+    public Improvement getImprovement() {
+        return improvement;
+    }
+
+    private void repair() {
+        /////////////////toDo;
+        setWorkDone(true);
+    }
+
+    public void setImprovement(Improvement improvement) {
+        this.improvement = improvement;
+    }
+
+    public int getNeededturns() {
+        return neededturns;
+    }
+
+    public void setNeededturns(int neededturns) {
+        this.neededturns = neededturns;
+    }
+
+    public String getWorkingDetail() {
+        if (improvement == null) return "no improvement is being made";
+        else return improvement + " remaining turns :" + neededturns;
+    }
+    private void addImprovement() {
+        if (improvement == Improvement.ROAD)
+            getTile().getTerraintype().setHasroad(true);
+        else if (improvement == Improvement.REMOVE_FOREST)
+            removeForest();
+        else if (improvement == Improvement.REPAIR)
+            repair();
+        else if (improvement == Improvement.REMOVE_ROUTE)
+            removeRoad();
+        else if (improvement == Improvement.REMOVE_MARSH)
+            removeMarsh();
+        else if (improvement == Improvement.REMOVE_JUNGLE)
+            removeJungle();
+        else
+            getTerrain().setImprovement(makingImprovement.getKey());
+    }
+
+    public void relieveFromJob() {
+        getPath().clear();
+        setSleep(false);
+        setWorkDone(true);
+        improvement = null;
+    }
+
+    public void nextTurn() {
+        if (improvement != null) {
+            neededturns--;
+            if (neededturns <= 0) {
+                addImprovement();
+                improvement = null;
+                neededturns = 0;
+            }
+        }
+    }
 }

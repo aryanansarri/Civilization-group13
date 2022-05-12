@@ -161,6 +161,10 @@ public class Tile {
         this.improvement = improvement;
     }
 
+    public TerrainType getTerraintype() {
+        return terraintype;
+    }
+
     @Override
     public String toString() {
         return "Tile{" +
