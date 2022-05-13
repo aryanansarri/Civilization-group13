@@ -16,7 +16,6 @@ import java.util.regex.Matcher;
 
 public class GameView {
     private GameViewController gameViewController = new GameViewController();
-    private CityController cityController = new CityController();
 
     public void run() {
         while (Menu.getMenu() == Menu.GAME) {
@@ -128,6 +127,7 @@ public class GameView {
         String state = "select";
         Coordinates coordinates = new Coordinates(Integer.parseInt(matcher.group("x")), Integer.parseInt(matcher.group("y")));
         City selectedCity = GameDatabase.getGameDatabase().getCityCoordinates(coordinates);
+        CityController cityController = gameViewController.getCityController();
         while (state.equals("select")) {
             String cmd = Menu.input();
             if (Menu.checkMatching(SelectCityRegex.back, cmd)) {
@@ -167,7 +167,7 @@ public class GameView {
     }
 
     private void selectSettler(Matcher matcher) {
-//        to do
+
     }
 
     private void selectWorker(Matcher matcher) {

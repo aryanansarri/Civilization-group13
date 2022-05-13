@@ -10,6 +10,7 @@ import java.util.regex.Matcher;
 public class GameViewController {
 
     private InfoController infoController = new InfoController();
+    private CityController cityController = new CityController();
     public String exitGameMenu() {
         Menu.goToMenu(Menu.MAIN);
         return "You are taken to the Main Menu";
@@ -36,6 +37,9 @@ public class GameViewController {
         return infoController;
     }
 
+    public CityController getCityController() {
+        return cityController;
+    }
     public String selectCityInCoordination(Matcher matcher) {
         Coordinates coordinates = new Coordinates(Integer.parseInt(matcher.group("x")),
                                                                 Integer.parseInt(matcher.group("y")));
@@ -52,5 +56,9 @@ public class GameViewController {
         }
         GameDatabase.getGameDatabase().setSelected(city);
         return "city is selected successfully";
+    }
+    public String selectUnits(Matcher matcher) {
+        Coordinates coordinates = new Coordinates(Integer.parseInt(matcher.group("x")), Integer.parseInt(matcher.group("y")));
+
     }
 }

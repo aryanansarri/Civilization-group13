@@ -8,7 +8,7 @@ import Models.Civilization.City;
 import Models.Civilization.Civilization;
 import Models.Units.*;
 
-public class UnitController {
+public class selectSettlerUnitController {
     public class CreateUnitController {
         public boolean createUnit(Civilization civilization, Tile tile, String type) {
             Unit unit = new Unit("type", tile, civilization);
