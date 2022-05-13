@@ -1,11 +1,11 @@
-package Models.Building;
+package Models.Block.TechnologyAndImprovement;
 
 import Models.Block.TerrainType;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static Models.Building.Technology.*;
+import static Models.Block.TechnologyAndImprovement.Technology.*;
 
 public enum Improvement {
 
@@ -25,7 +25,7 @@ public enum Improvement {
     private  int gold;
     private  int production;
     private int neededturns;
-    private  Technology neededTech;
+    private Technology neededTech;
     private    ArrayList<TerrainType> possibleTerrains;
     private String type;
 

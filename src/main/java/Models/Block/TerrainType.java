@@ -113,7 +113,7 @@ import java.util.ArrayList;
 
         TerrainType(int food, int product, int gold, int combatModifier, int MP, ArrayList<TerrainFeature> possibleFeatures, ArrayList<Resource> possibleResources) {
             this.food = food;
-            this.product = product;
+            this.production = product;
             this.gold = gold;
             this.MP = MP;
             this.combatModifier = combatModifier;
@@ -122,7 +122,7 @@ import java.util.ArrayList;
         }
 
         final int food;
-        final int product;
+        final int production;
         final int gold;
         final int MP;
         final int combatModifier;
@@ -133,8 +133,8 @@ import java.util.ArrayList;
             return food;
         }
 
-        public int getProduct() {
-            return product;
+        public int getProduction() {
+            return production;
         }
 
         public int getGold() {

@@ -1,12 +1,8 @@
 package Models.Units;
 
-import Models.Block.TerrainType;
 import Models.Block.Tile;
-import Models.Building.Improvement;
+import Models.Block.TechnologyAndImprovement.Improvement;
 import Models.Civilization.Civilization;
-import javafx.util.Pair;
-
-import java.util.HashMap;
 
 public class Worker extends Unit {
     private Improvement improvement;
