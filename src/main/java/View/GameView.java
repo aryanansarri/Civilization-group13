@@ -130,10 +130,35 @@ public class GameView {
         City selectedCity = GameDatabase.getGameDatabase().getCityCoordinates(coordinates);
         while (state.equals("select")) {
             String cmd = Menu.input();
-            if (Menu.checkMatching(SelectCityRegex.showCityInfo, cmd)) {
+            if (Menu.checkMatching(SelectCityRegex.back, cmd)) {
+                state = "null";
+                System.out.println("you are taken to game menu");
+            }
+            else if (Menu.checkMatching(SelectCityRegex.showCityInfo, cmd)) {
                 System.out.println(cityController.showCityInfo(selectedCity));
             }
-            else if ()
+            else if (Menu.checkMatching(SelectCityRegex.deleteCity, cmd)) {
+                System.out.println(cityController.deleteCity());
+                state = "end";
+            }
+            else if (Menu.checkMatching(SelectCityRegex.moveCitizen, cmd)) {
+                System.out.println(cityController.moveCitizen(Menu.getMatcher(), selectedCity));
+            }
+            else if (Menu.checkMatching(SelectCityRegex.setCitizen, cmd)) {
+                System.out.println(cityController.setCitizen(Menu.getMatcher(), selectedCity));
+            }
+            else if (Menu.checkMatching(SelectCityRegex.removeCitizen, cmd)) {
+                System.out.println(cityController.removeCitizen(Menu.getMatcher()));
+            }
+            else if (Menu.checkMatching(SelectCityRegex.buyTile, cmd)) {
+                System.out.println(cityController.buyTile(Menu.getMatcher()));
+            }
+            else if (Menu.checkMatching(SelectCityRegex.attack, cmd)) {
+                System.out.println(cityController.attack(Menu.getMatcher()));
+            }
+            else {
+                System.out.println(gameViewController.invalidMessage());
+            }
         }
     }
 

@@ -3,6 +3,7 @@ package Controller.GameController;
 import Models.Civilization.City;
 import Models.Civilization.Citizen;
 import Models.Coordinates;
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -59,4 +60,19 @@ public class CityController {
         return "None citizen is free to set.";
     }
 
+    public String deleteCity() {
+        return "";
+    }
+
+    public String removeCitizen(Matcher matcher) {
+        return "";
+    }
+
+    public String buyTile(Matcher matcher) {
+        return "";
+    }
+
+    public String attack(Matcher matcher) {
+        return "";
+    }
 }
