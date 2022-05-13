@@ -2,7 +2,7 @@ package Controller.GameController;
 
 import Models.Civilization.City;
 import Models.Civilization.Citizen;
-import Models.Cordination;
+import Models.Coordinates;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -19,13 +19,13 @@ public class CityController {
         int firstY = Integer.parseInt(matcher.group("y"));
         int secondX = Integer.parseInt(matcher.group("xx"));
         int secondY = Integer.parseInt(matcher.group("yy"));
-        Cordination first = new Cordination(firstX, firstY);
-        Cordination second = new Cordination(secondX, secondY);
-        if (!first.isValidCoordination())
+        Coordinates first = new Coordinates(firstX, firstY);
+        Coordinates second = new Coordinates(secondX, secondY);
+        if (!first.isValidCoordination(GameDatabase.getGameDatabase().getOriginalMap()))
             return "coordinates are invalid";
-        if (!second.isValidCoordination())
+        if (!second.isValidCoordination(GameDatabase.getGameDatabase().getOriginalMap()))
             return "coordinates are invalid";
-        if (!city.getTiles().contains(first.getTile()))
+        if (!city.getTiles().contains())
             return "This Tile does not belong to you!";
         if (!city.getTiles().contains(second.getTile()))
             return "This Tile does not belong to you!";

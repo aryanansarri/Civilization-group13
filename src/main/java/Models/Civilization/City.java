@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import Models.Block.TerrainFeature;
 import Models.Block.TerrainType;
 import Models.Block.Tile;
+import Models.Select;
+import Models.Units.Combatble;
 import Models.Units.MilitaryUnit;
 
-public class City {
+public class City implements Select, Combatble {
 
 
     //////////////////Numberal    Properties
@@ -192,5 +194,15 @@ public class City {
                 ", tiles=" + tiles +
                 ", beingcapital=" + beingcapital +
                 '}';
+    }
+
+    @Override
+    public void attack(Combatble combatble) {
+//        to do
+    }
+
+    @Override
+    public void defence(Combatble combatble) {
+//        to do
     }
 }

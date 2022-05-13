@@ -4,6 +4,7 @@ import Controller.GameController.GameDatabase;
 import Controller.GameController.GameViewController;
 import Controller.GameController.InfoController;
 import Models.Civilization.Civilization;
+import Models.Coordinates;
 import View.Regexes.GameRegex;
 import View.Regexes.InfoGameRegex;
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
@@ -117,7 +118,13 @@ public class GameView {
     }
 
     private void selectCity(Matcher matcher) {
-//        to do
+        String selectedResult = gameViewController.selectCityInCoordination(matcher);
+        System.out.println(selectedResult);
+        if (!selectedResult.equals("city is selected successfully")) return;
+        String state = "select";
+        while (state.equals("select")) {
+
+        }
     }
 
     private void selectMilitaryUnit(Matcher matcher) {

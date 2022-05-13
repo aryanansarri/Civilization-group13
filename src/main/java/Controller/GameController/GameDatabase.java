@@ -1,9 +1,11 @@
 package Controller.GameController;
 
 import Controller.User;
+import Models.Block.Tile;
 import Models.Block.TileVisitingKind;
+import Models.Civilization.City;
 import Models.Civilization.Civilization;
-import Models.Cordination;
+import Models.Coordinates;
 import Models.Info.CivilizationHappiness;
 import Models.OriginalMap;
 import Models.Select;
@@ -99,5 +101,29 @@ public class GameDatabase {
 
     public void nextTurn() {
         currentPlayerID = (currentPlayerID + 1) % players.size();
+    }
+
+    public City getCityCoordinates(Coordinates coordinates) {
+        int x = coordinates.getX();
+        int y = coordinates.getY();
+        for (int i = 0; i < getCivilizations().size(); i++) {
+            for (int j = 0; j < getCivilizations().get(i).getCities().size(); j++) {
+                City now = getCivilizations().get(i).getCities().get(j);
+                Tile tile = now.getLocation();
+                if (tile.getX() != x) continue;
+                if (tile.getY() != y) continue;
+                return now;
+            }
+        }
+        return null;
+    }
+
+    public Civilization getCivilizationByCity(City city) {
+        for (int i = 0; i < getCivilizations().size(); ++i) {
+            if (getCivilizations().contains(city)) {
+                return getCivilizations().get(i);
+            }
+        }
+        return null;
     }
 }

@@ -1,6 +1,11 @@
 package Controller.GameController;
 
+import Models.Civilization.City;
+import Models.Coordinates;
+import View.GameView;
 import View.Menu;
+
+import java.util.regex.Matcher;
 
 public class GameViewController {
 
@@ -31,4 +36,21 @@ public class GameViewController {
         return infoController;
     }
 
+    public String selectCityInCoordination(Matcher matcher) {
+        Coordinates coordinates = new Coordinates(Integer.parseInt(matcher.group("x")),
+                                                                Integer.parseInt(matcher.group("y")));
+        if (!coordinates.isValidCoordination(GameDatabase.getGameDatabase().getOriginalMap())) {
+            return "coordinates with x: " + coordinates.getX() + " and y: " + coordinates.getY() +
+                    " is not valid";
+        }
+        City city = GameDatabase.getGameDatabase().getCityCoordinates(coordinates);
+        if (city == null) {
+            return "not find city in given coordinates";
+        }
+        if (GameDatabase.getGameDatabase().getCivilizationByCity(city) != GameDatabase.getGameDatabase().getCurrentCivilization()) {
+            return "its not your civilization!";
+        }
+        GameDatabase.getGameDatabase().setSelected(city);
+        return "city is selected successfully";
+    }
 }
