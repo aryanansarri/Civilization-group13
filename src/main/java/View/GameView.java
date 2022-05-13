@@ -1,18 +1,22 @@
 package View;
 
+import Controller.GameController.CityController;
 import Controller.GameController.GameDatabase;
 import Controller.GameController.GameViewController;
 import Controller.GameController.InfoController;
+import Models.Civilization.City;
 import Models.Civilization.Civilization;
 import Models.Coordinates;
 import View.Regexes.GameRegex;
 import View.Regexes.InfoGameRegex;
+import View.Regexes.SelectCityRegex;
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 
 import java.util.regex.Matcher;
 
 public class GameView {
     private GameViewController gameViewController = new GameViewController();
+    private CityController cityController = new CityController();
 
     public void run() {
         while (Menu.getMenu() == Menu.GAME) {
@@ -122,8 +126,14 @@ public class GameView {
         System.out.println(selectedResult);
         if (!selectedResult.equals("city is selected successfully")) return;
         String state = "select";
+        Coordinates coordinates = new Coordinates(Integer.parseInt(matcher.group("x")), Integer.parseInt(matcher.group("y")));
+        City selectedCity = GameDatabase.getGameDatabase().getCityCoordinates(coordinates);
         while (state.equals("select")) {
-
+            String cmd = Menu.input();
+            if (Menu.checkMatching(SelectCityRegex.showCityInfo, cmd)) {
+                System.out.println(cityController.showCityInfo(selectedCity));
+            }
+            else if ()
         }
     }
 

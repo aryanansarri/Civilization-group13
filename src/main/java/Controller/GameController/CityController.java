@@ -25,13 +25,13 @@ public class CityController {
             return "coordinates are invalid";
         if (!second.isValidCoordination(GameDatabase.getGameDatabase().getOriginalMap()))
             return "coordinates are invalid";
-        if (!city.getTiles().contains())
+        if (!city.getTiles().contains(GameDatabase.getGameDatabase().getOriginalMap().getTerrain(firstX, firstY)))
             return "This Tile does not belong to you!";
-        if (!city.getTiles().contains(second.getTile()))
+        if (!city.getTiles().contains(GameDatabase.getGameDatabase().getOriginalMap().getTerrain(secondX, secondY)))
             return "This Tile does not belong to you!";
 
         for (int i = 0; i < city.getCitizens().size(); i++) {
-            if (city.getCitizens().get(i).getonTile() == first.getTile()) {
+            if (city.getCitizens().get(i).getonTile() == GameDatabase.getGameDatabase().getOriginalMap().getTerrain(firstX, firstY)) {
                 city.getCitizens().set(i, new Citizen(city));
                 return "Citizen Moved Successfully.";
             }
@@ -42,12 +42,12 @@ public class CityController {
     public String setCitizen(Matcher matcher,City city) {
         int x = Integer.parseInt(matcher.group("x"));
         int y = Integer.parseInt(matcher.group("y"));
-        Cordination coordination = new Cordination(x, y);
-        if (!coordination.isValidCoordination())
+        Coordinates coordination = new Coordinates(x, y);
+        if (!coordination.isValidCoordination(GameDatabase.getGameDatabase().getOriginalMap()))
             return "Coordinates are invalid!";
         if (city == null)
             return "City Not Selected!";
-        if (!city.getTiles().contains(coordination.getTile()))
+        if (!city.getTiles().contains(GameDatabase.getGameDatabase().getOriginalMap().getTerrain(coordination.getX(), coordination.getY())))
             return "This Tile does not belong to you!";
 
         for (int i = 0; i < city.getCitizens().size(); i++) {
