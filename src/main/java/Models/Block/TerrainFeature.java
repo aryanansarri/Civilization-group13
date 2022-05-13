@@ -9,9 +9,9 @@ public enum TerrainFeature {
     Jungle(2, 0, 1, 1, -25 / 100, true),
     Marsh(2, 0, -1, 0, 33/100, true),
     Oasis(1, 1, 3, 0, 33 / 100, true);
-
     private int movementcost;
     int gold;
+    int MP;
     private int food;
     private int production;
     private double combatmodifier;
@@ -27,8 +27,11 @@ public enum TerrainFeature {
         this.ismovingpossible = ismovingpossible;
     }
 
+    public int getMP() {
+        return MP;
+    }
 
-    public double getCombatmodifier() {
+    public double getCombatModifier() {
         return combatmodifier;
     }
 

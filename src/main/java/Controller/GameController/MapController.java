@@ -4,7 +4,6 @@ import Models.Block.TerrainFeature;
 import Models.Block.TerrainType;
 import Models.Block.Tile;
 import Models.Block.TileVisitingKind;
-import Models.Building.Improvement;
 import Models.ConsoleColors;
 import Models.Map;
 import Models.Resources.Resource;

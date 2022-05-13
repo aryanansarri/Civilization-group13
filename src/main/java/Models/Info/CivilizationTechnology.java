@@ -1,7 +1,7 @@
 package Models.Info;
 
 import Controller.GameController.GameDatabase;
-import Models.Building.Technology;
+import Models.Block.TechnologyAndImprovement.Technology;
 
 import java.util.ArrayList;
 import java.util.HashMap;
