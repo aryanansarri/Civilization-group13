@@ -1,6 +1,6 @@
 package Models.Building;
 
-import Models.Block.TechnologyAndImprovement.Technology;
+import Models.Technology.Technology;
 
 import java.util.ArrayList;
 

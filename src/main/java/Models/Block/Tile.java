@@ -2,7 +2,7 @@ package Models.Block;
 
 import java.util.ArrayList;
 
-import Models.Block.TechnologyAndImprovement.Improvement;
+import Models.Improvment.Improvement;
 import Models.Civilization.Citizen;
 import Models.Civilization.City;
 import Models.Civilization.Civilization;

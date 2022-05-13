@@ -1,11 +1,12 @@
-package Models.Block.TechnologyAndImprovement;
+package Models.Improvment;
 
 import Models.Block.TerrainType;
+import Models.Technology.Technology;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static Models.Block.TechnologyAndImprovement.Technology.*;
+import static Models.Technology.Technology.*;
 
 public enum Improvement {
 

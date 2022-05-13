@@ -1,12 +1,12 @@
 package Models.Units;
 
-import Models.Block.TechnologyAndImprovement.Technology;
+import Models.Technology.Technology;
 import Models.Resources.Resource;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static Models.Block.TechnologyAndImprovement.Technology.*;
+import static Models.Technology.Technology.*;
 import static Models.Units.CombatType.*;
 import static Models.Units.CombatType.GUNPOWDER;
 import static Models.Resources.Resource.*;

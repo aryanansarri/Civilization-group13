@@ -1,7 +1,7 @@
 package Models.Units;
 
 import Models.Block.Tile;
-import Models.Block.TechnologyAndImprovement.Improvement;
+import Models.Improvment.Improvement;
 import Models.Civilization.Civilization;
 
 public class Worker extends Unit {

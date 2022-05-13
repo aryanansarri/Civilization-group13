@@ -1,13 +1,13 @@
 package Models.Resources;
 
-import Models.Block.TechnologyAndImprovement.Improvement;
-import Models.Block.TechnologyAndImprovement.Technology;
+import Models.Improvment.Improvement;
+import Models.Technology.Technology;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static Models.Block.TechnologyAndImprovement.Improvement.*;
-import static Models.Block.TechnologyAndImprovement.Technology.*;
+import static Models.Improvment.Improvement.*;
+import static Models.Technology.Technology.*;
 import static Models.Resources.ResourcesType.*;
 
 public enum Resource {

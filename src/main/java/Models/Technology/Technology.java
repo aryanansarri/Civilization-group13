@@ -1,5 +1,6 @@
-package Models.Block.TechnologyAndImprovement;
+package Models.Technology;
 
+import Models.Improvment.Improvement;
 import Models.Resources.Resource;
 import Models.Units.UnitType;
 
