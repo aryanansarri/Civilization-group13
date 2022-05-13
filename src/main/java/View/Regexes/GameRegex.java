@@ -14,5 +14,7 @@ public class GameRegex {
     public static String selectWorker = "";
     public static String technologyMenu = "";
     public static String cheatMenu = "";
+    public static String buildMenu = "";
     public static String nextTurn = "";
+
 }

@@ -182,6 +182,36 @@ public class GameView {
 //        to do
     }
 
+    private void buildMenu(Matcher matcher) {
+        System.out.println("you can select a building or unit");
+        System.out.println("list of buildings: ");
+        System.out.println(cityController.showBuildings());
+        System.out.println("list of units: ");
+        System.out.println(cityController.showUnits());
+        String state = "build";
+        while (state.equals("build")) {
+            String cmd = Menu.input();
+            if (Menu.checkMatching(SelectCityRegex.back, cmd)) {
+                state = "NULL";
+                System.out.println("you are taken to Game Menu");
+            }
+            else if (Menu.checkMatching(SelectCityRegex.buildBuilding, cmd)) {
+                System.out.println(cityController.buildBuilding());
+            }
+            else if (Menu.checkMatching(SelectCityRegex.buildUnit, cmd)) {
+                System.out.println(cityController.buildingUnit());
+            }
+            else if (Menu.checkMatching(SelectCityRegex.buildBuildingGold, cmd)) {
+                System.out.println(cityController.buildBuildingWithGold());
+            }
+            else if (Menu.checkMatching(SelectCityRegex.buildUnitGold, cmd)) {
+                System.out.println(cityController.buildingUnitWithGold());
+            }
+            else {
+                System.out.println(gameViewController.invalidMessage());
+            }
+        }
+    }
     public GameViewController getGameViewController() {
         return gameViewController;
     }

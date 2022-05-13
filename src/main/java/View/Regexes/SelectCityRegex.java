@@ -9,5 +9,9 @@ public class SelectCityRegex {
     public static String removeCitizen = "";
     public static String buyTile = "";
     public static String attack = "";
-    public static String buildMenu = "";
+
+    public static String buildBuilding = "";
+    public static String buildUnit = "";
+    public static String buildBuildingGold = "";
+    public static String buildUnitGold = "";
 }

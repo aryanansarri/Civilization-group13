@@ -75,4 +75,28 @@ public class CityController {
     public String attack(Matcher matcher) {
         return "";
     }
+
+    public String showBuildings() {
+        return "";
+    }
+
+    public String showUnits() {
+        return "";
+    }
+
+    public String buildBuilding() {
+        return "";
+    }
+
+    public String buildBuildingWithGold() {
+        return "";
+    }
+
+    public String buildingUnit() {
+        return "";
+    }
+
+    public String buildingUnitWithGold() {
+        return "";
+    }
 }
