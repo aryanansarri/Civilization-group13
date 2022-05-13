@@ -23,8 +23,13 @@ public class City {
     //////////////////////////
 
 
+    public void setFood(int food) {
+        this.food = food;
+    }
 
-
+    public void setHappiness(int happiness) {
+        this.happiness = happiness;
+    }
     //////////////////Object properties
     private Civilization ownership;
     private MilitaryUnit garrisonUnit;

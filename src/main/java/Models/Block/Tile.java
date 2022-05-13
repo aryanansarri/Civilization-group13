@@ -15,7 +15,7 @@ public class Tile {
     private ArrayList<Border> borders=new ArrayList<Border>();
     private ArrayList<Resource> resources;
     private TerrainType terraintype;
-    private  TerrainFeature terrainFeature;
+    private TerrainFeature terrainFeature;
     private Improvement improvement;
 
     private int X;
@@ -34,6 +34,9 @@ public class Tile {
         this.terraintype = terraintype;
     }
 
+    public void setTerraintype(TerrainType terraintype) {
+        this.terraintype = terraintype;
+    }
 
     ////////////getting productive values
     public int getFood(){
