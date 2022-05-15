@@ -19,7 +19,7 @@ public class Civilization {
     private String civilizationName;
     private Map civilizationMap;
     private ArrayList<City> cities;
-    private ArrayList<Resource> resources;
+    private static ArrayList<Resource> resources;
     private ArrayList<Unit> units;
     private ArrayList<War> wars;
 
@@ -60,6 +60,7 @@ public class Civilization {
         return civilizationName;
     }
 
+
     public void setCivilizationName(String civilizationName) {
         this.civilizationName = civilizationName;
     }
@@ -72,7 +73,7 @@ public class Civilization {
         this.cities = cities;
     }
 
-    public ArrayList<Resource> getResources() {
+    public static ArrayList<Resource> getResources() {
         return resources;
     }
 
@@ -169,9 +170,7 @@ public class Civilization {
         for (City city : cities) {
             for (Tile tile : city.getTiles()) {
                 for (Resource resource : tile.getResources()) {
-                    if (civilizationTechnology.getPassedTechnology().contains(resource.getRequiredTechnology()) && tile.getImprovement() == resource.getRequiredImprovement()) {
-                        resources.add(resource);
-                    }
+                    if (civilizationTechnology.getPassedTechnology().contains(resource.getRequiredTechnology()) && tile.getImprovement() == resource.getRequiredImprovement()) {resources.add(resource);}
                 }
             }
         }
@@ -184,18 +183,14 @@ public class Civilization {
     public void refreshGold() {
         civilizationGold.setGoldAmount(0);
         civilizationGold.increaseAddedGoldAmount(civilizationGold.getCheatedGoldAmount());
-        for (City city : cities) {
-            civilizationGold.increaseGoldAmount(city.getGold());
-        }
+        for (City city : cities) {civilizationGold.increaseGoldAmount(city.getGold());}
     }
     public void refreshHappiness() {
         civilizationHappiness.setHappinessValue(10);
         civilizationHappiness.increaseHappinessValue(civilizationHappiness.getCheatedHappinessValue());
         ArrayList<Resource> luxuryResource = Resource.getAllResources();
         for (int i = 0; i < luxuryResource.size(); i++) {
-            if (luxuryResource.get(i).getGold() <= 0) {
-                luxuryResource.remove(i);
-            }
+            if (luxuryResource.get(i).getGold() <= 0) {luxuryResource.remove(i);}
         }
         for (Resource resource : this.resources) {
             if (!luxuryResource.contains(resource)) continue;
@@ -235,8 +230,7 @@ public class Civilization {
         Refresh();
         civilizationHappiness.nextTurn();
         civilizationGold.increaseGoldAmount(civilizationGold.getAddedGoldAmount());
-        if (civilizationGold.getAddedGoldAmount() < 0)
-        {
+        if (civilizationGold.getAddedGoldAmount() < 0) {
             civilizationScience.increaseScienceValue(getCivilizationGold().getAddedGoldAmount());
             getCivilizationGold().setGoldAmount(0);
         }

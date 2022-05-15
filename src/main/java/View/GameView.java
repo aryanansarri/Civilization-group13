@@ -185,6 +185,7 @@ public class GameView {
     private void buildMenu(Matcher matcher) {
         System.out.println("you can select a building or unit");
         System.out.println("list of buildings: ");
+       CityController cityController = gameViewController.getCityController();
         System.out.println(cityController.showBuildings());
         System.out.println("list of units: ");
         System.out.println(cityController.showUnits());

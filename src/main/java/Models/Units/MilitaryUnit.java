@@ -1,20 +1,17 @@
 package Models.Units;
 
 
+import Models.Block.TerrainType;
 import Models.Block.Tile;
+import Models.Civilization.Civilization;
 
 public class MilitaryUnit extends Unit{
     private int XP;
-    private final int RANGE;
     private int lastActionTurn;
 
 
-    public MilitaryUnit(int XP, boolean isSleep, boolean isOnFortify, boolean isOnAlert, boolean isOnGarrison,
-                        int range, int lastActionTurn, int HP, int mana, Tile tile, int combatStrength, int price){
-        super(HP, mana, tile, price, combatStrength);
-        this.XP = XP;
-        this.RANGE = range;
-        this.lastActionTurn = lastActionTurn;
+    public MilitaryUnit(Civilization civilization, UnitType unitType, Tile tile){
+        super(civilization,unitType,tile);
     }
 
     public int getLastActionTurn() {

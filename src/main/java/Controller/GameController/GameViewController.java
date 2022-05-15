@@ -57,8 +57,8 @@ public class GameViewController {
         GameDatabase.getGameDatabase().setSelected(city);
         return "city is selected successfully";
     }
-    public String selectUnits(Matcher matcher) {
+    public String selectCivilizationUnits(Matcher matcher) {
         Coordinates coordinates = new Coordinates(Integer.parseInt(matcher.group("x")), Integer.parseInt(matcher.group("y")));
-
+        Ti
     }
 }

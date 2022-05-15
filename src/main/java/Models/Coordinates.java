@@ -1,5 +1,8 @@
 package Models;
 
+import Controller.GameController.GameDatabase;
+import Models.Block.TerrainType;
+
 public class Coordinates{
     private int x,y;
 
@@ -36,4 +39,7 @@ public class Coordinates{
         return false;
     }
 
+    public TerrainType[][] getTerrainType(){
+        return GameDatabase.getGameDatabase().getOriginalMap().getTerrainTypes();
+    }
 }

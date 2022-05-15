@@ -6,7 +6,6 @@ import Models.Resources.Resource;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static Models.Technology.Technology.*;
 import static Models.Units.CombatType.*;
 import static Models.Units.CombatType.GUNPOWDER;
 import static Models.Resources.Resource.*;
@@ -62,6 +61,32 @@ public enum UnitType {
         this.prerequisiteTechs = prerequisiteTechs;
         this.range = range;
     }
+    public static ArrayList<UnitType> removingNonMilitary(ArrayList<UnitType> militaryUnit){
+        militaryUnit.remove(CATAPULT);
+        militaryUnit.remove(Canon);
+        militaryUnit.remove(Trebuchet);
+        militaryUnit.remove(Artillery);
+        militaryUnit.remove(SETTLER);
+        militaryUnit.remove(WORKER);
+        return militaryUnit;
+    }
+    public static ArrayList<UnitType> removingNonSiege(ArrayList<UnitType> siegeUnits){
+        siegeUnits.remove(CATAPULT);
+        siegeUnits.remove(Canon);
+        siegeUnits.remove(Trebuchet);
+        siegeUnits.remove(Artillery);
+        return siegeUnits;
+    }
+    public static ArrayList<UnitType> getMilitaryUnits(){
+        ArrayList<UnitType> militaryUnits = getAllUnits();
+        return removingNonMilitary(militaryUnits);
+    }
+
+    public static ArrayList<UnitType> getSiegeUnits(){
+        ArrayList<UnitType> siegeUnits = getAllUnits();
+        return removingNonSiege(siegeUnits);
+    }
+
 
     public int getMovementPoint() {
         return movementPoint;
@@ -98,12 +123,6 @@ public enum UnitType {
     }
     public static ArrayList<UnitType> getAllUnits(){
         return new ArrayList<>(Arrays.asList(UnitType.class.getEnumConstants()));
-    }
-
-    public static ArrayList<UnitType> getSiegeMilitaryUnit() {
-        ArrayList<UnitType> Siege = new ArrayList<>();
-        Siege.add(Artillery);Siege.add(CATAPULT);Siege.add(Canon);Siege.add(Trebuchet);
-        return Siege;
     }
 
 }
