@@ -6,12 +6,10 @@ import Models.Civilization.Civilization;
 import Models.Units.*;
 
 public class selectSettlerUnitController {
-    public class CreateUnitController {
-        public boolean createUnit(Civilization civilization, Tile tile, String type) {
-            Unit unit = new Unit("type", tile, civilization);
-            civilization.getUnits().add(unit);
-            return addUnitToMap(unit);
-        }
+    public boolean createUnit(Civilization civilization, Tile tile, String type) {
+        Unit unit = new Unit("type", tile, civilization);
+        civilization.getUnits().add(unit);
+        return addUnitToMap(unit);
     }
     public boolean deleteUnit(Unit unit,Civilization civilization) {
         if(unit == null)
@@ -177,8 +175,4 @@ public class selectSettlerUnitController {
         }
         return true;
     }
-
-
-
-
 }
