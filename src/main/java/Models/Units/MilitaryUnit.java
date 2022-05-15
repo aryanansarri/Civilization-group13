@@ -39,7 +39,7 @@ public class MilitaryUnit extends Unit {
             MilitaryUnit targetMilitaryUnit = (MilitaryUnit) target;
             if (targetMilitaryUnit.getUnitType().getRangedCombatStrength() == 0)
                 targetMilitaryUnit.setHP(targetMilitaryUnit.getHp() - getUnitType().getCombatStrength() * getTile().getCombatModifier());
-            if (targetMilitaryUnit.getHp() <= 0) targetMilitaryUnit.delete();
+            if (targetMilitaryUnit.getHp() <= 0) targetMilitaryUnit.remove();
         } else {
             System.out.println("Ain't no valid defence");
         }
