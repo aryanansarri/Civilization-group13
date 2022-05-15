@@ -178,6 +178,14 @@ public class City {
         return Demographic;
     }
 
+    public void setOwnership(Civilization ownership) {
+        this.ownership = ownership;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
     @Override
     public String toString() {
         return "City{" +

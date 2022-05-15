@@ -25,15 +25,18 @@ public class Unit implements Select, Combatble {
     protected boolean isOnGarrison;
     private boolean workDone;
     private ArrayList<Coordination> path = new ArrayList<>();
-    private UnitType type;
+    private UnitType unitType;
     public int lastDutyTurn;
 
     private int remindMove;
 
     public Unit(UnitType type, Tile tile, Civilization civilization) {
-        this.type=type;
+        this.unitType=type;
         this.tile=tile;
         this.civilization=civilization;
+    }
+    public UnitType getUnitType() {
+        return unitType;
     }
 
     public Tile getTile() {
@@ -120,7 +123,7 @@ public class Unit implements Select, Combatble {
         ArrayList<Tile> result = new ArrayList<>();
         result.add(getTile());
 
-        ArrayList<Tile> targetTerrainsBackUp = getTile().getAdjacentTerrain();
+        ArrayList<Tile> targetTerrainsBackUp = getTile().getAdjacentTiles();
         ArrayList<Tile> targetTerrains = new ArrayList<>(targetTerrainsBackUp);
 
             for (Tile targetTile : targetTerrainsBackUp) {
@@ -129,7 +132,7 @@ public class Unit implements Select, Combatble {
                 if (!(targetTile.getTerraintype() == TerrainType.MOUNTAIN ||
                         targetTile.getTerraintype() == TerrainType.HILLS ||
                         targetTile.getTerrainFeature()==TerrainFeature.Forest))
-                    targetTerrains.addAll(targetTile.getAdjacentTerrain());
+                    targetTerrains.addAll(targetTile.getAdjacentTiles());
             }
             targetTerrainsBackUp = new ArrayList<>(targetTerrains);
         return result;
@@ -200,12 +203,12 @@ public class Unit implements Select, Combatble {
         this.path = path;
     }
 
-    public String getType() {
-        return type;
+    public UnitType getType() {
+        return unitType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setType(UnitType type) {
+        this.unitType = type;
     }
 
     public int getRemindMove() {
@@ -216,20 +219,20 @@ public class Unit implements Select, Combatble {
         this.remindMove = remindMove;
     }
 
-    @Override
+
     public void attack(Combatble combatble) {
-//        to do
+        System.out.println("Wrong Unit chosen brother");
     }
 
-    @Override
+
     public void defence(Combatble combatble) {
-//        to do
+       System.out.println("Wrong Unit chosen brother");
     }
 
     @Override
     public String toString() {
         String str = "";
-        str += type + " at " + tile.getX() + ", " + tile.getY() + " ";
+        str += unitType + " at " + tile.getX() + ", " + tile.getY() + " ";
         str += "sleep: " + isSleep + " " + "on alert: " + isOnAlert + " ";
         str += "work done: " + workDone + " " + "hp: " + getHP() + " " ;
         str += "remind mp" + remindMove + " " + "path size: " + path.size();
