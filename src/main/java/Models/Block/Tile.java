@@ -79,6 +79,10 @@ public class Tile {
         this.terrainFeature = terrainFeature;
     }
 
+    public TerrainFeature getTerrainFeature() {
+        return terrainFeature;
+    }
+
     public void setMilitaryUnit(MilitaryUnit militaryUnit) {
         this.militaryUnit = militaryUnit;
     }

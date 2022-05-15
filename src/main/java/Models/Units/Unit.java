@@ -1,5 +1,7 @@
 package Models.Units;
 
+import Models.Block.TerrainFeature;
+import Models.Block.TerrainType;
 import Models.Block.Tile;
 import Models.Civilization.Civilization;
 import Models.Cordination;
@@ -114,7 +116,24 @@ public class Unit implements Select, Combatble {
     public int getCombatStrength() {
         return combatStrength;
     }
+    public ArrayList<Tile> getVisibleTerrain() {
+        ArrayList<Tile> result = new ArrayList<>();
+        result.add(getTile());
 
+        ArrayList<Tile> targetTerrainsBackUp = getTile().getAdjacentTerrain();
+        ArrayList<Tile> targetTerrains = new ArrayList<>(targetTerrainsBackUp);
+
+            for (Tile targetTile : targetTerrainsBackUp) {
+                if (!result.contains(targetTile))
+                    result.add(targetTile);
+                if (!(targetTile.getTerraintype() == TerrainType.MOUNTAIN ||
+                        targetTile.getTerraintype() == TerrainType.HILLS ||
+                        targetTile.getTerrainFeature()==TerrainFeature.Forest))
+                    targetTerrains.addAll(targetTile.getAdjacentTerrain());
+            }
+            targetTerrainsBackUp = new ArrayList<>(targetTerrains);
+        return result;
+    }
     public void istheTileVisible(int x, int y) {
         //will be boolean l8er
     }
