@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public enum TerrainType {
     DESERT(0, 0, 0, -33, 1, new ArrayList<TerrainFeature>() {
         {
-            add(TerrainFeature.RIVER); ////  ------>  ////////Sobhan jan add this;
+            add(TerrainFeature.River); ////  ------>  ////////Sobhan jan add this;
             add(TerrainFeature.Oasis);
             add(TerrainFeature.FloodPlains);
         }
@@ -24,7 +24,7 @@ public enum TerrainType {
     }),
     GRASSLLAND(2, 0, 0, -33, 1, new ArrayList<TerrainFeature>() {
         {
-            add(TerrainFeature.RIVER);    ////  ------>  ////////Sobhan jan add this;
+            add(TerrainFeature.River);  ////  ------>  ////////Sobhan jan add this;
             add(TerrainFeature.Forest);
             add(TerrainFeature.Marsh);
         }
@@ -156,4 +156,5 @@ public enum TerrainType {
     public ArrayList<Resource> getPossibleResources() {
         return possibleResources;
     }
+
 }

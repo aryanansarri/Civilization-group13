@@ -2,7 +2,7 @@ package Models.Block;
 
 
 public enum TerrainFeature {
-
+    River(0, 0, 1, 0, 0, true),
     FloodPlains(1, 0, 2, 0, 33/100, true),
     Ice(0, 0, 0, 0, 0, false),
     Forest(1, 0, 1, -1, -25 / 100, true),

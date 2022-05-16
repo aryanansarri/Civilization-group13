@@ -195,11 +195,11 @@ public class Unit implements Select, Combatble {
         this.workDone = workDone;
     }
 
-    public ArrayList<Cordination> getPath() {
+    public ArrayList<Coordinates> getPath() {
         return path;
     }
 
-    public void setPath(ArrayList<Cordination> path) {
+    public void setPath(ArrayList<Coordinates> path) {
         this.path = path;
     }
 

@@ -54,11 +54,11 @@ public class GameViewController {
         if (GameDatabase.getGameDatabase().getCivilizationByCity(city) != GameDatabase.getGameDatabase().getCurrentCivilization()) {
             return "its not your civilization!";
         }
-        GameDatabase.getGameDatabase().setSelected(city);
+        GameDatabase.getGameDatabase().setSelected(null);  /////////problematic
         return "city is selected successfully";
     }
     public String selectCivilizationUnits(Matcher matcher) {
         Coordinates coordinates = new Coordinates(Integer.parseInt(matcher.group("x")), Integer.parseInt(matcher.group("y")));
-        Ti
+        return "Unit is selected successfully";
     }
 }

@@ -18,7 +18,13 @@ import Models.Units.*;
 
 public class City{
 
+    public void setFood(int food) {
+        this.food = food;
+    }
 
+    public void setHappiness(int happiness) {
+        this.happiness = happiness;
+    }
 
     //////////////////Numberal    Properties
     private int happiness;
@@ -441,7 +447,7 @@ public class City{
             TerrainType.getResources().remove(unitType.getPrerequisiteResource());
             addingUnit = null;}
         if (unitType == UnitType.WORKER && TerrainType.getCivilianUnit() == null) {
-            new Worker(getCivilization(),UnitType.WORKER,tile);
+            new Worker(tile,getCivilization());
             addingUnit = null;}
         if (UnitType.getMilitaryUnits().contains(unitType) && getMilitaryUnit() == null) {
             new MilitaryUnit(getCivilization(),addingUnit.getSecond(), tile);
@@ -468,21 +474,6 @@ public class City{
     }
     public void citizenJob(){
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

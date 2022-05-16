@@ -114,7 +114,7 @@ public enum BuildingType  {
         return new ArrayList<>(prerequisiteBuildingTypes);
     }
 
-    private static ArrayList<BuildingType> createArrayList(BuildingType... types) {
+    public static ArrayList<BuildingType> createArrayList(BuildingType... types) {
         ArrayList<BuildingType> result = new ArrayList<>();
         for (BuildingType type : types) {
             result.add(type);

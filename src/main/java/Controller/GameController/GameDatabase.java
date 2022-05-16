@@ -88,7 +88,7 @@ public class GameDatabase {
         for (int i = 0; i < players.size(); i++) {
             civilizations.add(new Civilization(players.get(i).getUsername()));
         }
-        originalMap = new OriginalMap();
+        originalMap = new OriginalMap(civilizations.get(0));   //////////problematic
         Random rnd = new Random();
         for (Civilization civilization : civilizations) {
             // to do

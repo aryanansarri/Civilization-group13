@@ -1,5 +1,6 @@
 package Models.Units;
 
+import Models.Block.TerrainFeature;
 import Models.Block.Tile;
 import Models.Improvment.Improvement;
 import Models.Civilization.Civilization;
@@ -31,7 +32,7 @@ public class Worker extends Unit {
 
 
     private void removeMarsh() {
-        getTerrain().getTerrainFeatures().remove(TerrainFeature.MARSH);
+        getTerrain().getTerrainFeatures().remove(TerrainFeature.Marsh);
         setWorkDone(true);
     }
 
