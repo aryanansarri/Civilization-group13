@@ -1,5 +1,6 @@
 package Models.Units;
 
+import Controller.GameController.GameDatabase;
 import Models.Block.TerrainFeature;
 import Models.Block.TerrainType;
 import Models.Block.Tile;
@@ -29,6 +30,7 @@ public class Unit implements Select, Combatble {
     public int lastDutyTurn;
 
     private int remindMove;
+    private boolean dutyCompleted;
 
     public Unit(UnitType type, Tile tile, Civilization civilization) {
         this.unitType=type;
@@ -115,6 +117,8 @@ public class Unit implements Select, Combatble {
     public void setCivilization(Civilization civilization) {
         this.civilization = civilization;
     }
+
+
 
     public int getCombatStrength() {
         return combatStrength;
@@ -229,6 +233,27 @@ public class Unit implements Select, Combatble {
         System.out.println("Wrong Unit chosen brother");
     }
 
+    public void setDutyCompleted(boolean dutyCompleted) {
+        this.dutyCompleted = dutyCompleted;
+    }
+
+    public void deleteUnit() {
+        getCivilization().removeUnit(this);
+        for (Tile[] tile : GameDatabase.getOriginalMap().getTile()) {
+            for (Tile TILE : tile) {
+                if (TILE.getCivilianUnit() == this) TILE.setCivilianUnit(null);
+                if (TILE.getMilitaryUnit() == this) TILE.setMilitaryUnit(null);
+            }
+        }
+    }
+
+    public void capturedBy(Civilization civilization) {
+        if (!(this instanceof MilitaryUnit)) this.setCivilization(civilization);
+        else deleteUnit();
+    }
+
+
+
     @Override
     public String toString() {
         String str = "";
@@ -239,7 +264,5 @@ public class Unit implements Select, Combatble {
         return str;
     }
 
-//    to do bellow as attacking in City class
-    public void capturedBy(Civilization civilization) {
-    }
+
 }

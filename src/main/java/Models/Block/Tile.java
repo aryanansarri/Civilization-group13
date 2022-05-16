@@ -2,6 +2,7 @@ package Models.Block;
 
 import java.util.ArrayList;
 
+import Models.Connect;
 import Models.Coordinates;
 import Models.Improvment.Improvement;
 import Models.Civilization.Citizen;
@@ -27,6 +28,7 @@ public class Tile {
     private CivilianUnit civilianUnit;
     private Citizen workingCitizen;
     private City city;
+    private Connect<Improvement, Boolean> ImprovementConnector;
     private boolean ismovingpossible;
 
     ////////////constructor
@@ -118,7 +120,7 @@ public class Tile {
 //        if (civilianUnit instanceof Worker == true)
 //            return (Worker) civilianUnit;
 //        else
-            return null;
+        return null;
     }
 
     ///////////////////owner getters and setters
@@ -245,13 +247,16 @@ public class Tile {
         return null;
     }
 
+    public Connect<Improvement, Boolean> getImprovementConnector() {
+        return ImprovementConnector;
+    }
 
     public Coordinates getCordination() {
         return null;
 //        to do
     }
 
-//    to do bellow function as use in Map use in setTileVisibleForCivilization
+    //    to do bellow function as use in Map use in setTileVisibleForCivilization
     public Iterable<? extends Tile> getSurroundingTerrain() {
         return null;
     }

@@ -73,7 +73,7 @@ public class Worker extends Unit {
         else return improvement + " remaining turns :" + neededturns;
     }
     private void addImprovement() {
-        if (improvement == Improvement.Road)
+        if (improvement == Improvement.ROAD)
             getTile().getTerraintype().setHasroad(true);
         else if (improvement == Improvement.REMOVE_FOREST)
             removeForest();

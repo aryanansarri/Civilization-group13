@@ -4,10 +4,14 @@ import Models.Block.TerrainFeature;
 import Models.Block.TerrainType;
 import Models.Block.Tile;
 import Models.Block.TileVisitingKind;
+import Models.Connect;
 import Models.ConsoleColors;
+import Models.Improvment.Improvement;
 import Models.Map;
 import Models.Resources.Resource;
+import Models.Technology.Technology;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 
 public class MapController {
@@ -35,7 +39,7 @@ public class MapController {
     }
 
     private String getBackgroundColor(Tile terrain) {
-        TerrainType type = terrain.getType();
+        TerrainType type = terrain.getTerraintype();
         if (type == TerrainType.DESERT) {
             return ConsoleColors.BROWN_BACKGROUND;
         } else if (type == TerrainType.GRASSLLAND) {
@@ -123,18 +127,18 @@ public class MapController {
 
                 if (j % 2 == 0 & tileVisitingKinds[x + i][y + j] == TileVisitingKind.Visible) {
                     // TODO set name in civilization constructor
-                    if (terrains[x + i][y + j].getCivilization() == null) {
+                    if (terrains[x + i][y + j].getOwner() == null) {
                         mapString[istart + 1][jstart + 5] = backgroundColor + " " + ConsoleColors.RESET;
                     } else {
                         mapString[istart + 1][jstart + 5] = backgroundColor
-                                + terrains[x + i][y + j].getCivilization().getName().charAt(0) + ConsoleColors.RESET;
+                                + terrains[x + i][y + j].getOwner().getCivilizationName().charAt(0) + ConsoleColors.RESET;
                     }
                 } else {
-                    if (terrains[x + i + remainder][y + j].getCivilization() == null) {
+                    if (terrains[x + i + remainder][y + j].getOwner() == null) {
                         mapString[istart + 1][jstart + 5] = backgroundColor + " " + ConsoleColors.RESET;
                     } else {
                         mapString[istart + 1][jstart + 5] = backgroundColor
-                                + terrains[x + i + remainder][y + j].getCivilization().getName().charAt(0)
+                                + terrains[x + i + remainder][y + j].getOwner().getCivilizationName().charAt(0)
                                 + ConsoleColors.RESET;
                     }
                 }
@@ -206,7 +210,7 @@ public class MapController {
             for (Tile adjTerrain : terrain.getSurroundingTerrain()) {
                 if (adjTerrain.getTerrainFeatures().contains(TerrainFeature.RIVER)) {
                     stringBuilder.append(
-                            "terrain on x: " + adjTerrain.getXPosition() + " y: " + adjTerrain.getYPosition() + "\n");
+                            "terrain on x: " + adjTerrain.getX() + " y: " + adjTerrain.getY() + "\n");
                 }
             }
         }
@@ -216,14 +220,14 @@ public class MapController {
         if (terrain.getCivilianUnit() == null) {
             stringBuilder.append("there is no civilization unit in this terrain\n");
         } else {
-            stringBuilder.append("civilzation unit: " + terrain.getCivilianUnit().getMyType() + " belonging to: "
-                    + terrain.getCivilianUnit().getCivilization().getName() + "\n");
+            stringBuilder.append("civilzation unit: " + terrain.getCivilianUnit().getType() + " belonging to: "
+                    + terrain.getCivilianUnit().getCivilization().getCivilizationName() + "\n");
         }
         if (terrain.getMilitaryUnit() == null) {
             stringBuilder.append("there is no military unit in this terrain\n");
         } else {
-            stringBuilder.append("military unit: " + terrain.getMilitaryUnit().getMyType() + " belonging to: " +
-                    terrain.getMilitaryUnit().getCivilization().getName() + "\n");
+            stringBuilder.append("military unit: " + terrain.getMilitaryUnit().getType() + " belonging to: " +
+                    terrain.getMilitaryUnit().getCivilization().getCivilizationName() + "\n");
         }
         showResources(stringBuilder, terrain);
         showImprovements(stringBuilder, terrain);
@@ -231,12 +235,12 @@ public class MapController {
     }
 
     private void showImprovements(StringBuilder stringBuilder, Tile terrain) {
-        Pair<Improvement, Boolean> improvementPair = terrain.getImprovementPair();
+        Connect<Improvement, Boolean> improvementPair = terrain.getImprovementPair();
         if (improvementPair != null) {
-            Improvement improvement = improvementPair.getKey();
-            if (improvement != null && improvementPair.getValue() == true) {
-                if (improvement.getRequiredTechnology() == null || GameDataBase.getCurrentCivilization()
-                        .getTechnologies().getTechnologiesResearched().contains(improvement.getRequiredTechnology())) {
+            Improvement improvement = improvementPair.getFirst();
+            if (improvement != null && improvementPair.getSecond() == true) {
+                if (improvement.getNeededTech() == null || GameDatabase.getGameDatabase().getCurrentCivilization()
+                        .getCivilizationTechnology().getPassedTechnology().contains(improvement.getNeededTech())) {
                     stringBuilder.append("this terrain has " + improvement.name() + " improvement\n");
                 }
             }
@@ -245,8 +249,8 @@ public class MapController {
 
     private void showResources(StringBuilder stringBuilder, Tile terrain) {
         stringBuilder.append("list of resources in this terrain:\n");
-        ArrayList<TechnologyType> technologies = GameDataBase.getCurrentCivilization().getTechnologies()
-                .getTechnologiesResearched();
+        ArrayList<Technology> technologies = GameDatabase.getGameDatabase().getCurrentCivilization().getCivilizationTechnology()
+                .getPassedTechnology();
         for (Resource resource : terrain.getResources()) {
             if (technologies.contains(resource.getRequiredTechnology())) {
                 stringBuilder.append(resource + "\n");
@@ -261,19 +265,19 @@ public class MapController {
         int x = Integer.parseInt(matcher.group("x"));
         int y = Integer.parseInt(matcher.group("y"));
         TerrainValidate(x, y);
-        Tile terrain = GameDataBase.getMainMap().getTerrain(x, y);
-        TileVisitingKind terrainState = GameDataBase.getCurrentCivilization().getTerrainState(x, y);
+        Tile terrain = GameDatabase.getGameDatabase().getOriginalMap().getTile(x, y);
+        TileVisitingKind terrainState = GameDatabase.getGameDatabase().getCurrentCivilization().getTileVisitingKind(x, y);
 
         if (terrainState == TileVisitingKind.FogOfWar)
             return "this terrain is in fog for you";
 
         StringBuilder stringBuilder = new StringBuilder();
-        if (terrain.getCivilization() == null)
+        if (terrain.getOwner() == null)
             stringBuilder.append("this terrain belongs to: no one");
         else
-            stringBuilder.append("this terrain belongs to: ").append(terrain.getCivilization().getName());
+            stringBuilder.append("this terrain belongs to: ").append(terrain.getOwner().getCivilizationName());
         stringBuilder.append("\n" + "Terrain type is: ")
-                .append(terrain.getType()).append("\n").append("Terrain features are: ")
+                .append(terrain.getTerraintype()).append("\n").append("Terrain features are: ")
                 .append(terrain.getTerrainFeatures())
                 .append("\n");
         if (terrainState == TileVisitingKind.Visible) {
