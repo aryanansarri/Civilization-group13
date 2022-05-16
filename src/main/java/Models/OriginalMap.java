@@ -14,7 +14,7 @@ import java.util.Random;
 import static Models.Block.TerrainType.*;
 
 public class OriginalMap extends Map{
-    private final ArrayList<Cordination> drought = new ArrayList<>();
+    private final ArrayList<Coordinates> drought = new ArrayList<>();
     private final TerrainType[][] terraintype = new TerrainType[getRows()][getColumns()];
     private static final Tile[][] tile = new Tile[getRows()][getColumns()];
     private final ArrayList<Tile> hasRiver = new ArrayList<>();
@@ -48,7 +48,7 @@ public class OriginalMap extends Map{
         return terraintype;
     }
 
-    public ArrayList<Cordination> getDrought() {
+    public ArrayList<Coordinates> getDrought() {
         return drought;
     }
     public void setTile (int x,int y,Tile tiles) {
@@ -73,7 +73,7 @@ public class OriginalMap extends Map{
 
 
     private boolean isCoordinated(int x, int y) {
-        for (Cordination cordination : drought) {
+        for (Coordinates cordination : drought) {
             if (cordination.getX() == x && cordination.getY() == y) {
                 return true;
             }
@@ -81,15 +81,15 @@ public class OriginalMap extends Map{
         return false;
     }
 
-    private Cordination findDrought(int x, int y) {
-        for (Cordination cordination : drought) {
+    private Coordinates findDrought(int x, int y) {
+        for (Coordinates cordination : drought) {
             if (cordination.getX() == x && cordination.getY() == y) return cordination;
         }
         return null;
     }
 
     private void randomDrought(int x, int y, Random random){
-        drought.add(new Cordination(x,y));
+        drought.add(new Coordinates(x,y));
         if(drought.size() < droughtCount){
             for (int i=0; i<6;i++) {
                 if (random.nextBoolean()) {
@@ -140,47 +140,47 @@ public class OriginalMap extends Map{
 
     private void randomRiver(int x,int y,Random random){
         hasRiver.add(tile[x][y]);
-        tile[x][y].getTerrainFeatures().add(TerrainFeature.River);
+        tile[x][y].getTerrainFeatures().add(TerrainFeature.RIVER);
         if (hasRiver.size() < riverCount){
             for (int i = 0; i < 6; i++) {
                 if(random.nextBoolean()){
                     if (y % 2 == 1) {
-                        if (i == 0 && !tile[x][y - 1].getTerrainFeatures().contains(TerrainFeature.River)) {
+                        if (i == 0 && !tile[x][y - 1].getTerrainFeatures().contains(TerrainFeature.RIVER)) {
                             randomRiver( x, y - 1,random);
                         }
-                        if (i == 1 && x - 1 >= 0 && !tile[x - 1][y].getTerrainFeatures().contains(TerrainFeature.River)) {
+                        if (i == 1 && x - 1 >= 0 && !tile[x - 1][y].getTerrainFeatures().contains(TerrainFeature.RIVER)) {
                             randomRiver( x - 1, y,random);
                         }
-                        if (i == 2 && y + 1 < getColumns() && !tile[x][y + 1].getTerrainFeatures().contains(TerrainFeature.River)) {
+                        if (i == 2 && y + 1 < getColumns() && !tile[x][y + 1].getTerrainFeatures().contains(TerrainFeature.RIVER)) {
                             randomRiver( x, y + 1,random);
                         }
-                        if (i == 3 && x + 1 < getRows() && !tile[x + 1][y - 1].getTerrainFeatures().contains(TerrainFeature.River)) {
+                        if (i == 3 && x + 1 < getRows() && !tile[x + 1][y - 1].getTerrainFeatures().contains(TerrainFeature.RIVER)) {
                             randomRiver(x + 1, y - 1,random);
                         }
-                        if (i == 4 && x + 1 < getRows() && !tile[x + 1][y].getTerrainFeatures().contains(TerrainFeature.River)) {
+                        if (i == 4 && x + 1 < getRows() && !tile[x + 1][y].getTerrainFeatures().contains(TerrainFeature.RIVER)) {
                             randomRiver( x + 1, y,random);
                         }
-                        if (i == 5 && x + 1 < getRows() && y + 1 < getColumns() && !tile[x + 1][y + 1].getTerrainFeatures().contains(TerrainFeature.River)) {
+                        if (i == 5 && x + 1 < getRows() && y + 1 < getColumns() && !tile[x + 1][y + 1].getTerrainFeatures().contains(TerrainFeature.RIVER)) {
                             randomRiver(x + 1, y + 1,random);
                         }
                     }
                     if(y%2 == 0){
-                        if (i == 0 && x - 1 >= 0 && y - 1 >= 0 && !tile[x - 1][y - 1].getTerrainFeatures().contains(TerrainFeature.River)) {
+                        if (i == 0 && x - 1 >= 0 && y - 1 >= 0 && !tile[x - 1][y - 1].getTerrainFeatures().contains(TerrainFeature.RIVER)) {
                             randomRiver( x - 1, y - 1,random);
                         }
-                        if (i == 1 && x - 1 >= 0 && !tile[x - 1][y].getTerrainFeatures().contains(TerrainFeature.River)) {
+                        if (i == 1 && x - 1 >= 0 && !tile[x - 1][y].getTerrainFeatures().contains(TerrainFeature.RIVER)) {
                             randomRiver( x - 1, y,random);
                         }
-                        if (i == 2 && x - 1 >= 0 && y + 1 < getColumns() && !tile[x - 1][y + 1].getTerrainFeatures().contains(TerrainFeature.River)) {
+                        if (i == 2 && x - 1 >= 0 && y + 1 < getColumns() && !tile[x - 1][y + 1].getTerrainFeatures().contains(TerrainFeature.RIVER)) {
                             randomRiver( x - 1, y + 1,random);
                         }
-                        if (i == 3 && y - 1 >= 0 && !tile[x][y - 1].getTerrainFeatures().contains(TerrainFeature.River)) {
+                        if (i == 3 && y - 1 >= 0 && !tile[x][y - 1].getTerrainFeatures().contains(TerrainFeature.RIVER)) {
                             randomRiver( x, y - 1,random);
                         }
-                        if (i == 4 && x + 1 < getRows() && !tile[x + 1][y].getTerrainFeatures().contains(TerrainFeature.River)) {
+                        if (i == 4 && x + 1 < getRows() && !tile[x + 1][y].getTerrainFeatures().contains(TerrainFeature.RIVER)) {
                             randomRiver(x + 1, y,random);
                         }
-                        if (i == 5 && y + 1 < getColumns() && !tile[x][y + 1].getTerrainFeatures().contains(TerrainFeature.River)) {
+                        if (i == 5 && y + 1 < getColumns() && !tile[x][y + 1].getTerrainFeatures().contains(TerrainFeature.RIVER)) {
                             randomRiver( x, y + 1,random);
                         }
                     }
@@ -191,16 +191,16 @@ public class OriginalMap extends Map{
 
     private TerrainType randomTerrainType(int x,int y,Random random){
         if(isCoordinated(x,y))
-            return new ArrayList<TerrainType>(Arrays.asList(GrassLand,Plains,Desert,Snow,Tundra,Hills,Mountain)).get(random.nextInt(7));
-        else return TerrainType.Ocean;
+            return new ArrayList<TerrainType>(Arrays.asList(GRASSLLAND,PLAIN,DESERT,SNOW,TUNDRA,HILLS,MOUNTAIN)).get(random.nextInt(7));
+        else return OCEAN;
     }
 
 
     private ArrayList<TerrainFeature> randomTerrainFeature( Tile tile, Random random) {
         ArrayList<TerrainFeature> chiz = new ArrayList<>();
-        for (TerrainFeature terrainFeature : tile.getType().getPossibleFeatures()) {
+        for (TerrainFeature terrainFeature : tile.getTerraintype().getPossibleFeatures()) {
             if (random.nextBoolean()) {
-                if ((!terrainFeature.equals(TerrainFeature.FloodPlains) || chiz.contains(TerrainFeature.River)) && !chiz.equals(TerrainFeature.River))
+                if ((!terrainFeature.equals(TerrainFeature.FloodPlains) || chiz.contains(TerrainFeature.RIVER)) && !chiz.equals(TerrainFeature.RIVER))
                     chiz.add(terrainFeature);
             }
         }
@@ -216,7 +216,7 @@ public class OriginalMap extends Map{
                 }
             }
         }
-        for (Resource resource : tile.getType().getPossibleResources()) {
+        for (Resource resource : tile.getTerraintype().getPossibleResources()) {
             if (random.nextBoolean()) {
                 resources.add(resource);
             }

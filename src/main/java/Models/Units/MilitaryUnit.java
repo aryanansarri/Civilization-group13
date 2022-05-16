@@ -11,7 +11,7 @@ public class MilitaryUnit extends Unit{
 
 
     public MilitaryUnit(Civilization civilization, UnitType unitType, Tile tile){
-        super(civilization,unitType,tile);
+        super(unitType,tile, civilization);
     }
 
     public int getLastActionTurn() {
@@ -41,5 +41,9 @@ public class MilitaryUnit extends Unit{
     public void move(Tile tile) {
         super.move(tile);
 //this is different than rest
+    }
+
+//    to do bellow as attacking in City class
+    public void deleteUnit() {
     }
 }

@@ -13,10 +13,11 @@ import Models.Info.CityFood;
 import Models.Info.CityGold;
 import Models.Info.CityProduct;
 import Models.Info.CityScience;
+import Models.Select;
 import Models.Units.*;
 
 
-public class City{
+public class City implements Select {
 
 
 
@@ -276,10 +277,10 @@ public class City{
         if(tile.getCivilianUnit() == null && UnitType.SETTLER == unitType)
             new SettlerUnit(this.ownership,unitType,tile);
         if(tile.getCivilianUnit() == null && UnitType.WORKER == unitType)
-            new Worker(this.ownership,unitType,tile);
-        if(getMilitaryUnit() == null && UnitType.getMilitaryUnits().contains(unitType))
+            new Worker(tile, getCivilization());
+        if(tile.getMilitaryUnit() == null && UnitType.getMilitaryUnits().contains(unitType))
             new MilitaryUnit(this.ownership,unitType,tile);
-        if(getMilitaryUnit()== null && UnitType.getSiegeUnits().contains(unitType)){
+        if(tile.getMilitaryUnit() == null && UnitType.getSiegeUnits().contains(unitType)){
             new SiegeUnit(this.ownership,unitType,tile);
         }
         Civilization.getResources().remove(unitType.getPrerequisiteResource());
@@ -308,13 +309,13 @@ public class City{
     }
 
     public Civilization getCivilization() {
-        for (Civilization civil : GameDatabase.getCivilizations()) {
+        for (Civilization civil : GameDatabase.getGameDatabase().getCivilizations()) {
             for (City city : civil.getCities()) {if (city == this) return civil;}
         }return null;
     }
 
     public void setCivilization(Civilization civilization,Tile tile) {
-        for(Civilization civil : GameDatabase.getCivilizations()){
+        for(Civilization civil : GameDatabase.getGameDatabase().getCivilizations()){
             for(City city : civil.getCities()){city.getTiles().remove(tile);}
         }
         civilization.addNewCity(this);
@@ -419,7 +420,7 @@ public class City{
         setIsHappy(false);
     }
     public void removeCity(Tile tile){
-        for(Civilization civil : GameDatabase.getCivilizations()){
+        for(Civilization civil : GameDatabase.getGameDatabase().getCivilizations()){
             for(City city : civil.getCities()){
                 city.getTiles().remove(tile);
             }
@@ -436,14 +437,14 @@ public class City{
         if (unitType == UnitType.SETTLER && TerrainType.getCivilianUnit() == null) {
             new SettlerUnit( getCivilization(),UnitType.SETTLER,tile);
             addingUnit = null;}
-        if (UnitType.getSiegeUnits().contains(unitType) && getMilitaryUnit() == null) {
+        if (UnitType.getSiegeUnits().contains(unitType) && tile.getMilitaryUnit() == null) {
             new SiegeUnit(getCivilization(),addingUnit.getSecond(), tile);
             TerrainType.getResources().remove(unitType.getPrerequisiteResource());
             addingUnit = null;}
         if (unitType == UnitType.WORKER && TerrainType.getCivilianUnit() == null) {
-            new Worker(getCivilization(),UnitType.WORKER,tile);
+            new Worker(tile, getCivilization());
             addingUnit = null;}
-        if (UnitType.getMilitaryUnits().contains(unitType) && getMilitaryUnit() == null) {
+        if (UnitType.getMilitaryUnits().contains(unitType) && tile.getMilitaryUnit() == null) {
             new MilitaryUnit(getCivilization(),addingUnit.getSecond(), tile);
             TerrainType.getResources().remove(unitType.getPrerequisiteResource());
             addingUnit = null;}
@@ -469,22 +470,71 @@ public class City{
     public void citizenJob(){
     }
 
+    public void setHappiness(int happiness) {
+        this.happiness = happiness;
+    }
 
+    public void setFood(int food) {
+        this.food = food;
+    }
 
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
 
+    public boolean isHappy() {
+        return isHappy;
+    }
 
+    public void setProduction(int production) {
+        this.production = production;
+    }
 
+    public void setFightingPower(int fightingPower) {
+        this.fightingPower = fightingPower;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public void setBuilding(BuildingType building) {
+        this.building = building;
+    }
 
+    public void setAddingBuilding(Connect<Double, BuildingType> addingBuilding) {
+        this.addingBuilding = addingBuilding;
+    }
 
+    public void setAddingUnit(Connect<Double, UnitType> addingUnit) {
+        this.addingUnit = addingUnit;
+    }
 
+    public void setOwnership(Civilization ownership) {
+        this.ownership = ownership;
+    }
 
+    public void setGarrisonUnit(MilitaryUnit garrisonUnit) {
+        this.garrisonUnit = garrisonUnit;
+    }
 
+    public void setLocation(Tile location) {
+        this.location = location;
+    }
 
+    public void setCitizens(ArrayList<Citizen> citizens) {
+        this.citizens = citizens;
+    }
 
+    public void setTiles(ArrayList<Tile> tiles) {
+        this.tiles = tiles;
+    }
 
+    public boolean isBeingcapital() {
+        return beingcapital;
+    }
 
-
-
+    public void setBeingcapital(boolean beingcapital) {
+        this.beingcapital = beingcapital;
+    }
 }

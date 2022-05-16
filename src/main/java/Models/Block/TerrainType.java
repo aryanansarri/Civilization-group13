@@ -1,12 +1,16 @@
 package Models.Block;
 
+import Models.Coordinates;
 import Models.Resources.Resource;
+import Models.Units.CivilianUnit;
 
 import java.util.ArrayList;
+import java.util.Collection;
+
 public enum TerrainType {
     DESERT(0, 0, 0, -33, 1, new ArrayList<TerrainFeature>() {
         {
-            add(TerrainFeature.RIVER); ////  ------>  ////////Sobhan jan add this;
+            add(TerrainFeature.RIVER);
             add(TerrainFeature.Oasis);
             add(TerrainFeature.FloodPlains);
         }
@@ -24,7 +28,7 @@ public enum TerrainType {
     }),
     GRASSLLAND(2, 0, 0, -33, 1, new ArrayList<TerrainFeature>() {
         {
-            add(TerrainFeature.RIVER);    ////  ------>  ////////Sobhan jan add this;
+            add(TerrainFeature.RIVER);
             add(TerrainFeature.Forest);
             add(TerrainFeature.Marsh);
         }
@@ -43,7 +47,7 @@ public enum TerrainType {
     }),
     HILLS(0, 2, 0, 25, 2, new ArrayList<TerrainFeature>() {
         {
-            add(TerrainFeature.River); ////  ------>  ////////Sobhan jan add this;
+            add(TerrainFeature.RIVER);
             add(TerrainFeature.Forest);
             add(TerrainFeature.Jungle);
         }
@@ -71,7 +75,7 @@ public enum TerrainType {
     }),
     PLAIN(1, 1, 0, -33, 1, new ArrayList<TerrainFeature>() {
         {
-            add(TerrainFeature.River);////  ------>  ////////Sobhan jan add this;
+            add(TerrainFeature.RIVER);
             add(TerrainFeature.Forest);
             add(TerrainFeature.Jungle);
         }
@@ -129,6 +133,18 @@ public enum TerrainType {
     final ArrayList<TerrainFeature> possibleFeatures;
     final ArrayList<Resource> possibleResources;
 
+
+//    to do this function
+    public static Collection<Object> getResources() {
+        return null;
+    }
+
+
+//    to do this function as establishUnit in City class
+    public static CivilianUnit getCivilianUnit() {
+        return null;
+    }
+
     public int getFood() {
         return food;
     }
@@ -156,4 +172,10 @@ public enum TerrainType {
     public ArrayList<Resource> getPossibleResources() {
         return possibleResources;
     }
+
+
+    public void setHasroad(boolean b) {
+//        to do
+    }
+
 }

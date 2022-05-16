@@ -59,6 +59,6 @@ public class GameViewController {
     }
     public String selectCivilizationUnits(Matcher matcher) {
         Coordinates coordinates = new Coordinates(Integer.parseInt(matcher.group("x")), Integer.parseInt(matcher.group("y")));
-        Ti
+        return "";
     }
 }

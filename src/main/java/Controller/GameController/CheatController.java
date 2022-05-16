@@ -28,7 +28,7 @@ public class CheatController {
     }
 
     public void addImprovement(Tile tile, Improvement improvement) {
-        tile.setImprovement(improvement, );
+        tile.setImprovement(improvement);
     }
 
     public void changeTerrainFeature(Tile tile, TerrainFeature terrainFeature) {

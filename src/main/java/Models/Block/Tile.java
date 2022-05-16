@@ -2,6 +2,7 @@ package Models.Block;
 
 import java.util.ArrayList;
 
+import Models.Coordinates;
 import Models.Improvment.Improvement;
 import Models.Civilization.Citizen;
 import Models.Civilization.City;
@@ -16,6 +17,7 @@ public class Tile {
     private ArrayList<Resource> resources;
     private TerrainType terraintype;
     private TerrainFeature terrainFeature;
+    private ArrayList<TerrainFeature> terrainFeatures;
     private Improvement improvement;
 
     private int X;
@@ -112,9 +114,10 @@ public class Tile {
     }
 
     public Worker getWorker() {
-        if (civilianUnit instanceof Worker == true)
-            return (Worker) civilianUnit;
-        else
+//        solve it
+//        if (civilianUnit instanceof Worker == true)
+//            return (Worker) civilianUnit;
+//        else
             return null;
     }
 
@@ -192,5 +195,64 @@ public class Tile {
                 ", city=" + city +
                 ", ismovingpossible=" + ismovingpossible +
                 '}';
+    }
+
+    public ArrayList<Border> getBorders() {
+        return borders;
+    }
+
+    public void setBorders(ArrayList<Border> borders) {
+        this.borders = borders;
+    }
+
+    public void setTerrainFeature(TerrainFeature terrainFeature) {
+        this.terrainFeature = terrainFeature;
+    }
+
+    public ArrayList<TerrainFeature> getTerrainFeatures() {
+        return terrainFeatures;
+    }
+
+    public void setTerrainFeatures(ArrayList<TerrainFeature> terrainFeatures) {
+        this.terrainFeatures = terrainFeatures;
+    }
+
+    public void setX(int x) {
+        X = x;
+    }
+
+    public void setY(int y) {
+        Y = y;
+    }
+
+    public void setWorkingCitizen(Citizen workingCitizen) {
+        this.workingCitizen = workingCitizen;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public boolean isIsmovingpossible() {
+        return ismovingpossible;
+    }
+
+    public void setIsmovingpossible(boolean ismovingpossible) {
+        this.ismovingpossible = ismovingpossible;
+    }
+
+    public ArrayList<Tile> getAdjacentTiles() {
+        return null;
+    }
+
+
+    public Coordinates getCordination() {
+        return null;
+//        to do
+    }
+
+//    to do bellow function as use in Map use in setTileVisibleForCivilization
+    public Iterable<? extends Tile> getSurroundingTerrain() {
+        return null;
     }
 }

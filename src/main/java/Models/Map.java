@@ -37,14 +37,14 @@ public class Map {
     }
 
     public void setCivilization(Civilization civilization) {
-        for (Civilization civil : GameDatabase.getCivilizations()) {
+        for (Civilization civil : GameDatabase.getGameDatabase().getCivilizations()) {
             if (civil.getCivilizationMap() == this) civil.setCivilizationMap(null);
         }
         civilization.setCivilizationMap(this);
     }
 
     public Civilization getCivilization() {
-        for (Civilization civil : GameDatabase.getCivilizations()) {
+        for (Civilization civil : GameDatabase.getGameDatabase().getCivilizations()) {
             if (civil.getCivilizationMap() == this) return civil;
         }
         return null;
@@ -93,11 +93,11 @@ public class Map {
     }
 
     public  void setTileVisibleForCivilization() {
-        Tile[][] tile = GameDatabase.getOriginalMap().getTile();
+        Tile[][] tile = GameDatabase.getGameDatabase().getOriginalMap().getTile();
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (tile[i][j].getOwner() == getCivilization())
-                    for (TerrainType terrainType : tile[i][j].getSurroundingTerrain()) {
+                    for (Tile terrainType : tile[i][j].getSurroundingTerrain()) {
                         tileVisitingKinds[terrainType.getCordination().getX()][terrainType.getCordination()
                                 .getY()] = Visible;
                     }
@@ -105,12 +105,12 @@ public class Map {
         }
     }
     public void setTileVisibleForCivilianUnit() {
-        Tile[][] tile = GameDatabase.getOriginalMap().getTile();
+        Tile[][] tile = GameDatabase.getGameDatabase().getOriginalMap().getTile();
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (tile[i][j].getCivilianUnit() != null)
                     if (tile[i][j].getCivilianUnit().getCivilization() == getCivilization())
-                        for (TerrainType terrainType : tile[i][j].getCivilianUnit().getVisibleTerrain()) {
+                        for (Tile terrainType : tile[i][j].getCivilianUnit().getVisibleTerrain()) {
                             tileVisitingKinds[terrainType.getCordination().getX()][terrainType.getCordination()
                                     .getY()] = Visible;
                         }
@@ -118,12 +118,12 @@ public class Map {
         }
     }
     public void setTileVisibleForMilitaryUnit() {
-        Tile[][] tile = GameDatabase.getOriginalMap().getTile();
+        Tile[][] tile = GameDatabase.getGameDatabase().getOriginalMap().getTile();
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (tile[i][j].getMilitaryUnit() != null)
                     if (getCivilization() == tile[i][j].getMilitaryUnit().getCivilization())
-                        for (TerrainType terrainType : tile[i][j].getMilitaryUnit().getVisibleTerrain()) {
+                        for (Tile terrainType : tile[i][j].getMilitaryUnit().getVisibleTerrain()) {
                             tileVisitingKinds[terrainType.getCordination().getX()][terrainType.getCordination()
                                     .getY()] = Visible;
                         }

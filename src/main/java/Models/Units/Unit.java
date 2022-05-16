@@ -16,7 +16,7 @@ public class Unit implements Select, Combatble {
     private double HP;
     private int mana;
     private Tile tile;
-    private Civilization civilization;
+    private static Civilization civilization;
     private int combatStrength;
     public int COST;
     private boolean isSleep;
@@ -88,7 +88,7 @@ public class Unit implements Select, Combatble {
         return HP;
     }
 
-    public Civilization getCivilization() {
+    public static Civilization getCivilization() {
         return civilization;
     }
 
@@ -195,11 +195,11 @@ public class Unit implements Select, Combatble {
         this.workDone = workDone;
     }
 
-    public ArrayList<Cordination> getPath() {
+    public ArrayList<Coordinates> getPath() {
         return path;
     }
 
-    public void setPath(ArrayList<Cordination> path) {
+    public void setPath(ArrayList<Coordinates> path) {
         this.path = path;
     }
 
@@ -237,5 +237,9 @@ public class Unit implements Select, Combatble {
         str += "work done: " + workDone + " " + "hp: " + getHP() + " " ;
         str += "remind mp" + remindMove + " " + "path size: " + path.size();
         return str;
+    }
+
+//    to do bellow as attacking in City class
+    public void capturedBy(Civilization civilization) {
     }
 }

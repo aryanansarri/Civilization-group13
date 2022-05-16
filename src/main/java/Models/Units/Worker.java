@@ -1,5 +1,6 @@
 package Models.Units;
 
+import Models.Block.TerrainFeature;
 import Models.Block.Tile;
 import Models.Improvment.Improvement;
 import Models.Civilization.Civilization;
@@ -31,18 +32,18 @@ public class Worker extends Unit {
 
 
     private void removeMarsh() {
-        getTerrain().getTerrainFeatures().remove(TerrainFeature.MARSH);
+        getTile().getTerrainFeatures().remove(TerrainFeature.Marsh);
         setWorkDone(true);
     }
 
 
     private void removeJungle() {
-        getTile().getTerraintype().getTerrainfeature().remove(TerrainFeature.JUNGLE);
+        getTile().getTerraintype().getPossibleFeatures().remove(TerrainFeature.Jungle);
         setWorkDone(true);
     }
 
     private void removeForest() {
-        getTile().getTerraintype().getTerrainfeature().remove(TerrainFeature.FOREST);
+        getTile().getTerraintype().getPossibleFeatures().remove(TerrainFeature.Forest);
         setWorkDone(true);
     }
 
@@ -72,7 +73,7 @@ public class Worker extends Unit {
         else return improvement + " remaining turns :" + neededturns;
     }
     private void addImprovement() {
-        if (improvement == Improvement.ROAD)
+        if (improvement == Improvement.Road)
             getTile().getTerraintype().setHasroad(true);
         else if (improvement == Improvement.REMOVE_FOREST)
             removeForest();
@@ -85,7 +86,7 @@ public class Worker extends Unit {
         else if (improvement == Improvement.REMOVE_JUNGLE)
             removeJungle();
         else
-            getTerrain().setImprovement(makingImprovement.getKey());
+            getTile().setImprovement(this.improvement);
     }
 
     public void relieveFromJob() {

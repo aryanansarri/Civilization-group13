@@ -5,21 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25779730-4de1-4a8c-ad4e-eadfcfaacb57" name="Changes" comment="">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/GameController/CityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/GameController/MapController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/GameController/UnitController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/MapDrawer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameController/CheatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameController/CheatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameController/CityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameController/CityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameController/GameDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameController/GameDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameController/GameViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameController/GameViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameController/UnitController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Block/TerrainFeature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Block/TerrainFeature.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/Block/TerrainType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Block/TerrainType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/Block/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Block/Tile.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Cordination.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Map.java" afterDir="false" />
->>>>>>> cfecaeb90f2555dde318bcfa1f45ddfec33d6682
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Civilization/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Civilization/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Improvment/Improvement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Improvment/Improvement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/OriginalMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/OriginalMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Units/CivilianUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Units/CivilianUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Units/MilitaryUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Units/MilitaryUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Units/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Units/Unit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Units/UnitType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Units/UnitType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Units/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Units/Worker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,21 +54,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-  </component>
-=======
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
->>>>>>> mohammad
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -144,9 +139,6 @@
       <updated>1651908445222</updated>
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

@@ -1,6 +1,10 @@
 package Models.Block;
 
 
+import Models.Resources.Resource;
+
+import java.util.ArrayList;
+
 public enum TerrainFeature {
 
     FloodPlains(1, 0, 2, 0, 33/100, true),
@@ -8,6 +12,8 @@ public enum TerrainFeature {
     Forest(1, 0, 1, -1, -25 / 100, true),
     Jungle(2, 0, 1, 1, -25 / 100, true),
     Marsh(2, 0, -1, 0, 33/100, true),
+    RIVER(0, 0, 1, 0, 0, false),
+
     Oasis(1, 1, 3, 0, 33 / 100, true);
     private int movementcost;
     int gold;
@@ -57,5 +63,9 @@ public enum TerrainFeature {
 
     public boolean getIsmovingpossible() {
         return ismovingpossible;
+    }
+
+    public ArrayList<Resource> getPossibleResources() {
+        return null;
     }
 }

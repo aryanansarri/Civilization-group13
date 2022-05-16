@@ -6,6 +6,6 @@ import Models.Civilization.Civilization;
 
 public class CivilianUnit extends Unit{
     CivilianUnit(Civilization civilization, UnitType unitType, Tile tile){
-        super(civilization,unitType,tile);
+        super(unitType,tile, civilization);
     }
 }

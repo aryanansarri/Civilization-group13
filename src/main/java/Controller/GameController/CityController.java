@@ -10,7 +10,6 @@ import java.util.regex.Matcher;
 
 public class CityController {
 
-
     public String showCityInfo(City city) {
         return city.getName() + city.getHappiness() + city.getOwnership() + city.getHealth() ;
     }
@@ -26,13 +25,13 @@ public class CityController {
             return "coordinates are invalid";
         if (!second.isValidCoordination(GameDatabase.getGameDatabase().getOriginalMap()))
             return "coordinates are invalid";
-        if (!city.getTiles().contains(GameDatabase.getGameDatabase().getOriginalMap().getTerrain(firstX, firstY)))
+        if (!city.getTiles().contains(GameDatabase.getGameDatabase().getOriginalMap().getTile(firstX, firstY)))
             return "This Tile does not belong to you!";
-        if (!city.getTiles().contains(GameDatabase.getGameDatabase().getOriginalMap().getTerrain(secondX, secondY)))
+        if (!city.getTiles().contains(GameDatabase.getGameDatabase().getOriginalMap().getTile(secondX, secondY)))
             return "This Tile does not belong to you!";
 
         for (int i = 0; i < city.getCitizens().size(); i++) {
-            if (city.getCitizens().get(i).getonTile() == GameDatabase.getGameDatabase().getOriginalMap().getTerrain(firstX, firstY)) {
+            if (city.getCitizens().get(i).getonTile() == GameDatabase.getGameDatabase().getOriginalMap().getTile(firstX, firstY)) {
                 city.getCitizens().set(i, new Citizen(city));
                 return "Citizen Moved Successfully.";
             }
@@ -48,7 +47,7 @@ public class CityController {
             return "Coordinates are invalid!";
         if (city == null)
             return "City Not Selected!";
-        if (!city.getTiles().contains(GameDatabase.getGameDatabase().getOriginalMap().getTerrain(coordination.getX(), coordination.getY())))
+        if (!city.getTiles().contains(GameDatabase.getGameDatabase().getOriginalMap().getTile(coordination.getX(), coordination.getY())))
             return "This Tile does not belong to you!";
 
         for (int i = 0; i < city.getCitizens().size(); i++) {

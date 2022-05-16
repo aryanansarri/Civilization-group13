@@ -20,8 +20,19 @@ public enum Improvement {
     Plantation("Plantation",0,0,0,Calendar,new ArrayList<TerrainType>(Arrays.asList())),
     Quarry("Quarry",0,0,0,Masonry,new ArrayList<TerrainType>(Arrays.asList())),
     Trading_Post("Trading_Post",0,0,1,Trapping,new ArrayList<TerrainType>(Arrays.asList())),
-    Manufactory("Manufactory",0,2,0,Engineering,new ArrayList<TerrainType>(Arrays.asList()));
+    Manufactory("Manufactory",0,2,0,Engineering,new ArrayList<TerrainType>(Arrays.asList())),
 
+
+//    ************************
+//         notes
+//         please do bellow
+//    ************************
+    Road("road", 0, 0, 0, null, new ArrayList<>()),
+    REMOVE_FOREST("remove forest",0 , 0,0 ,null ,new ArrayList<>() ),
+    REPAIR("repair",0 , 0,0 ,null ,new ArrayList<>() ),
+    REMOVE_ROUTE("remove route",0 ,0 ,0 ,null ,new ArrayList<>() ),
+    REMOVE_MARSH("remove marsh",0 ,0 ,0 ,null ,new ArrayList<>() ),
+    REMOVE_JUNGLE("remove jungle", 0, 0, 0, null, new ArrayList<>());
     private  int food;
     private  int gold;
     private  int production;
