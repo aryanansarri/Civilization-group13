@@ -2,12 +2,14 @@ package Models.Units;
 
 import Models.Block.TerrainFeature;
 import Models.Block.Tile;
+import Models.Connect;
 import Models.Improvment.Improvement;
 import Models.Civilizations.Civilization;
 
 public class Worker extends Unit {
     private Improvement improvement;
     private int neededturns;
+    private Connect<Improvement, Integer> makeImprovement;
 
     public Worker(Tile tile, Civilization civilization) {
         super(UnitType.WORKER, tile, civilization);
@@ -28,6 +30,9 @@ public class Worker extends Unit {
     private void removeRoad() {
         getTile().getTerraintype().setHasroad(false);
         setWorkDone(true);
+    }
+    public Connect<Improvement, Integer> getMakeImprovement() {
+        return makeImprovement;
     }
 
 

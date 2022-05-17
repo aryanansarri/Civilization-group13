@@ -27,6 +27,7 @@ public class Unit implements Select, Combatble {
     private ArrayList<Coordinates> path = new ArrayList<>();
     private UnitType unitType;
     public int lastDutyTurn;
+    private String action;
 
     private int remindMove;
     private boolean dutyCompleted;
@@ -76,6 +77,14 @@ public class Unit implements Select, Combatble {
     public void setHP(int hp){ this.HP = hp;}
     public void setMovementPoint(int movementPoint ){this.MovementPoint = movementPoint;}
     public double getHp() {return this.HP;}
+
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
 
     public void setLastDutyTurn(int lastDutyTurn) {
         this.lastDutyTurn = lastDutyTurn;
@@ -152,6 +161,27 @@ public class Unit implements Select, Combatble {
 
     public void setHP(double HP) {
         this.HP = HP;
+    }
+
+    public void delete() {
+        getCivilization().removeUnit(this);
+        for (Tile[] terrains : GameDatabase.getOriginalMap().getTile()) {
+            for (Tile tile : terrains) {
+                if (tile.getCivilianUnit() == this)
+                    tile.setCivilianUnit(null);
+                if (tile.getMilitaryUnit() == this)
+                    tile.setMilitaryUnit(null);
+            }
+        }
+    }
+    public void DoNothing() {
+        path.clear();
+        workDone = true;
+        isSleep = false;
+    }
+
+    public String showInfo() {
+        return unitType + " at " + getTile().getCordination().toString() + " Worke done : " + workDone + " sleep : " + isSleep + " remaining Mp : " + remindMove + " hp : " + HP+ " size of masiri ke bayad bere : " + path.size();
     }
 
     public void setCombatStrength(int combatStrength) {

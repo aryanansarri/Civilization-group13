@@ -2,6 +2,7 @@ package Models;
 
 import Controller.GameController.GameDatabase;
 import Models.Block.TerrainType;
+import Models.Block.Tile;
 
 public class Coordinates{
     private int x,y;
@@ -42,4 +43,8 @@ public class Coordinates{
     public TerrainType[][] getTerrainType(){
         return GameDatabase.getGameDatabase().getOriginalMap().getTerrainTypes();
     }
+    public Tile getTile(){
+        return GameDatabase.getGameDatabase().getOriginalMap().getTile(this.x,this.y);
+    }
+
 }

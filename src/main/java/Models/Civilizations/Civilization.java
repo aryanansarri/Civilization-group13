@@ -7,6 +7,7 @@ import Models.Info.CivilizationHappiness;
 import Models.Info.CivilizationScience;
 import Models.Info.CivilizationTechnology;
 import Models.Map;
+import Models.Notification;
 import Models.Resources.Resource;
 import Models.Units.Unit;
 import Models.War;
@@ -25,6 +26,7 @@ public class Civilization {
     private CivilizationGold civilizationGold;
     private CivilizationScience civilizationScience;
     private CivilizationHappiness civilizationHappiness;
+    private Notification notification;
 
 
     public Civilization(String civilizationName) {
@@ -62,6 +64,8 @@ public class Civilization {
     public void setCivilizationName(String civilizationName) {
         this.civilizationName = civilizationName;
     }
+
+
 
     public ArrayList<City> getCities() {
         return cities;
@@ -107,6 +111,10 @@ public class Civilization {
         return civilizationGold;
     }
 
+    public void updateNotification(String input) {
+        this.notification.updateNotification(input);
+    }
+
     public void setCivilizationGold(CivilizationGold civilizationGold) {
         this.civilizationGold = civilizationGold;
     }
@@ -149,6 +157,14 @@ public class Civilization {
 
     public void removeUnit(Unit unit) {
         units.remove(unit);
+    }
+
+    public Notification getNotification() {
+        return notification;
+    }
+
+    public void resetNotification() {
+        this.notification.resetNotifiction();
     }
 
     public TileVisitingKind getTileVisitingKind(int x, int y) {

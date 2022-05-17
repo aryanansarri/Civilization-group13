@@ -70,6 +70,26 @@ public enum UnitType {
         militaryUnit.remove(WORKER);
         return militaryUnit;
     }
+    public static int getDefensiveBonus(Unit unit) {
+        if (getNoDefensiveBonusUnits().contains(unit.getType()))
+            return 0;
+        return 1;
+    }
+    public static ArrayList<UnitType> getNoDefensiveBonusUnits() {
+        ArrayList<UnitType> tmp = new ArrayList<>();
+        tmp.add(CHARIOTARCHER);
+        tmp.add(CATAPULT);
+        tmp.add(HORSEMAN);
+        tmp.add(KNIGHT);
+        tmp.add(Trebuchet);
+        tmp.add(Canon);
+        tmp.add(Lancer);
+        tmp.add(Cavalry);
+        tmp.add(Panzer);
+        tmp.add(Tank);
+        tmp.add(Artillery);
+        return tmp;
+    }
     public static ArrayList<UnitType> removingNonSiege(ArrayList<UnitType> siegeUnits){
         siegeUnits.remove(CATAPULT);
         siegeUnits.remove(Canon);

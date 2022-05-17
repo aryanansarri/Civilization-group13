@@ -22,16 +22,16 @@ public class GameDatabase {
     }
 
     private ArrayList<User> players;
-    private ArrayList<Civilization> civilizations;
-    private int currentPlayerID = 0;
+    private static ArrayList<Civilization> civilizations;
+    private static int currentPlayerID = 0;
     private OriginalMap originalMap;
-    private Select selected;
+    private static Select selected;
 
     public User getCurrentPlayer() {
         return players.get(currentPlayerID % players.size());
     }
 
-    public Civilization getCurrentCivilization() {
+    public static Civilization getCurrentCivilization() {
         return civilizations.get(currentPlayerID % civilizations.size());
     }
 
@@ -60,7 +60,7 @@ public class GameDatabase {
         this.civilizations = civilizations;
     }
 
-    public OriginalMap getOriginalMap() {
+    public static OriginalMap getOriginalMap() {
         return originalMap;
     }
 
@@ -68,7 +68,7 @@ public class GameDatabase {
         this.originalMap = originalMap;
     }
 
-    public Select getSelected() {
+    public static Select getSelected() {
         return selected;
     }
 

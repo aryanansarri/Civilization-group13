@@ -31,6 +31,7 @@ public class Tile implements Select {
     private City city;
     private Connect<Improvement, Boolean> ImprovementConnector;
     private boolean ismovingpossible;
+    private boolean hasRoad;
 
     ////////////constructor
     public Tile(TerrainType terraintype,int X,int Y) {
@@ -50,6 +51,15 @@ public class Tile implements Select {
         if (terrainFeature!=null) getfoodT+=terrainFeature.getFood();
         return getfoodT;
     }
+
+    public boolean isHasRoad() {
+        return hasRoad;
+    }
+
+    public void setHasRoad(boolean hasRoad) {
+        this.hasRoad = hasRoad;
+    }
+
     public int getProduction(){
         if (terrainFeature== TerrainFeature.Forest) return 1;
         int getProT=terraintype.production;

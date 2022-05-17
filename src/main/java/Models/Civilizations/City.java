@@ -306,6 +306,73 @@ public class City implements Select {
         GoldHandlerForBuilding(buildingType);
     }
 
+    public ArrayList<Tile> getSurroundingTiles() {
+        ArrayList<Tile> terrains = new ArrayList<>();
+        int x, y;
+        if (GameDatabase.getOriginalMap().getTileX(this.getLocation()) % 2 == 0) {
+            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) + 1;
+            y = GameDatabase.getOriginalMap().getTileY(this.getLocation());
+            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+
+            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) - 1;
+            y = GameDatabase.getOriginalMap().getTileY(this.getLocation());
+            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+
+            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) - 1;
+            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) - 1;
+            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+
+            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) - 1;
+            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) + 1;
+            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+
+            x = GameDatabase.getOriginalMap().getTileX(this.getLocation());
+            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) - 1;
+            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+
+            x = GameDatabase.getOriginalMap().getTileX(this.getLocation());
+            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) + 1;
+            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+        } else {
+            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) + 1;
+            y = GameDatabase.getOriginalMap().getTileY(this.getLocation());
+            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+
+            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) - 1;
+            y = GameDatabase.getOriginalMap().getTileY(this.getLocation());
+            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+
+            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) + 1;
+            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) - 1;
+            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+
+            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) + 1;
+            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) + 1;
+            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+
+            x = GameDatabase.getOriginalMap().getTileX(this.getLocation());
+            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) - 1;
+            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+
+            x = GameDatabase.getOriginalMap().getTileX(this.getLocation());
+            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) + 1;
+            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+        }
+        return terrains;
+    }
+
     public Civilization getCivilization() {
         for (Civilization civil : GameDatabase.getGameDatabase().getCivilizations()) {
             for (City city : civil.getCities()) {if (city == this) return civil;}
