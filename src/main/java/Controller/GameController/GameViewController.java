@@ -10,6 +10,7 @@ public class GameViewController {
 
     private InfoController infoController = new InfoController();
     private CityController cityController = new CityController();
+    private CheatController cheatController = new CheatController();
     public String exitGameMenu() {
         Menu.goToMenu(Menu.MAIN);
         return "You are taken to the Main Menu";
@@ -59,5 +60,9 @@ public class GameViewController {
     public String selectCivilizationUnits(Matcher matcher) {
         Coordinates coordinates = new Coordinates(Integer.parseInt(matcher.group("x")), Integer.parseInt(matcher.group("y")));
         return "";
+    }
+
+    public CheatController getCheatController() {
+        return cheatController;
     }
 }

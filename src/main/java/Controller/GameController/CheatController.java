@@ -10,13 +10,17 @@ import Models.Civilizations.City;
 import Models.Civilizations.Civilization;
 import Models.Resources.Resource;
 
+import java.util.regex.Matcher;
+
 public class CheatController {
-    public void turnCheat(User user, int amount) {
-        user.setGold(user.getGold() + amount);
+    public String turnCheat(Matcher matcher)  {
+        int amount = Integer.parseInt(matcher.group("amount"));
+        GameDatabase.getGameDatabase().getCurrentPlayer().setTurns(GameDatabase.getGameDatabase().getCurrentPlayer().getTurns() + amount);
+        return "turn cheated successfully for " + amount + " times";
     }
 
     public void goldCheat(User user, int amount) {
-        user.setTurns(user.getTurns() + amount);
+        user.setGold(user.getGold() + amount);
     }
 
     public void addTech(Civilization civilization, Technology technology) {

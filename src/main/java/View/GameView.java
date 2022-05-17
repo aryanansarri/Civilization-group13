@@ -53,6 +53,7 @@ public class GameView {
                 technologyMenu(Menu.getMatcher());
             }
             else if (Menu.checkMatching(GameRegex.cheatMenu, cmd)) {
+                System.out.println("you are now in cheat menu");
                 cheatMenu(Menu.getMatcher());
             }
             else if (Menu.checkMatching(GameRegex.nextTurn, cmd)) {
@@ -166,7 +167,7 @@ public class GameView {
     }
 
     private void selectSettler(Matcher matcher) {
-
+//        to do
     }
 
     private void selectWorker(Matcher matcher) {
@@ -178,7 +179,11 @@ public class GameView {
     }
 
     private void cheatMenu(Matcher matcher) {
-//        to do
+        String state = "cheat";
+        while (state.equals("cheat")) {
+            String cmd = Menu.input();
+
+        }
     }
 
     private void buildMenu(Matcher matcher) {
