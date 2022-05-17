@@ -33,7 +33,7 @@ public class City implements Select {
     private CityFood cityFood;
     private CityGold cityGold;
     private CityScience cityScience;
-    private BuildingType building;
+    private ArrayList<BuildingType> buildings=new ArrayList<>();
     private Connect<Double,BuildingType> addingBuilding;
     private Connect<Double,UnitType> addingUnit;
 
@@ -302,7 +302,7 @@ public class City implements Select {
         else if(buildingType.getPrerequisiteTechnology()!= null && !(Unit.getCivilization().getCivilizationTechnology().getPassedTechnology().contains(buildingType.getPrerequisiteTechnology()))){
             System.err.println("The intended Tech doesn't exist!");
         }
-        building.createBuilding(buildingType);
+        buildings.add(buildingType);
         GoldHandlerForBuilding(buildingType);
     }
 
@@ -324,7 +324,7 @@ public class City implements Select {
         this.addingUnit = city.getAddingUnit();
         this.addingBuilding = city.getAddingBuilding();
         this.citizens = city.getCitizens();
-        this.building = city.getBuilding();
+        this.buildings=city.buildings;
         this.health = 40;
         this.cityProduct = city.getProduct();
         this.cityFood =city.getCityFood();
@@ -350,8 +350,8 @@ public class City implements Select {
         return cityProduct;
     }
 
-    private BuildingType getBuilding() {
-        return building;
+    public ArrayList<BuildingType> getBuildings() {
+        return buildings;
     }
 
     private Connect<Double,BuildingType> getAddingBuilding() {
@@ -368,7 +368,6 @@ public class City implements Select {
         this.addingBuilding = null;
         this.citizens = new ArrayList<>();
         this.citizens.add(null);
-        this.building = null;
         this.health = 40;
         this.cityProduct = new CityProduct();
         this.cityFood = new CityFood();
@@ -412,7 +411,6 @@ public class City implements Select {
         if (addingUnit != null)
             if (addingUnit.getSecond() == UnitType.SETTLER) cityFood.increaseFood(-2);
     }
-
     public void capturedBy(Civilization civilization,Tile tile){
         setCivilization(civilization,tile);
         setIsHappy(false);
@@ -426,7 +424,7 @@ public class City implements Select {
     }
 
     private void establishBuilding() {
-        building.createBuilding(addingBuilding.getSecond());
+        buildings.add(addingBuilding.getSecond());
         addingBuilding = null;
     }
 
@@ -496,8 +494,8 @@ public class City implements Select {
         this.name = name;
     }
 
-    public void setBuilding(BuildingType building) {
-        this.building = building;
+    public void addBuilding(BuildingType building) {
+        this.buildings.add(building);
     }
 
     public void setAddingBuilding(Connect<Double, BuildingType> addingBuilding) {

@@ -9,11 +9,12 @@ import Models.Civilizations.Citizen;
 import Models.Civilizations.City;
 import Models.Civilizations.Civilization;
 import Models.Resources.Resource;
+import Models.Select;
 import Models.Units.CivilianUnit;
 import Models.Units.MilitaryUnit;
 import Models.Units.Worker;
 
-public class Tile {
+public class Tile implements Select {
     private ArrayList<Border> borders=new ArrayList<Border>();
     private ArrayList<Resource> resources;
     private TerrainType terraintype;

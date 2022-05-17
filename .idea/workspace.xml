@@ -5,23 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25779730-4de1-4a8c-ad4e-eadfcfaacb57" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Building/Building.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Regexes/MapMenuRegex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Regexes/SelectWorkerRegex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Regexes/TechnologyRegex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Regexes/selectMilitaryUnitRegex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/View/Regexes/selectSettlerMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Block/TerrainType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Block/TerrainType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/GameController/GameDatabase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/GameController/GameViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/GameView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/MainView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/ProfileMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/CheatRegex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/GameRegex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/InfoGameRegex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/LoginRegex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/MainMenuRegex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/ProfileMenuRegex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/SelectCityRegex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/selectSettlerRegex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameController/GameViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameController/GameViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Block/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Block/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Building/BuildingType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Building/BuildingType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Civilizations/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Civilizations/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Technology/Technology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Technology/Technology.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Regexes/CheatRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Regexes/CheatRegex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Models/Block/TerrainType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Block/TerrainType.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,13 +52,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />

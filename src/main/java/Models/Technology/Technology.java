@@ -76,6 +76,11 @@ public enum Technology{
         this.type=type;
     }
 
+    public static Technology get(String tech) {
+        return null;
+//        to do
+    }
+
     public int getCost(){
         return this.cost;
     }

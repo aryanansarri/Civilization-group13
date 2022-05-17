@@ -1,7 +1,11 @@
 package Controller.GameController;
 
+import Models.Block.Tile;
 import Models.Civilizations.City;
+import Models.Civilizations.Civilization;
 import Models.Coordinates;
+import Models.Units.CivilianUnit;
+import Models.Units.Unit;
 import View.Menu;
 
 import java.util.regex.Matcher;
@@ -12,6 +16,11 @@ public class GameViewController {
     private CityController cityController = new CityController();
     private CheatController cheatController = new CheatController();
     private MapController mapController = new MapController();
+    private TechnologyMenuController technologyMenuController = new TechnologyMenuController();
+    public TechnologyMenuController getTechnologyMenuController() {
+        return technologyMenuController;
+    }
+
     public String exitGameMenu() {
         Menu.goToMenu(Menu.MAIN);
         return "You are taken to the Main Menu";
@@ -26,7 +35,17 @@ public class GameViewController {
     }
 
     public String nextTurn() {
-//        to do
+        for (Unit unit : GameDatabase.getGameDatabase().getCurrentCivilization().getUnits()) {
+            if (!unit.isWorkDone()) {
+                return "a unit didn't work done yet";
+            }
+        }
+        GameDatabase.getGameDatabase().nextTurn();
+        Civilization curr = GameDatabase.getGameDatabase().getCurrentCivilization();
+        for (City city : curr.getCities()) {
+            city.nextTurn();
+        }
+        curr.nextTurn();
         return "next turn was done!";
     }
 
@@ -60,7 +79,12 @@ public class GameViewController {
     }
     public String selectCivilizationUnits(Matcher matcher) {
         Coordinates coordinates = new Coordinates(Integer.parseInt(matcher.group("x")), Integer.parseInt(matcher.group("y")));
-        return "";
+        Tile tile = GameDatabase.getGameDatabase().getOriginalMap().getTile(coordinates.getX(), coordinates.getY());
+        if (tile == null) {
+            return "not found any unit there";
+        }
+        GameDatabase.getGameDatabase().setSelected(tile);
+        return "unit selected successfully";
     }
 
     public CheatController getCheatController() {

@@ -121,10 +121,4 @@ public enum BuildingType  {
         }
         return result;
     }
-
-
-//    to do bellow establishBuilding in City class
-    public void createBuilding(BuildingType second) {
-//        to do
-    }
 }
