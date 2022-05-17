@@ -235,7 +235,7 @@ public class MapController {
     }
 
     private void showImprovements(StringBuilder stringBuilder, Tile terrain) {
-        Connect<Improvement, Boolean> improvementPair = terrain.getImprovementPair();
+        Connect<Improvement, Boolean> improvementPair = new Connect<Improvement,Boolean>(terrain.getImprovement(),terrain.getImprovement().isHale());
         if (improvementPair != null) {
             Improvement improvement = improvementPair.getFirst();
             if (improvement != null && improvementPair.getSecond() == true) {
