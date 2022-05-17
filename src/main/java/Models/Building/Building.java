@@ -63,7 +63,7 @@ public class Building {
         } else if (type == BuildingType.STOCK_EXCHANGE) {
             if (city.getBuildings().contains(BuildingType.BANK) || city.getBuildings().contains(BuildingType.SATRAPS_COURT))
                 return true;
-        } else {//there is no more condition to check for this specific type
+        } else {
             return true;
         }
         return false;

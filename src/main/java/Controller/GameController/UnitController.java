@@ -207,7 +207,7 @@ public class UnitController {
         unit.pillage();
         GameDatabase.getCurrentCivilization().updateNotification("Military unit " + unit.getType().name() + " on "
                 + unit.getTile().getCordination().toString() + " pillaged the city");
-        return "City successfully pillaged";
+        return "City   pillaged";
     }
 
     public String garrison() {
@@ -255,7 +255,7 @@ public class UnitController {
         unit.wakeUp();
         GameDatabase.getCurrentCivilization().updateNotification("Unit " + unit.getType().name() + " on "
                 + unit.getTile().getCordination().toString() + " is now awake!");
-        return "Unit waked up successfully!";
+        return "Unit waked up  !";
     }
 
 
@@ -374,7 +374,7 @@ public class UnitController {
             return "Cant build ! !";
         }
         if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Lumber_Mill) {
-            return "There is lumber mill in this position!";
+            return "There is lumber mill here!";
         }
         if (((Worker) GameDatabase.getSelected()).getMakeImprovement() != null) {
             return "They are busy at the moment";
@@ -383,7 +383,7 @@ public class UnitController {
         worker.makeImprovement(Improvement.Lumber_Mill);
         GameDatabase.getCurrentCivilization().updateNotification(
                 "a worker made a lubmermill on " + worker.getTile().getCordination().toString());
-        return "Lumber mill created successfully!";
+        return "Lumber_mill created !";
     }
 
 
@@ -394,20 +394,20 @@ public class UnitController {
                 return "They are busy at the moment";
             }
             if (((Worker) GameDatabase.getSelected()).getTile().isHasRoad()) {
-                return "There is road in this position!";
+                return "There is road here!";
             }
             Worker worker = ((Worker) GameDatabase.getSelected());
             worker.makeImprovement(Improvement.ROAD);
             GameDatabase.getCurrentCivilization()
                     .updateNotification("A worker made a road on " + worker.getTile().getCordination().toString());
-            return "Road created successfully!";
+            return "Road created !";
         }
 
          public String buildFarm(){
              if (checkWorker() != null)
                  return checkWorker();
              if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Farm) {
-                 return "There is farm in this position!";
+                 return "There is farm here!";
              }
              if (!Improvement.Farm.checkIsPossible(((Worker) GameDatabase.getSelected()).getTile())) {
                  return "Cant build !";
@@ -419,7 +419,7 @@ public class UnitController {
              worker.makeImprovement(Improvement.Farm);
              GameDatabase.getCurrentCivilization()
                      .updateNotification("a worker made a farm on " + worker.getTile().getCordination().toString());
-             return "Farm created successfully!";
+             return "Farm created !";
          }
 
     public String buildMine() {
@@ -429,7 +429,7 @@ public class UnitController {
             return "Cant build !";
         }
         if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Mine) {
-            return "There is mine in this position!";
+            return "There is mine here!";
         }
         if (((Worker) GameDatabase.getSelected()).getMakeImprovement() != null) {
             return "They are busy at the moment";
@@ -438,7 +438,7 @@ public class UnitController {
         worker.makeImprovement(Improvement.Mine);
         GameDatabase.getCurrentCivilization()
                 .updateNotification("a worker made a mine on " + worker.getTile().getCordination().toString());
-        return "Mine created successfully!";
+        return "Mine created !";
     }
 
     public String buildTradingPost() {
@@ -448,7 +448,7 @@ public class UnitController {
             return "Cant build !";
         }
         if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Trading_Post) {
-            return "There is farm in this position!";
+            return "There is farm here!";
         }
         if (((Worker) GameDatabase.getSelected()).getMakeImprovement() != null) {
             return "They are busy at the moment";
@@ -457,7 +457,7 @@ public class UnitController {
         worker.makeImprovement(Improvement.Trading_Post);
         GameDatabase.getCurrentCivilization().updateNotification(
                 "a worker made a trading post on " + worker.getTile().getCordination().toString());
-        return "Farm created successfully!";
+        return "Farm created !";
     }
 
 
@@ -468,7 +468,7 @@ public class UnitController {
             if (command != null)
                 return command;
             if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Pasture) {
-                return "There is pasture in this position!";
+                return "There is pasture here!";
             }
             if (!Improvement.Pasture.checkIsPossible(((Worker) GameDatabase.getSelected()).getTile())) {
                 return "can build";
@@ -480,7 +480,7 @@ public class UnitController {
             worker.makeImprovement(Improvement.Pasture);
             GameDatabase.getCurrentCivilization()
                     .updateNotification("a worker made a pasture on " + worker.getTile().getCordination().toString());
-            return "Pasture created successfully!";
+            return "Pasture created !";
         }
 
         public String buildCamp() {
@@ -488,7 +488,7 @@ public class UnitController {
             if (command != null)
                 return command;
             if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Camp) {
-                return "There is camp mill in this position!";
+                return "There is camp mill here!";
             }
             if (!Improvement.Camp.checkIsPossible(((Worker) GameDatabase.getSelected()).getTile())) {
                 return "Cant build !";
@@ -500,7 +500,7 @@ public class UnitController {
             worker.makeImprovement(Improvement.Camp);
             GameDatabase.getCurrentCivilization()
                     .updateNotification("a worker made a camp on " + worker.getTile().getCordination().toString());
-            return "Camp created successfully!";
+            return "Camp created !";
         }
 
         public String buildPlantation() {
@@ -508,7 +508,7 @@ public class UnitController {
             if (command != null)
                 return command;
             if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Plantation) {
-                return "There is plantation in this position!";
+                return "There is plantation here!";
             }
             if (!Improvement.Plantation.checkIsPossible(((Worker) GameDatabase.getSelected()).getTile())) {
                 return "Cant build !";
@@ -520,7 +520,7 @@ public class UnitController {
             worker.makeImprovement(Improvement.Plantation);
             GameDatabase.getCurrentCivilization().updateNotification(
                     "a worker made a plantation on " + worker.getTile().getCordination().toString());
-            return "Plantation created successfully!";
+            return "Plantation created !";
         }
 
         public String buildQuarry() {
@@ -528,7 +528,7 @@ public class UnitController {
             if (command != null)
                 return command;
             if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Quarry) {
-                return "There is quarry in this position!";
+                return "There is quarry here!";
             }
             if (!Improvement.Quarry.checkIsPossible(((Worker) GameDatabase.getSelected()).getTile())) {
                 return "Cant build !";
@@ -540,7 +540,7 @@ public class UnitController {
             worker.makeImprovement(Improvement.Quarry);
             GameDatabase.getCurrentCivilization()
                     .updateNotification("a worker made a quarry on " + worker.getTile().getCordination().toString());
-            return "Quarry created successfully!";
+            return "Quarry created !";
         }
 
         public String removeJungle() {
@@ -557,7 +557,7 @@ public class UnitController {
             worker.makeImprovement(Improvement.REMOVE_JUNGLE);
             GameDatabase.getCurrentCivilization()
                     .updateNotification("a worker removed jungle on " + worker.getTile().getCordination().toString());
-            return "Jungle removed successfully!";
+            return "Jungle removed !";
         }
 
         public String removeRoute() {
@@ -574,7 +574,7 @@ public class UnitController {
             worker.makeImprovement(Improvement.REMOVE_ROUTE);
             GameDatabase.getCurrentCivilization()
                     .updateNotification("a worker removed route on " + worker.getTile().getCordination().toString());
-            return "Road removed successfully!";
+            return "Road removed !";
         }
 
         public String removeMarsh() {
@@ -591,7 +591,7 @@ public class UnitController {
             worker.makeImprovement(Improvement.REMOVE_MARSH);
             GameDatabase.getCurrentCivilization()
                     .updateNotification("a worker removed marsh on " + worker.getTile().getCordination().toString());
-            return "marsh removed successfully!";
+            return "marsh removed !";
         }
 
         public String removeForest() {
@@ -600,7 +600,7 @@ public class UnitController {
                 return command;
             if (!((Worker) GameDatabase.getSelected()).getTile().getTerrainFeatures()
                     .contains(TerrainFeature.Forest)) {
-                return "There is no forest or forrest in this place!";
+                return "no forest here!";
             }
             if (((Worker) GameDatabase.getSelected()).getImprovement() != null) {
                 return "They are busy at the moment";
@@ -609,7 +609,7 @@ public class UnitController {
             worker.makeImprovement(Improvement.REMOVE_FOREST);
             GameDatabase.getCurrentCivilization()
                     .updateNotification("a worker removed forest on " + worker.getTile().getCordination().toString());
-            return "forest removed successfully!";
+            return "forest removed !";
         }
 
         public String repair() {
@@ -627,7 +627,7 @@ public class UnitController {
             worker.makeImprovement(Improvement.REPAIR);
             GameDatabase.getCurrentCivilization()
                     .updateNotification("a worker repaired on " + worker.getTile().getCordination().toString());
-            return "Repair successfully!";
+            return "Repaired!";
         }
 
         public String move(Matcher matcher, Unit unit) {
@@ -718,7 +718,7 @@ public class UnitController {
             unit.move(destination);
             GameDatabase.getCurrentCivilization().updateNotification("unit " + unitType.name() + " started moving from "
                     + origin.getCordination().toString() + " to " + destination.getCordination().toString());
-            return "unit moved successfully";
+            return "unit moved  ";
         }
 
         public ArrayList<Coordinates> getBestPath(Tile destination, Tile origin, Unit unit) {
