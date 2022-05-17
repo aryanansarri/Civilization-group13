@@ -132,7 +132,7 @@ public enum TerrainType {
     final int combatModifier;
     final ArrayList<TerrainFeature> possibleFeatures;
     final ArrayList<Resource> possibleResources;
-
+    private boolean hasRode=false;
 
 //    to do this function
     public static Collection<Object> getResources() {
@@ -175,7 +175,6 @@ public enum TerrainType {
 
 
     public void setHasroad(boolean b) {
-//        to do
+       this.hasRode=b;
     }
-
 }
