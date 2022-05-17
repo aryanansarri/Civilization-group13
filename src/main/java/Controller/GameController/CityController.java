@@ -1,11 +1,9 @@
 package Controller.GameController;
 
-import Models.Civilization.City;
-import Models.Civilization.Citizen;
+import Models.Civilizations.City;
+import Models.Civilizations.Citizen;
 import Models.Coordinates;
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 
-import java.util.ArrayList;
 import java.util.regex.Matcher;
 
 public class CityController {

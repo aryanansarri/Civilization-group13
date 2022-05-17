@@ -1,9 +1,8 @@
 package Models.Units;
 
-import Models.Block.TerrainType;
 import Models.Block.Tile;
-import Models.Civilization.City;
-import Models.Civilization.Civilization;
+import Models.Civilizations.City;
+import Models.Civilizations.Civilization;
 
 public class SettlerUnit extends CivilianUnit {
     public SettlerUnit(Civilization civilization, UnitType unitType, Tile tile){

@@ -1,8 +1,7 @@
 package Models.Units;
 
-import Models.Block.TerrainType;
 import Models.Block.Tile;
-import Models.Civilization.Civilization;
+import Models.Civilizations.Civilization;
 
 public class SiegeUnit extends MilitaryUnit {
     public SiegeUnit(Civilization civilization, UnitType unitType, Tile tile) {

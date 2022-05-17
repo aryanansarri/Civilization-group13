@@ -1,8 +1,6 @@
-package Models.Civilization;
+package Models.Civilizations;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.logging.Handler;
 
 import Controller.GameController.GameDatabase;
 import Models.Block.TerrainType;

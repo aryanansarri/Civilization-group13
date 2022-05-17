@@ -1,7 +1,7 @@
 package Models.Info;
 
 import Controller.GameController.GameDatabase;
-import Models.Civilization.City;
+import Models.Civilizations.City;
 
 import java.util.ArrayList;
 

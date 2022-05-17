@@ -1,9 +1,8 @@
 package Models.Units;
 
 
-import Models.Block.TerrainType;
 import Models.Block.Tile;
-import Models.Civilization.Civilization;
+import Models.Civilizations.Civilization;
 
 public class MilitaryUnit extends Unit{
     private int XP;
@@ -45,5 +44,6 @@ public class MilitaryUnit extends Unit{
 
 //    to do bellow as attacking in City class
     public void deleteUnit() {
+        super.deleteUnit();
     }
 }

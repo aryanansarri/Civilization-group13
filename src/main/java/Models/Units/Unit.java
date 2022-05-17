@@ -4,12 +4,11 @@ import Controller.GameController.GameDatabase;
 import Models.Block.TerrainFeature;
 import Models.Block.TerrainType;
 import Models.Block.Tile;
-import Models.Civilization.Civilization;
+import Models.Civilizations.Civilization;
 import Models.Coordinates;
 import Models.Select;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Unit implements Select, Combatble {
     private int MovementPoint;
@@ -239,7 +238,7 @@ public class Unit implements Select, Combatble {
 
     public void deleteUnit() {
         getCivilization().removeUnit(this);
-        for (Tile[] tile : GameDatabase.getOriginalMap().getTile()) {
+        for (Tile[] tile : GameDatabase.getGameDatabase().getOriginalMap().getTile()) {
             for (Tile TILE : tile) {
                 if (TILE.getCivilianUnit() == this) TILE.setCivilianUnit(null);
                 if (TILE.getMilitaryUnit() == this) TILE.setMilitaryUnit(null);

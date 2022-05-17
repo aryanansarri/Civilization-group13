@@ -1,4 +1,4 @@
-package Models.Civilization;
+package Models.Civilizations;
 
 import Models.Block.Tile;
 

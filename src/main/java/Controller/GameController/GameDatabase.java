@@ -2,9 +2,8 @@ package Controller.GameController;
 
 import Controller.User;
 import Models.Block.Tile;
-import Models.Block.TileVisitingKind;
-import Models.Civilization.City;
-import Models.Civilization.Civilization;
+import Models.Civilizations.City;
+import Models.Civilizations.Civilization;
 import Models.Coordinates;
 import Models.Info.CivilizationHappiness;
 import Models.OriginalMap;

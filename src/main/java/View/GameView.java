@@ -4,13 +4,12 @@ import Controller.GameController.CityController;
 import Controller.GameController.GameDatabase;
 import Controller.GameController.GameViewController;
 import Controller.GameController.InfoController;
-import Models.Civilization.City;
-import Models.Civilization.Civilization;
+import Models.Civilizations.City;
+import Models.Civilizations.Civilization;
 import Models.Coordinates;
 import View.Regexes.GameRegex;
 import View.Regexes.InfoGameRegex;
 import View.Regexes.SelectCityRegex;
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 
 import java.util.regex.Matcher;
 

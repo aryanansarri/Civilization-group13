@@ -1,8 +1,7 @@
 package Controller.GameController;
 
-import Models.Civilization.City;
+import Models.Civilizations.City;
 import Models.Coordinates;
-import View.GameView;
 import View.Menu;
 
 import java.util.regex.Matcher;

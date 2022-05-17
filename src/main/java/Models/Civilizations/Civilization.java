@@ -1,7 +1,5 @@
-package Models.Civilization;
+package Models.Civilizations;
 
-import Models.Block.TerrainFeature;
-import Models.Block.TerrainType;
 import Models.Block.Tile;
 import Models.Block.TileVisitingKind;
 import Models.Info.CivilizationGold;

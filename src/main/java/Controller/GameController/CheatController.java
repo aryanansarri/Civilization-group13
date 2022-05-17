@@ -6,13 +6,9 @@ import Models.Technology.Technology;
 import Models.Block.TerrainFeature;
 import Models.Block.TerrainType;
 import Models.Block.Tile;
-import Models.Civilization.City;
-import Models.Civilization.Civilization;
-import Models.Info.CivilizationScience;
+import Models.Civilizations.City;
+import Models.Civilizations.Civilization;
 import Models.Resources.Resource;
-import View.Menu;
-
-import java.util.regex.Matcher;
 
 public class CheatController {
     public void turnCheat(User user, int amount) {

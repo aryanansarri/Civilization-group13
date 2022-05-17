@@ -2,7 +2,7 @@ package Models;
 
 import Controller.GameController.GameDatabase;
 import Models.Block.*;
-import Models.Civilization.Civilization;
+import Models.Civilizations.Civilization;
 import Models.Units.Unit;
 
 import static Models.Block.TileVisitingKind.*;

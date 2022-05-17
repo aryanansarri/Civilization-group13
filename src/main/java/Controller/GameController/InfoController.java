@@ -1,6 +1,6 @@
 package Controller.GameController;
 
-import Models.Civilization.City;
+import Models.Civilizations.City;
 import Models.Units.Unit;
 import Models.Units.UnitType;
 
@@ -44,7 +44,7 @@ public class InfoController {
     public String getMilitary() {
         String military = "";
         for (Unit unit : GameDatabase.getGameDatabase().getCurrentCivilization().getUnits()) {
-            if (UnitType.getSiegeMilitaryUnit().contains(unit.getType())) {
+            if (UnitType.getSiegeUnits().contains(unit.getType())) {
                 military += unit.toString() + "\n";
             }
         }

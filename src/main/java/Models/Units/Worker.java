@@ -3,7 +3,7 @@ package Models.Units;
 import Models.Block.TerrainFeature;
 import Models.Block.Tile;
 import Models.Improvment.Improvement;
-import Models.Civilization.Civilization;
+import Models.Civilizations.Civilization;
 
 public class Worker extends Unit {
     private Improvement improvement;

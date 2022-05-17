@@ -1,10 +1,9 @@
 package Models;
 
-import Models.*;
 import Models.Block.TerrainFeature;
 import Models.Block.TerrainType;
 import Models.Block.Tile;
-import Models.Civilization.Civilization;
+import Models.Civilizations.Civilization;
 import Models.Resources.Resource;
 
 import java.util.ArrayList;
