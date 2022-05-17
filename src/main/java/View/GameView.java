@@ -66,7 +66,7 @@ public class GameView {
     }
 
     private void showMap(Matcher matcher) {
-//        to do
+        gameViewController.getMapController().showMap(0, 0);
     }
 
     private void showInfo(Matcher matcher) {

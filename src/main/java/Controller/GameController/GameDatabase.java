@@ -126,4 +126,8 @@ public class GameDatabase {
         }
         return null;
     }
+
+    public void PlayGame(ArrayList<User> players) {
+//        to do
+    }
 }
