@@ -29,7 +29,7 @@ public class SettlerUnit extends CivilianUnit {
         City city = new City();
         city.setBeingcapital(false);
         city.setCivilization(getCivilization(),getTile());
-        GameDatabase.getOriginalMap().setTile(getTile().getX(), getTile().getY(), getTile());
+        GameDatabase.getGameDatabase().getOriginalMap().setTile(getTile().getX(), getTile().getY(), getTile());
         for (Tile tile : city.getSurroundingTiles()) {
             tile.setOwner(getCivilization());
         }
@@ -40,7 +40,7 @@ public class SettlerUnit extends CivilianUnit {
         City city = new City(getTile().getCity());
         city.setBeingcapital(true);
         city.setCivilization(getCivilization(),getTile());
-        GameDatabase.getOriginalMap().setTile(getTile().getX(), getTile().getY(), getTile());
+        GameDatabase.getGameDatabase().getOriginalMap().setTile(getTile().getX(), getTile().getY(), getTile());
         for (Tile terrain : city.getSurroundingTiles()) {
             terrain.setOwner(getCivilization());
         }

@@ -24,7 +24,7 @@ public class GameDatabase {
     private ArrayList<User> players;
     private static ArrayList<Civilization> civilizations;
     private static int currentPlayerID = 0;
-    private OriginalMap originalMap;
+    private static OriginalMap originalMap;
     private static Select selected;
 
     public User getCurrentPlayer() {
@@ -57,7 +57,7 @@ public class GameDatabase {
     }
 
     public void setCivilizations(ArrayList<Civilization> civilizations) {
-        this.civilizations = civilizations;
+        GameDatabase.civilizations = civilizations;
     }
 
     public static OriginalMap getOriginalMap() {
@@ -65,7 +65,7 @@ public class GameDatabase {
     }
 
     public void setOriginalMap(OriginalMap originalMap) {
-        this.originalMap = originalMap;
+        GameDatabase.originalMap = originalMap;
     }
 
     public static Select getSelected() {

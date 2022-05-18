@@ -45,13 +45,13 @@ public class UnitController {
 
         public String moveUnit(Unit unit , Tile destination,Civilization civilization){
 
-            GameDatabase.getCurrentCivilization().getCivilizationMap().updateExploration();
+            GameDatabase.getGameDatabase().getCurrentCivilization().getCivilizationMap().updateExploration();
             Tile origin = unit.getTile();
             int Movement = unit.getRemindMove();
             int maxMovement = unit.getType().getMovementPoint();
             UnitType unitType = unit.getType();
             Coordinates coordinates = destination.getCordination();
-            TileVisitingKind state = GameDatabase.getCurrentCivilization().getTileVisitingKind(coordinates.getX(), coordinates.getY());
+            TileVisitingKind state = GameDatabase.getGameDatabase().getCurrentCivilization().getTileVisitingKind(coordinates.getX(), coordinates.getY());
             if (unit.getRemindMove() <= 0)
                 return "unfortunately you don't have enough moving point to move your unit";
             if (state == TileVisitingKind.FogOfWar)
@@ -61,7 +61,7 @@ public class UnitController {
             return backTrack(destination, origin, Movement, maxMovement, unitType, unit);
         }
     public String moveUnit(Matcher matcher) {
-        if (GameDatabase.getSelected() instanceof Unit)
+        if (GameDatabase.getGameDatabase().getSelected() instanceof Unit)
             return move(matcher, (Unit) GameDatabase.getSelected());
         return "no unit selected";
     }
@@ -76,32 +76,32 @@ public class UnitController {
         }
         public void alertUnit(Civilization civilization)
         {
-            Unit unit = (Unit)GameDatabase.getSelected();
+            Unit unit = (Unit)GameDatabase.getGameDatabase().getSelected();
             unit.alert();
         }
         public void awakeUnit(Civilization civilization)
         {
-            Unit unit = (Unit)GameDatabase.getSelected();
+            Unit unit = (Unit)GameDatabase.getGameDatabase().getSelected();
             unit.wakeUp();
         }
         public String sleep(Civilization civilization)
         {
-            if (!(GameDatabase.getSelected() instanceof Unit)) {
+            if (!(GameDatabase.getGameDatabase().getSelected() instanceof Unit)) {
                 return "No unit selected";
             }
             if (((Unit) GameDatabase.getSelected()).getCivilization() != GameDatabase.getCurrentCivilization()) {
                 return "selected har nobat new shavad";
             }
-            Unit unit = ((Unit) GameDatabase.getSelected());
+            Unit unit = ((Unit) GameDatabase.getGameDatabase().getSelected());
             unit.sleep();
-            GameDatabase.getCurrentCivilization().updateNotification("Unit " + unit.getType().name() + " on "
+            GameDatabase.getGameDatabase().getCurrentCivilization().updateNotification("Unit " + unit.getType().name() + " on "
                     + unit.getTile().getCordination().toString() + " is now sleeping!");
             return "Done. Unit slept";
         }
 
     public void delete(Unit unit) {
         getCivilization().removeUnit(unit);
-        for (Tile[] terrains : GameDatabase.getOriginalMap().getTile()) {
+        for (Tile[] terrains : GameDatabase.getGameDatabase().getOriginalMap().getTile()) {
             for (Tile tile : terrains) {
                 if (tile.getMilitaryUnit() == unit)
                     tile.setMilitaryUnit(null);
@@ -113,53 +113,53 @@ public class UnitController {
 
 
     public String alert() {
-        if (!(GameDatabase.getSelected() instanceof Unit)) {
+        if (!(GameDatabase.getGameDatabase().getSelected() instanceof Unit)) {
             return "No unit selected!";
         }
-        if (((Unit) GameDatabase.getSelected()).getCivilization() != GameDatabase.getCurrentCivilization()) {
+        if (((Unit) GameDatabase.getGameDatabase().getSelected()).getCivilization() != GameDatabase.getGameDatabase().getCurrentCivilization()) {
             return "selected har nobat new shavad";
         }
-        if (!(GameDatabase.getSelected() instanceof MilitaryUnit)) {
+        if (!(GameDatabase.getGameDatabase().getSelected() instanceof MilitaryUnit)) {
             return "its not a military unit!";
         }
-        MilitaryUnit unit = ((MilitaryUnit) GameDatabase.getSelected());
+        MilitaryUnit unit = ((MilitaryUnit) GameDatabase.getGameDatabase().getSelected());
         unit.setOnAlert(true);
-        GameDatabase.getCurrentCivilization().updateNotification("Military unit " + unit.getType().name() + " on "
+        GameDatabase.getGameDatabase().getCurrentCivilization().updateNotification("Military unit " + unit.getType().name() + " on "
                 + unit.getTile().getCordination().toString() + " is now in alert!");
         return "Unit is alerted!";
     }
 
 
     public String fortify() {
-        if (!(GameDatabase.getSelected() instanceof Unit)) {
+        if (!(GameDatabase.getGameDatabase().getSelected() instanceof Unit)) {
             return "No unit selected!";
         }
-        if (((Unit) GameDatabase.getSelected()).getCivilization() != GameDatabase.getCurrentCivilization()) {
+        if (((Unit) GameDatabase.getGameDatabase().getSelected()).getCivilization() != GameDatabase.getGameDatabase().getCurrentCivilization()) {
             return "selected har nobat new shavad";
         }
-        if (!(GameDatabase.getSelected() instanceof MilitaryUnit)) {
+        if (!(GameDatabase.getGameDatabase().getSelected() instanceof MilitaryUnit)) {
             return "its not a military unit!";
         }
-        MilitaryUnit unit = ((MilitaryUnit) GameDatabase.getSelected());
+        MilitaryUnit unit = ((MilitaryUnit) GameDatabase.getGameDatabase().getSelected());
         unit.fortify();
-        GameDatabase.getCurrentCivilization().updateNotification("Military unit " + unit.getType().name() + " on "
+        GameDatabase.getGameDatabase().getCurrentCivilization().updateNotification("Military unit " + unit.getType().name() + " on "
                 + unit.getTile().getCordination().toString() + " is now in fortify!");
         return "Unit is fortify!";
     }
 
     public String fortifyHeal() {
-        if (!(GameDatabase.getSelected() instanceof Unit)) {
+        if (!(GameDatabase.getGameDatabase().getSelected() instanceof Unit)) {
             return "No unit selected!";
         }
-        if (!(GameDatabase.getSelected() instanceof MilitaryUnit)) {
+        if (!(GameDatabase.getGameDatabase().getSelected() instanceof MilitaryUnit)) {
             return "This is not a military unit!";
         }
-        if (((Unit) GameDatabase.getSelected()).getCivilization() != GameDatabase.getCurrentCivilization()) {
+        if (((Unit) GameDatabase.getGameDatabase().getSelected()).getCivilization() != GameDatabase.getGameDatabase().getCurrentCivilization()) {
             return "selected har nobat new shavad";
         }
-        MilitaryUnit unit = ((MilitaryUnit) GameDatabase.getSelected());
+        MilitaryUnit unit = ((MilitaryUnit) GameDatabase.getGameDatabase().getSelected());
         unit.setFortifyHeal(true);
-        GameDatabase.getCurrentCivilization().updateNotification("Military unit " + unit.getType().name() + " on "
+        GameDatabase.getGameDatabase().getCurrentCivilization().updateNotification("Military unit " + unit.getType().name() + " on "
                 + unit.getTile().getCordination().toString() + " is now in fortify until full health!");
         return "Unit is fortify until heal!";
     }
@@ -167,20 +167,20 @@ public class UnitController {
 
 
     public String setUp() {
-        if (!(GameDatabase.getSelected() instanceof Unit)) {
+        if (!(GameDatabase.getGameDatabase().getSelected() instanceof Unit)) {
             return "No unit selected!";
         }
-        if (((Unit) GameDatabase.getSelected()).getCivilization() != GameDatabase.getCurrentCivilization()) {
+        if (((Unit) GameDatabase.getGameDatabase().getSelected()).getCivilization() != GameDatabase.getGameDatabase().getCurrentCivilization()) {
             return "selected har nobat new shavad";
         }
-        if (!(GameDatabase.getSelected() instanceof MilitaryUnit)) {
+        if (!(GameDatabase.getGameDatabase().getSelected() instanceof MilitaryUnit)) {
             return "This is not a military unit!";
         }
-        if (!UnitType.getSiegeUnits().contains(((Unit) GameDatabase.getSelected()).getType()))
+        if (!UnitType.getSiegeUnits().contains(((Unit) GameDatabase.getGameDatabase().getSelected()).getType()))
             return "this unit can not siege";
-        SiegeUnit unit = ((SiegeUnit) GameDatabase.getSelected());
+        SiegeUnit unit = ((SiegeUnit) GameDatabase.getGameDatabase().getSelected());
         unit.setUp();
-        GameDatabase.getCurrentCivilization().updateNotification("Military unit " + unit.getType().name() + " on "
+        GameDatabase.getGameDatabase().getCurrentCivilization().updateNotification("Military unit " + unit.getType().name() + " on "
                 + unit.getTile().getCordination().toString() + " is now set up!");
         return "Unit is set up!";
     }
@@ -188,44 +188,44 @@ public class UnitController {
 
 
     public String pillage() {
-        if (!(GameDatabase.getSelected() instanceof Unit)) {
+        if (!(GameDatabase.getGameDatabase().getSelected() instanceof Unit)) {
             return "No unit selected!";
         }
-        if (((Unit) GameDatabase.getSelected()).getCivilization() != GameDatabase.getCurrentCivilization()) {
+        if (((Unit) GameDatabase.getGameDatabase().getSelected()).getCivilization() != GameDatabase.getGameDatabase().getCurrentCivilization()) {
             return "selected har nobat new shavad";
         }
-        if (!(GameDatabase.getSelected() instanceof MilitaryUnit)) {
+        if (!(GameDatabase.getGameDatabase().getSelected() instanceof MilitaryUnit)) {
             return "its not a military unit";
         }
-        if (((MilitaryUnit) GameDatabase.getSelected()).getTile().getImprovement() == null) {
+        if (((MilitaryUnit) GameDatabase.getGameDatabase().getSelected()).getTile().getImprovement() == null) {
             return "There is not improvement in this area";
         }
-        if (!((MilitaryUnit) GameDatabase.getSelected()).getTile().getImprovementConnector().getSecond()) {
+        if (!((MilitaryUnit) GameDatabase.getGameDatabase().getSelected()).getTile().getImprovementConnector().getSecond()) {
             return "improvement kharabe va dobare pillage nemishe";
         }
-        MilitaryUnit unit = ((MilitaryUnit) GameDatabase.getSelected());
+        MilitaryUnit unit = ((MilitaryUnit) GameDatabase.getGameDatabase().getSelected());
         unit.pillage();
-        GameDatabase.getCurrentCivilization().updateNotification("Military unit " + unit.getType().name() + " on "
+        GameDatabase.getGameDatabase().getCurrentCivilization().updateNotification("Military unit " + unit.getType().name() + " on "
                 + unit.getTile().getCordination().toString() + " pillaged the city");
         return "City   pillaged";
     }
 
     public String garrison() {
-        if (!(GameDatabase.getSelected() instanceof Unit)) {
+        if (!(GameDatabase.getGameDatabase().getSelected() instanceof Unit)) {
             return "No unit selected!";
         }
-        if (((Unit) GameDatabase.getSelected()).getCivilization() != GameDatabase.getCurrentCivilization()) {
+        if (((Unit) GameDatabase.getGameDatabase().getSelected()).getCivilization() != GameDatabase.getGameDatabase().getCurrentCivilization()) {
             return "selected har nobat new shavad";
         }
-        if (!(GameDatabase.getSelected() instanceof MilitaryUnit)) {
+        if (!(GameDatabase.getGameDatabase().getSelected() instanceof MilitaryUnit)) {
             return "its not a military unit!";
         }
-        if (!(((MilitaryUnit) GameDatabase.getSelected()).getTile().getCity() instanceof City)) {
+        if (!(((MilitaryUnit) GameDatabase.getGameDatabase().getSelected()).getTile().getCity() instanceof City)) {
             return "This unit is not in city!";
         }
-        MilitaryUnit unit = ((MilitaryUnit) GameDatabase.getSelected());
+        MilitaryUnit unit = ((MilitaryUnit) GameDatabase.getGameDatabase().getSelected());
         unit.garrison();
-        GameDatabase.getCurrentCivilization().updateNotification("Military unit " + unit.getType().name() + " on "
+        GameDatabase.getGameDatabase().getCurrentCivilization().updateNotification("Military unit " + unit.getType().name() + " on "
                 + unit.getTile().getCordination().toString() + " is now in garrison!");
         return "Unit is in garrison!";
     }
@@ -234,26 +234,26 @@ public class UnitController {
 
 
     public String doNothing() {
-        if (!(GameDatabase.getSelected() instanceof Unit)) {
+        if (!(GameDatabase.getGameDatabase().getSelected() instanceof Unit)) {
             return "No unit selected";
         }
-        if (((Unit) GameDatabase.getSelected()).getCivilization() != GameDatabase.getCurrentCivilization()) {
+        if (((Unit) GameDatabase.getGameDatabase().getSelected()).getCivilization() != GameDatabase.getGameDatabase().getCurrentCivilization()) {
             return "selected har nobat new shavad";
         }
-        ((Unit) GameDatabase.getSelected()).DoNothing();
+        ((Unit) GameDatabase.getGameDatabase().getSelected()).DoNothing();
         return "done!";
     }
     
     public String wake(){
-        if (!(GameDatabase.getSelected() instanceof Unit)) {
+        if (!(GameDatabase.getGameDatabase().getSelected() instanceof Unit)) {
             return "No unit selected!";
         }
-        if (((Unit) GameDatabase.getSelected()).getCivilization() != GameDatabase.getCurrentCivilization()) {
+        if (((Unit) GameDatabase.getGameDatabase().getSelected()).getCivilization() != GameDatabase.getGameDatabase().getCurrentCivilization()) {
             return "selectedo bayad har turn new mikardim";
         }
-        Unit unit = (Unit) GameDatabase.getSelected();
+        Unit unit = (Unit) GameDatabase.getGameDatabase().getSelected();
         unit.wakeUp();
-        GameDatabase.getCurrentCivilization().updateNotification("Unit " + unit.getType().name() + " on "
+        GameDatabase.getGameDatabase().getCurrentCivilization().updateNotification("Unit " + unit.getType().name() + " on "
                 + unit.getTile().getCordination().toString() + " is now awake!");
         return "Unit waked up  !";
     }
@@ -261,7 +261,7 @@ public class UnitController {
 
 
         public boolean unitFortify(Civilization civilization) {
-            Unit unit = (Unit)GameDatabase.getSelected();
+            Unit unit = (Unit)GameDatabase.getGameDatabase().getSelected();
             if(unit == null) return false;
             if(unit instanceof CivilianUnit||
                     !(unit  instanceof MilitaryUnit))
@@ -272,7 +272,7 @@ public class UnitController {
 
 
         public boolean unitFortifyUntilHealed(Civilization civilization) {
-            Unit unit = (Unit)GameDatabase.getSelected();
+            Unit unit = (Unit)GameDatabase.getGameDatabase().getSelected();
             if(unit == null|| unit instanceof CivilianUnit)
                 return false;
             //unit.setAction("fortify_Until_Healed");
@@ -281,7 +281,7 @@ public class UnitController {
 
         public boolean unitGarrison(Civilization civilization)
         {
-            Unit unit = (Unit)GameDatabase.getSelected();
+            Unit unit = (Unit)GameDatabase.getGameDatabase().getSelected();
             if(unit == null) return false;
             City city = unit.getTile().getCity();
             if (!city.getOwnership().equals(civilization)) return false;
@@ -295,7 +295,7 @@ public class UnitController {
             City city;
             if (civilization == null)
                 return false;
-            Unit unit = (Unit)GameDatabase.getSelected();
+            Unit unit = (Unit)GameDatabase.getGameDatabase().getSelected();
             if (!(unit instanceof SettlerUnit))
                 return false;
 
@@ -313,7 +313,7 @@ public class UnitController {
         }
         public boolean unitBuildImprovement(Civilization civilization, Improvement improvement)
         {
-            Unit unit = (Unit)GameDatabase.getSelected();
+            Unit unit = (Unit)GameDatabase.getGameDatabase().getSelected();
             if(unit == null)
                 return false;
             Tile tile = unit.getTile();
@@ -370,18 +370,18 @@ public class UnitController {
     public String buildLumberMill() {
         if (checkWorker() != null)
             return checkWorker();
-        if (!Improvement.Lumber_Mill.checkIsPossible(((Worker) GameDatabase.getSelected()).getTile())) {
+        if (!Improvement.Lumber_Mill.checkIsPossible(((Worker) GameDatabase.getGameDatabase().getSelected()).getTile())) {
             return "Cant build ! !";
         }
-        if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Lumber_Mill) {
+        if (((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().getImprovement() == Improvement.Lumber_Mill) {
             return "There is lumber mill here!";
         }
-        if (((Worker) GameDatabase.getSelected()).getMakeImprovement() != null) {
+        if (((Worker) GameDatabase.getGameDatabase().getSelected()).getMakeImprovement() != null) {
             return "They are busy at the moment";
         }
-        Worker worker = ((Worker) GameDatabase.getSelected());
+        Worker worker = ((Worker) GameDatabase.getGameDatabase().getSelected());
         worker.makeImprovement(Improvement.Lumber_Mill);
-        GameDatabase.getCurrentCivilization().updateNotification(
+        GameDatabase.getGameDatabase().getCurrentCivilization().updateNotification(
                 "a worker made a lubmermill on " + worker.getTile().getCordination().toString());
         return "Lumber_mill created !";
     }
@@ -390,15 +390,15 @@ public class UnitController {
         public String buildRoad(){
             if (checkWorker() != null)
                 return checkWorker();
-            if (((Worker) GameDatabase.getSelected()).getMakeImprovement() != null) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getMakeImprovement() != null) {
                 return "They are busy at the moment";
             }
-            if (((Worker) GameDatabase.getSelected()).getTile().isHasRoad()) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().isHasRoad()) {
                 return "There is road here!";
             }
-            Worker worker = ((Worker) GameDatabase.getSelected());
+            Worker worker = ((Worker) GameDatabase.getGameDatabase().getSelected());
             worker.makeImprovement(Improvement.ROAD);
-            GameDatabase.getCurrentCivilization()
+            GameDatabase.getGameDatabase().getCurrentCivilization()
                     .updateNotification("A worker made a road on " + worker.getTile().getCordination().toString());
             return "Road created !";
         }
@@ -406,18 +406,18 @@ public class UnitController {
          public String buildFarm(){
              if (checkWorker() != null)
                  return checkWorker();
-             if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Farm) {
+             if (((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().getImprovement() == Improvement.Farm) {
                  return "There is farm here!";
              }
-             if (!Improvement.Farm.checkIsPossible(((Worker) GameDatabase.getSelected()).getTile())) {
+             if (!Improvement.Farm.checkIsPossible(((Worker) GameDatabase.getGameDatabase().getSelected()).getTile())) {
                  return "Cant build !";
              }
-             if (((Worker) GameDatabase.getSelected()).getMakeImprovement() != null) {
+             if (((Worker) GameDatabase.getGameDatabase().getSelected()).getMakeImprovement() != null) {
                  return "They are busy at the moment";
              }
-             Worker worker = ((Worker) GameDatabase.getSelected());
+             Worker worker = ((Worker) GameDatabase.getGameDatabase().getSelected());
              worker.makeImprovement(Improvement.Farm);
-             GameDatabase.getCurrentCivilization()
+             GameDatabase.getGameDatabase().getCurrentCivilization()
                      .updateNotification("a worker made a farm on " + worker.getTile().getCordination().toString());
              return "Farm created !";
          }
@@ -425,18 +425,18 @@ public class UnitController {
     public String buildMine() {
         if (checkWorker() != null)
             return checkWorker();
-        if (!Improvement.Mine.checkIsPossible(((Worker) GameDatabase.getSelected()).getTile())) {
+        if (!Improvement.Mine.checkIsPossible(((Worker) GameDatabase.getGameDatabase().getSelected()).getTile())) {
             return "Cant build !";
         }
-        if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Mine) {
+        if (((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().getImprovement() == Improvement.Mine) {
             return "There is mine here!";
         }
-        if (((Worker) GameDatabase.getSelected()).getMakeImprovement() != null) {
+        if (((Worker) GameDatabase.getGameDatabase().getSelected()).getMakeImprovement() != null) {
             return "They are busy at the moment";
         }
-        Worker worker = (Worker) GameDatabase.getSelected();
+        Worker worker = (Worker) GameDatabase.getGameDatabase().getSelected();
         worker.makeImprovement(Improvement.Mine);
-        GameDatabase.getCurrentCivilization()
+        GameDatabase.getGameDatabase().getCurrentCivilization()
                 .updateNotification("a worker made a mine on " + worker.getTile().getCordination().toString());
         return "Mine created !";
     }
@@ -444,18 +444,18 @@ public class UnitController {
     public String buildTradingPost() {
         if (checkWorker() != null)
             return checkWorker();
-        if (!Improvement.Trading_Post.checkIsPossible(((Worker) GameDatabase.getSelected()).getTile())) {
+        if (!Improvement.Trading_Post.checkIsPossible(((Worker) GameDatabase.getGameDatabase().getSelected()).getTile())) {
             return "Cant build !";
         }
-        if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Trading_Post) {
+        if (((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().getImprovement() == Improvement.Trading_Post) {
             return "There is farm here!";
         }
-        if (((Worker) GameDatabase.getSelected()).getMakeImprovement() != null) {
+        if (((Worker) GameDatabase.getGameDatabase().getSelected()).getMakeImprovement() != null) {
             return "They are busy at the moment";
         }
-        Worker worker = ((Worker) GameDatabase.getSelected());
+        Worker worker = ((Worker) GameDatabase.getGameDatabase().getSelected());
         worker.makeImprovement(Improvement.Trading_Post);
-        GameDatabase.getCurrentCivilization().updateNotification(
+        GameDatabase.getGameDatabase().getCurrentCivilization().updateNotification(
                 "a worker made a trading post on " + worker.getTile().getCordination().toString());
         return "Farm created !";
     }
@@ -467,18 +467,18 @@ public class UnitController {
             String command = checkWorker();
             if (command != null)
                 return command;
-            if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Pasture) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().getImprovement() == Improvement.Pasture) {
                 return "There is pasture here!";
             }
-            if (!Improvement.Pasture.checkIsPossible(((Worker) GameDatabase.getSelected()).getTile())) {
+            if (!Improvement.Pasture.checkIsPossible(((Worker) GameDatabase.getGameDatabase().getSelected()).getTile())) {
                 return "can build";
             }
-            if (((Worker) GameDatabase.getSelected()).getMakeImprovement() != null) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getMakeImprovement() != null) {
                 return "They are busy at the moment";
             }
-            Worker worker = ((Worker) GameDatabase.getSelected());
+            Worker worker = ((Worker) GameDatabase.getGameDatabase().getSelected());
             worker.makeImprovement(Improvement.Pasture);
-            GameDatabase.getCurrentCivilization()
+            GameDatabase.getGameDatabase().getCurrentCivilization()
                     .updateNotification("a worker made a pasture on " + worker.getTile().getCordination().toString());
             return "Pasture created !";
         }
@@ -487,18 +487,18 @@ public class UnitController {
             String command = checkWorker();
             if (command != null)
                 return command;
-            if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Camp) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().getImprovement() == Improvement.Camp) {
                 return "There is camp mill here!";
             }
-            if (!Improvement.Camp.checkIsPossible(((Worker) GameDatabase.getSelected()).getTile())) {
+            if (!Improvement.Camp.checkIsPossible(((Worker) GameDatabase.getGameDatabase().getSelected()).getTile())) {
                 return "Cant build !";
             }
-            if (((Worker) GameDatabase.getSelected()).getMakeImprovement() != null) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getMakeImprovement() != null) {
                 return "They are busy at the moment";
             }
-            Worker worker = ((Worker) GameDatabase.getSelected());
+            Worker worker = ((Worker) GameDatabase.getGameDatabase().getSelected());
             worker.makeImprovement(Improvement.Camp);
-            GameDatabase.getCurrentCivilization()
+            GameDatabase.getGameDatabase().getCurrentCivilization()
                     .updateNotification("a worker made a camp on " + worker.getTile().getCordination().toString());
             return "Camp created !";
         }
@@ -507,18 +507,18 @@ public class UnitController {
             String command = checkWorker();
             if (command != null)
                 return command;
-            if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Plantation) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().getImprovement() == Improvement.Plantation) {
                 return "There is plantation here!";
             }
-            if (!Improvement.Plantation.checkIsPossible(((Worker) GameDatabase.getSelected()).getTile())) {
+            if (!Improvement.Plantation.checkIsPossible(((Worker) GameDatabase.getGameDatabase().getSelected()).getTile())) {
                 return "Cant build !";
             }
-            if (((Worker) GameDatabase.getSelected()).getMakeImprovement() != null) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getMakeImprovement() != null) {
                 return "They are busy at the moment";
             }
-            Worker worker = ((Worker) GameDatabase.getSelected());
+            Worker worker = ((Worker) GameDatabase.getGameDatabase().getSelected());
             worker.makeImprovement(Improvement.Plantation);
-            GameDatabase.getCurrentCivilization().updateNotification(
+            GameDatabase.getGameDatabase().getCurrentCivilization().updateNotification(
                     "a worker made a plantation on " + worker.getTile().getCordination().toString());
             return "Plantation created !";
         }
@@ -527,18 +527,18 @@ public class UnitController {
             String command = checkWorker();
             if (command != null)
                 return command;
-            if (((Worker) GameDatabase.getSelected()).getTile().getImprovement() == Improvement.Quarry) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().getImprovement() == Improvement.Quarry) {
                 return "There is quarry here!";
             }
-            if (!Improvement.Quarry.checkIsPossible(((Worker) GameDatabase.getSelected()).getTile())) {
+            if (!Improvement.Quarry.checkIsPossible(((Worker) GameDatabase.getGameDatabase().getSelected()).getTile())) {
                 return "Cant build !";
             }
-            if (((Worker) GameDatabase.getSelected()).getImprovement() != null) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getImprovement() != null) {
                 return "They are busy at the moment";
             }
-            Worker worker = ((Worker) GameDatabase.getSelected());
+            Worker worker = ((Worker) GameDatabase.getGameDatabase().getSelected());
             worker.makeImprovement(Improvement.Quarry);
-            GameDatabase.getCurrentCivilization()
+            GameDatabase.getGameDatabase().getCurrentCivilization()
                     .updateNotification("a worker made a quarry on " + worker.getTile().getCordination().toString());
             return "Quarry created !";
         }
@@ -547,15 +547,15 @@ public class UnitController {
             String command = checkWorker();
             if (command != null)
                 return command;
-            if (!((Worker) GameDatabase.getSelected()).getTile().getTerrainFeatures().contains(TerrainFeature.Jungle)) {
+            if (!((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().getTerrainFeatures().contains(TerrainFeature.Jungle)) {
                 return "There is no jungle or forrest in this place!";
             }
-            if (((Worker) GameDatabase.getSelected()).getImprovement() != null) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getImprovement() != null) {
                 return "They are busy at the moment";
             }
-            Worker worker = ((Worker) GameDatabase.getSelected());
+            Worker worker = ((Worker) GameDatabase.getGameDatabase().getSelected());
             worker.makeImprovement(Improvement.REMOVE_JUNGLE);
-            GameDatabase.getCurrentCivilization()
+            GameDatabase.getGameDatabase().getCurrentCivilization()
                     .updateNotification("a worker removed jungle on " + worker.getTile().getCordination().toString());
             return "Jungle removed !";
         }
@@ -564,15 +564,15 @@ public class UnitController {
             String command = checkWorker();
             if (command != null)
                 return command;
-            if (!((Worker) GameDatabase.getSelected()).getTile().isHasRoad()) {
+            if (!((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().isHasRoad()) {
                 return "There is no road in this place!";
             }
-            if (((Worker) GameDatabase.getSelected()).getImprovement() != null) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getImprovement() != null) {
                 return "They are busy at the moment";
             }
-            Worker worker = ((Worker) GameDatabase.getSelected());
+            Worker worker = ((Worker) GameDatabase.getGameDatabase().getSelected());
             worker.makeImprovement(Improvement.REMOVE_ROUTE);
-            GameDatabase.getCurrentCivilization()
+            GameDatabase.getGameDatabase().getCurrentCivilization()
                     .updateNotification("a worker removed route on " + worker.getTile().getCordination().toString());
             return "Road removed !";
         }
@@ -581,15 +581,15 @@ public class UnitController {
             String command = checkWorker();
             if (command != null)
                 return command;
-            if (!((Worker) GameDatabase.getSelected()).getTile().getTerrainFeatures().contains(TerrainFeature.Marsh)) {
+            if (!((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().getTerrainFeatures().contains(TerrainFeature.Marsh)) {
                 return "There is no marsh or forrest in this place!";
             }
-            if (((Worker) GameDatabase.getSelected()).getMakeImprovement() != null) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getMakeImprovement() != null) {
                 return "They are busy at the moment";
             }
-            Worker worker = ((Worker) GameDatabase.getSelected());
+            Worker worker = ((Worker) GameDatabase.getGameDatabase().getSelected());
             worker.makeImprovement(Improvement.REMOVE_MARSH);
-            GameDatabase.getCurrentCivilization()
+            GameDatabase.getGameDatabase().getCurrentCivilization()
                     .updateNotification("a worker removed marsh on " + worker.getTile().getCordination().toString());
             return "marsh removed !";
         }
@@ -598,16 +598,16 @@ public class UnitController {
             String command = checkWorker();
             if (command != null)
                 return command;
-            if (!((Worker) GameDatabase.getSelected()).getTile().getTerrainFeatures()
+            if (!((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().getTerrainFeatures()
                     .contains(TerrainFeature.Forest)) {
                 return "no forest here!";
             }
-            if (((Worker) GameDatabase.getSelected()).getImprovement() != null) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getImprovement() != null) {
                 return "They are busy at the moment";
             }
-            Worker worker = ((Worker) GameDatabase.getSelected());
+            Worker worker = ((Worker) GameDatabase.getGameDatabase().getSelected());
             worker.makeImprovement(Improvement.REMOVE_FOREST);
-            GameDatabase.getCurrentCivilization()
+            GameDatabase.getGameDatabase().getCurrentCivilization()
                     .updateNotification("a worker removed forest on " + worker.getTile().getCordination().toString());
             return "forest removed !";
         }
@@ -616,16 +616,16 @@ public class UnitController {
             String command = checkWorker();
             if (command != null)
                 return command;
-            if (((Worker) GameDatabase.getSelected()).getTile().getImprovementConnector() == null)
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().getImprovementConnector() == null)
                 return "there is no improvements";
-            if (((Worker) GameDatabase.getSelected()).getTile().getImprovementConnector().getSecond())
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getTile().getImprovementConnector().getSecond())
                 return " improvement saaleme";
-            if (((Worker) GameDatabase.getSelected()).getImprovement() != null) {
+            if (((Worker) GameDatabase.getGameDatabase().getSelected()).getImprovement() != null) {
                 return "They are busy at the moment";
             }
-            Worker worker = ((Worker) GameDatabase.getSelected());
+            Worker worker = ((Worker) GameDatabase.getGameDatabase().getSelected());
             worker.makeImprovement(Improvement.REPAIR);
-            GameDatabase.getCurrentCivilization()
+            GameDatabase.getGameDatabase().getCurrentCivilization()
                     .updateNotification("a worker repaired on " + worker.getTile().getCordination().toString());
             return "Repaired!";
         }
@@ -634,24 +634,24 @@ public class UnitController {
             int x = Integer.parseInt(matcher.group("x"));
             int y = Integer.parseInt(matcher.group("y"));
             Coordinates coordination = new Coordinates(x, y);
-            if (!coordination.isValidCoordination(GameDatabase.getCurrentCivilization().getCivilizationMap()))
+            if (!coordination.isValidCoordination(GameDatabase.getGameDatabase().getCurrentCivilization().getCivilizationMap()))
                 return "position out of bounds";
             if (unit == null)
                 return "no unit selected";
-            if (getCivilization() != GameDatabase.getCurrentCivilization())
+            if (getCivilization() != GameDatabase.getGameDatabase().getCurrentCivilization())
                 return "this unit doesn't belong to you good sir";
-            Tile destination = GameDatabase.getOriginalMap().getTile(x, y);
+            Tile destination = GameDatabase.getGameDatabase().getOriginalMap().getTile(x, y);
             return moveUnit(destination, unit);
         }
 
         private String moveUnit(Tile destination, Unit unit) {
-            GameDatabase.getCurrentCivilization().getCivilizationMap().updateExploration();
+            GameDatabase.getGameDatabase().getCurrentCivilization().getCivilizationMap().updateExploration();
             Tile origin = unit.getTile();
             int MP = unit.getRemindMove();
             int maxMp = unit.getType().getMovementPoint();
             UnitType unitType = unit.getType();
             Coordinates coordination = destination.getCordination();
-            TileVisitingKind state = GameDatabase.getCurrentCivilization().getTileVisitingKind(coordination.getX(),
+            TileVisitingKind state = GameDatabase.getGameDatabase().getCurrentCivilization().getTileVisitingKind(coordination.getX(),
                     coordination.getY());
             if (unit.getRemindMove() <= 0)
                 return "unfortunately you don't have enough moving point to move your unit";
@@ -673,21 +673,21 @@ public class UnitController {
         String command = checkWorker();
         if (command != null)
             return command;
-        return ((Worker) GameDatabase.getSelected()).showInfo();
+        return ((Worker) GameDatabase.getGameDatabase().getSelected()).showInfo();
     }
 
         private String checkWorker() {
-            if (!(GameDatabase.getSelected() instanceof Unit)) {
+            if (!(GameDatabase.getGameDatabase().getSelected() instanceof Unit)) {
                 return "No unit selected";
             }
-            if (((Unit) GameDatabase.getSelected()).getCivilization() != GameDatabase.getCurrentCivilization()) {
+            if (((Unit) GameDatabase.getGameDatabase().getSelected()).getCivilization() != GameDatabase.getGameDatabase().getCurrentCivilization()) {
                 return "must new every selected";
             }
-            if (((Unit) GameDatabase.getSelected()).getTile().getOwner() != GameDatabase
+            if (((Unit) GameDatabase.getGameDatabase().getSelected()).getTile().getOwner() != GameDatabase.getGameDatabase()
                     .getCurrentCivilization()) {
                 return "tile isnt yours!";
             }
-            if (!(GameDatabase.getSelected() instanceof Worker)) {
+            if (!(GameDatabase.getGameDatabase().getSelected() instanceof Worker)) {
                 return "not a worker unit";
             }
             return null;
@@ -716,7 +716,7 @@ public class UnitController {
             pathCoordination.remove(0);
             unit.setPath(pathCoordination);
             unit.move(destination);
-            GameDatabase.getCurrentCivilization().updateNotification("unit " + unitType.name() + " started moving from "
+            GameDatabase.getGameDatabase().getCurrentCivilization().updateNotification("unit " + unitType.name() + " started moving from "
                     + origin.getCordination().toString() + " to " + destination.getCordination().toString());
             return "unit moved  ";
         }
@@ -849,7 +849,7 @@ public class UnitController {
         private boolean isMovePossible(int MP, Tile nextTerrain, Tile terrain) {
             if (nextTerrain.getTerraintype() == TerrainType.MOUNTAIN || nextTerrain.getTerraintype() == TerrainType.OCEAN)
                 return false;
-            if (GameDatabase.getCurrentCivilization().getTileVisitingKind(nextTerrain.getX(), nextTerrain.getY()) == TileVisitingKind.FogOfWar) {
+            if (GameDatabase.getGameDatabase().getCurrentCivilization().getTileVisitingKind(nextTerrain.getX(), nextTerrain.getY()) == TileVisitingKind.FogOfWar) {
                 return false;
             }
             return true;

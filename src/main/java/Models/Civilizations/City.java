@@ -310,65 +310,65 @@ public class City implements Select {
         ArrayList<Tile> terrains = new ArrayList<>();
         int x, y;
         if (GameDatabase.getOriginalMap().getTileX(this.getLocation()) % 2 == 0) {
-            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) + 1;
-            y = GameDatabase.getOriginalMap().getTileY(this.getLocation());
-            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
-                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+            x = GameDatabase.getGameDatabase().getOriginalMap().getTileX(this.getLocation()) + 1;
+            y = GameDatabase.getGameDatabase().getOriginalMap().getTileY(this.getLocation());
+            if (GameDatabase.getGameDatabase().getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getGameDatabase().getOriginalMap().getTile(x, y));
 
-            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) - 1;
-            y = GameDatabase.getOriginalMap().getTileY(this.getLocation());
-            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
-                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+            x = GameDatabase.getGameDatabase().getOriginalMap().getTileX(this.getLocation()) - 1;
+            y = GameDatabase.getGameDatabase().getOriginalMap().getTileY(this.getLocation());
+            if (GameDatabase.getGameDatabase().getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getGameDatabase().getOriginalMap().getTile(x, y));
 
-            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) - 1;
-            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) - 1;
-            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
-                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+            x = GameDatabase.getGameDatabase().getOriginalMap().getTileX(this.getLocation()) - 1;
+            y = GameDatabase.getGameDatabase().getOriginalMap().getTileY(this.getLocation()) - 1;
+            if (GameDatabase.getGameDatabase().getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getGameDatabase().getOriginalMap().getTile(x, y));
 
-            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) - 1;
-            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) + 1;
-            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
-                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+            x = GameDatabase.getGameDatabase().getOriginalMap().getTileX(this.getLocation()) - 1;
+            y = GameDatabase.getGameDatabase().getOriginalMap().getTileY(this.getLocation()) + 1;
+            if (GameDatabase.getGameDatabase().getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getGameDatabase().getOriginalMap().getTile(x, y));
 
-            x = GameDatabase.getOriginalMap().getTileX(this.getLocation());
-            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) - 1;
-            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
-                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+            x = GameDatabase.getGameDatabase().getOriginalMap().getTileX(this.getLocation());
+            y = GameDatabase.getGameDatabase().getOriginalMap().getTileY(this.getLocation()) - 1;
+            if (GameDatabase.getGameDatabase().getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getGameDatabase().getOriginalMap().getTile(x, y));
 
-            x = GameDatabase.getOriginalMap().getTileX(this.getLocation());
-            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) + 1;
-            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
-                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+            x = GameDatabase.getGameDatabase().getOriginalMap().getTileX(this.getLocation());
+            y = GameDatabase.getGameDatabase().getOriginalMap().getTileY(this.getLocation()) + 1;
+            if (GameDatabase.getGameDatabase().getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getGameDatabase().getOriginalMap().getTile(x, y));
         } else {
-            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) + 1;
-            y = GameDatabase.getOriginalMap().getTileY(this.getLocation());
-            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
-                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+            x = GameDatabase.getGameDatabase().getOriginalMap().getTileX(this.getLocation()) + 1;
+            y = GameDatabase.getGameDatabase().getOriginalMap().getTileY(this.getLocation());
+            if (GameDatabase.getGameDatabase().getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getGameDatabase().getOriginalMap().getTile(x, y));
 
-            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) - 1;
-            y = GameDatabase.getOriginalMap().getTileY(this.getLocation());
-            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
-                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+            x = GameDatabase.getGameDatabase().getOriginalMap().getTileX(this.getLocation()) - 1;
+            y = GameDatabase.getGameDatabase().getOriginalMap().getTileY(this.getLocation());
+            if (GameDatabase.getGameDatabase().getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getGameDatabase().getOriginalMap().getTile(x, y));
 
-            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) + 1;
-            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) - 1;
-            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
-                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+            x = GameDatabase.getGameDatabase().getOriginalMap().getTileX(this.getLocation()) + 1;
+            y = GameDatabase.getGameDatabase().getOriginalMap().getTileY(this.getLocation()) - 1;
+            if (GameDatabase.getGameDatabase().getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getGameDatabase().getOriginalMap().getTile(x, y));
 
-            x = GameDatabase.getOriginalMap().getTileX(this.getLocation()) + 1;
-            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) + 1;
-            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
-                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+            x = GameDatabase.getGameDatabase().getOriginalMap().getTileX(this.getLocation()) + 1;
+            y = GameDatabase.getGameDatabase().getOriginalMap().getTileY(this.getLocation()) + 1;
+            if (GameDatabase.getGameDatabase().getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getGameDatabase().getOriginalMap().getTile(x, y));
 
-            x = GameDatabase.getOriginalMap().getTileX(this.getLocation());
-            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) - 1;
-            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
-                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+            x = GameDatabase.getGameDatabase().getOriginalMap().getTileX(this.getLocation());
+            y = GameDatabase.getGameDatabase().getOriginalMap().getTileY(this.getLocation()) - 1;
+            if (GameDatabase.getGameDatabase().getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getGameDatabase().getOriginalMap().getTile(x, y));
 
-            x = GameDatabase.getOriginalMap().getTileX(this.getLocation());
-            y = GameDatabase.getOriginalMap().getTileY(this.getLocation()) + 1;
-            if (GameDatabase.getOriginalMap().isTileCorrect(x, y))
-                terrains.add(GameDatabase.getOriginalMap().getTile(x, y));
+            x = GameDatabase.getGameDatabase().getOriginalMap().getTileX(this.getLocation());
+            y = GameDatabase.getGameDatabase().getOriginalMap().getTileY(this.getLocation()) + 1;
+            if (GameDatabase.getGameDatabase().getOriginalMap().isTileCorrect(x, y))
+                terrains.add(GameDatabase.getGameDatabase().getOriginalMap().getTile(x, y));
         }
         return terrains;
     }
