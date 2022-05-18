@@ -146,21 +146,16 @@ public class MapController {
 
     }
 
-    private int handelXBoundaries(int x, int y) {
-        if (x > Map.getRows() - 3)
-            return Map.getRows() - 3;
-        if (x < 0)
-            return 0;
-        if (y % 2 == 1 && x > Map.getRows() - 4)
-            return Map.getRows() - 4;
+    private int correctXBoundary(int x, int y) {
+        if (x > Map.getRows() - 3) return Map.getRows() - 3;
+        if (x < 0) return 0;
+        if (y % 2 == 1 && x > Map.getRows() - 4) return Map.getRows() - 4;
         return x;
     }
 
-    private int handelYBoundaries(int y) {
-        if (y > Map.getColumns() - 6)
-            return Map.getColumns() - 6;
-        if (y < 0)
-            return 0;
+    private int correctYBoundary(int y) {
+        if (y > Map.getColumns() - 6) return Map.getColumns() - 6;
+        if (y < 0) return 0;
         return y;
     }
 
@@ -169,13 +164,9 @@ public class MapController {
     }
 
     public String showMap(int x, int y) {
-        x = handelXBoundaries(x, y);
-        y = handelYBoundaries(y);
-
-        if (!TerrainValidate(x, y)) {
-            return "ERROR x: " + x + " , y: " + y + " in show map is invalid";
-        }
-
+        x = correctXBoundary(x, y);
+        y = correctYBoundary(y);
+        if (!TerrainValidate(x, y)) {return "ERROR x: " + x + " , y: " + y + " in show map is invalid";}
         String[][] mapString = new String[21][51];
         for (int i = 0; i < mapString.length; i++) {
             for (int j = 0; j < mapString[i].length; j++) {
@@ -204,7 +195,7 @@ public class MapController {
 
     public void showRivers(StringBuilder stringBuilder, Tile terrain) {
         if (terrain.getTerrainFeatures().contains(TerrainFeature.RIVER)) {
-            stringBuilder.append("this terrain has a river with following terrains:\n");
+            stringBuilder.append("this tile has a river with following tiles:\n");
             for (Tile adjTerrain : terrain.getSurroundingTerrain()) {
                 if (adjTerrain.getTerrainFeatures().contains(TerrainFeature.RIVER)) {
                     stringBuilder.append(
