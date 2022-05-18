@@ -10,9 +10,12 @@ import static Models.Block.TileVisitingKind.*;
 
 public class Map {
     private final static int columns = 20, rows = 20;
-    private  final TileVisitingKind[][] tileVisitingKinds = new TileVisitingKind[columns][rows];
+    private final TileVisitingKind[][] tileVisitingKinds = new TileVisitingKind[columns][rows];
     private final Civilization civilization;
 
+    public TileVisitingKind[][] getAllTileVisitingKinds() {
+        return tileVisitingKinds;
+    }
     //initialization of map :
     // if it is original map then it is visible
     // if it is not original map then it is fog of war at first to discover it

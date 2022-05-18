@@ -20,6 +20,9 @@ public class OriginalMap extends Map{
     private final int droughtCount = 200;
     private final int riverCount = 50;
 
+    public static Tile[][] getTiles() {
+        return tile;
+    }
     public static Tile[][] getTile(){
         return tile;
     }

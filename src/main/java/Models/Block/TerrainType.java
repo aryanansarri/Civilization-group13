@@ -17,10 +17,10 @@ public enum TerrainType {
     GRASSLLAND(2, 0, 0, -33, 1, new ArrayList<TerrainFeature>(Arrays.asList(RIVER,Forest,Marsh)) , new ArrayList<Resource>(Arrays.asList(Iron,Horse,Coal,Cow,Gold,Jewel,Marble,Cotton,Sheep)) ),
     HILLS(0, 2, 0, 25, 2, new ArrayList<TerrainFeature>(Arrays.asList(RIVER,Forest,Jungle)), new ArrayList<Resource>(Arrays.asList(Iron,Coal,Gazelle,Gold,Silver,Jewel,Marble,Sheep))),
     MOUNTAIN(0, 0, 0, 25, Integer.MAX_VALUE,  new ArrayList<TerrainFeature>(),  new ArrayList<Resource>()),
-    OCEAN(1, 0, 1, 0, Integer.MAX_VALUE, new ArrayList<TerrainFeature>(List.of(Ice)) , new ArrayList<Resource>() ),
+    OCEAN(1, 0, 1, 0, Integer.MAX_VALUE, new ArrayList<TerrainFeature>(Arrays.asList(Ice)) , new ArrayList<Resource>() ),
     PLAIN(1, 1, 0, -33, 1, new ArrayList<TerrainFeature>(Arrays.asList(RIVER,Forest,Jungle)) , new ArrayList<Resource>(Arrays.asList(Iron,Horse,Coal,Wheat,Gold,Jewel,Marble,Ivory,Cotton,Incense,Sheep))),
-    SNOW(0, 0, 0, -33, 1, new ArrayList<TerrainFeature>(), new ArrayList<Resource>(List.of(Iron)) ),
-    TUNDRA(1, 0, 0, -33, 1, new ArrayList<TerrainFeature>(List.of(Forest)) , new ArrayList<Resource>(Arrays.asList(Iron,Horse,Gazelle,Silver,Jewel,Marble,Fur)));
+    SNOW(0, 0, 0, -33, 1, new ArrayList<TerrainFeature>(), new ArrayList<Resource>(Arrays.asList(Iron)) ),
+    TUNDRA(1, 0, 0, -33, 1, new ArrayList<TerrainFeature>(Arrays.asList(Forest)) , new ArrayList<Resource>(Arrays.asList(Iron,Horse,Gazelle,Silver,Jewel,Marble,Fur)));
 
     TerrainType(int food, int product, int gold, int combatModifier, int MP, ArrayList<TerrainFeature> possibleFeatures, ArrayList<Resource> possibleResources) {
         this.food = food;

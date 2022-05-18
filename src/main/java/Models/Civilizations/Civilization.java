@@ -249,4 +249,9 @@ public class Civilization {
             getCivilizationGold().setGoldAmount(0);
         }
     }
+
+    public boolean hasTechnology(String engineering) {
+//        to do
+        return false;
+    }
 }
