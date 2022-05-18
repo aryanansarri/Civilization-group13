@@ -126,7 +126,6 @@ public class MapController {
                     drawMainDetails(mapString, istart, jstart, x + i, y + j, backgroundColor);
 
                 if (j % 2 == 0 & tileVisitingKinds[x + i][y + j] == TileVisitingKind.Visible) {
-                    // TODO set name in civilization constructor
                     if (terrains[x + i][y + j].getOwner() == null) {
                         mapString[istart + 1][jstart + 5] = backgroundColor + " " + ConsoleColors.RESET;
                     } else {
@@ -177,7 +176,6 @@ public class MapController {
             return "ERROR x: " + x + " , y: " + y + " in show map is invalid";
         }
 
-        // creating mapString
         String[][] mapString = new String[21][51];
         for (int i = 0; i < mapString.length; i++) {
             for (int j = 0; j < mapString[i].length; j++) {
@@ -218,13 +216,13 @@ public class MapController {
 
     private void showVisibleDetails(StringBuilder stringBuilder, Tile terrain) {
         if (terrain.getCivilianUnit() == null) {
-            stringBuilder.append("there is no civilization unit in this terrain\n");
+            stringBuilder.append("no civilization unit in this tile\n");
         } else {
             stringBuilder.append("civilzation unit: " + terrain.getCivilianUnit().getType() + " belonging to: "
                     + terrain.getCivilianUnit().getCivilization().getCivilizationName() + "\n");
         }
         if (terrain.getMilitaryUnit() == null) {
-            stringBuilder.append("there is no military unit in this terrain\n");
+            stringBuilder.append("no military unit in this tile\n");
         } else {
             stringBuilder.append("military unit: " + terrain.getMilitaryUnit().getType() + " belonging to: " +
                     terrain.getMilitaryUnit().getCivilization().getCivilizationName() + "\n");
@@ -241,14 +239,14 @@ public class MapController {
             if (improvement != null && improvementPair.getSecond() == true) {
                 if (improvement.getNeededTech() == null || GameDatabase.getGameDatabase().getCurrentCivilization()
                         .getCivilizationTechnology().getPassedTechnology().contains(improvement.getNeededTech())) {
-                    stringBuilder.append("this terrain has " + improvement.name() + " improvement\n");
+                    stringBuilder.append("this tile has " + improvement.name() + " improvement\n");
                 }
             }
         }
     }
 
     private void showResources(StringBuilder stringBuilder, Tile terrain) {
-        stringBuilder.append("list of resources in this terrain:\n");
+        stringBuilder.append("list of resources in this tile:\n");
         ArrayList<Technology> technologies = GameDatabase.getGameDatabase().getCurrentCivilization().getCivilizationTechnology()
                 .getPassedTechnology();
         for (Resource resource : terrain.getResources()) {
@@ -269,15 +267,15 @@ public class MapController {
         TileVisitingKind terrainState = GameDatabase.getGameDatabase().getCurrentCivilization().getTileVisitingKind(x, y);
 
         if (terrainState == TileVisitingKind.FogOfWar)
-            return "this terrain is in fog for you";
+            return "tile is in fog for you sir";
 
         StringBuilder stringBuilder = new StringBuilder();
         if (terrain.getOwner() == null)
-            stringBuilder.append("this terrain belongs to: no one");
+            stringBuilder.append("this tile belongs to no one");
         else
-            stringBuilder.append("this terrain belongs to: ").append(terrain.getOwner().getCivilizationName());
-        stringBuilder.append("\n" + "Terrain type is: ")
-                .append(terrain.getTerraintype()).append("\n").append("Terrain features are: ")
+            stringBuilder.append("this tile is for: ").append(terrain.getOwner().getCivilizationName());
+        stringBuilder.append("\n" + "TileType is: ")
+                .append(terrain.getTerraintype()).append("\n").append("TileFeatures are: ")
                 .append(terrain.getTerrainFeatures())
                 .append("\n");
         if (terrainState == TileVisitingKind.Visible) {
