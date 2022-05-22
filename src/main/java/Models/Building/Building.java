@@ -16,7 +16,8 @@ public class Building {
     }
 
     public static boolean isCityCompatibleWithBuildingType(City city, BuildingType type) {
-        if (!((type.getPrerequisiteTechnology() == null) || city.getOwnership().getCivilizationTechnology().getPassedTechnology().contains(type.getPrerequisiteTechnology())))
+        if (!((type.getPrerequisiteTechnology() == null) ||
+                city.getOwnership().getCivilizationTechnology().getPassedTechnology().contains(type.getPrerequisiteTechnology())))
             return false;
         else if (type == BuildingType.ARMORY) {
             for (int i = 0; i < city.getTiles().size(); i++)

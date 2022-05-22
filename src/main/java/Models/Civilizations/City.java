@@ -43,7 +43,7 @@ public class City implements Select {
 
 
     //////////////////Object properties
-    private Civilization ownership;
+    private Civilization ownership = new Civilization("city");
     private MilitaryUnit garrisonUnit;
     private Tile location;
     private ArrayList<Citizen> citizens = new ArrayList<>();
