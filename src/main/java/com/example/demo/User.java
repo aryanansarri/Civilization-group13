@@ -1,10 +1,13 @@
 package com.example.demo;
 
+import javafx.scene.paint.ImagePattern;
+
 public class User {
     private int timeOfLastWin;
     private String username;
     private String password;
     private String nickname;
+    private ImagePattern profilePic;
     private int score;
     private int gold;
     private int turns;
@@ -16,6 +19,14 @@ public class User {
         turns=0;
         gold=0;
         score = 0;
+    }
+
+    public ImagePattern getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(ImagePattern profilePic) {
+        this.profilePic = profilePic;
     }
 
     public int getGold() {
