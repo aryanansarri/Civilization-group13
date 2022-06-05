@@ -23,6 +23,8 @@ public class ScoreBoard extends Application {
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setPrefSize(1280, 720);
         Pane content = new Pane();
+        sortUsers();
+        addUsers(content);
         scrollPane.setContent(content);
         Scene scene = new Scene(scrollPane);
         stage.setTitle("ScoreBoard");
