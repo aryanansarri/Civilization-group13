@@ -4,119 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25779730-4de1-4a8c-ad4e-eadfcfaacb57" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ControllerTest/LoginTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ControllerTest/MainControlerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ControllerTest/PlayerDatabaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ModelsTest/BuildingTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ModelsTest/CitizenTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ModelsTest/ConnectTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ModelsTest/ConsoleColorsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ModelsTest/CoordinatesTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ModelsTest/InfoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ModelsTest/ModelsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ModelsTest/NotificatonsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ModelsTest/TerainTypeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Building/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Building/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Civilizations/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Civilizations/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ControllerTest/MapControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ControllerTest/MapControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ControllerTest/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ModelsTest/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/GameController/CheatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/GameController/CheatController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/GameController/CityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/GameController/CityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/GameController/GameDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/GameController/GameDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/GameController/GameViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/GameController/GameViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/GameController/InfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/GameController/InfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/GameController/MapController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/GameController/MapController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/GameController/TechnologyMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/GameController/TechnologyMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/GameController/UnitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/GameController/UnitController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/MenuController/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/MenuController/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/MenuController/MainViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/MenuController/MainViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/MenuController/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/MenuController/ProfileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/PlayerDatabase$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/PlayerDatabase$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/PlayerDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/PlayerDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Block/Border.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Block/Border.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Block/TerrainFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Block/TerrainFeature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Block/TerrainType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Block/TerrainType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Block/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Block/Tile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Block/TileVisitingKind.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Block/TileVisitingKind.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Building/Building.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Building/Building.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Building/BuildingType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Building/BuildingType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Civilizations/Citizen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Civilizations/Citizen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Civilizations/City.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Civilizations/City.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Civilizations/Civilization.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Civilizations/Civilization.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Connect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Connect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/ConsoleColors.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/ConsoleColors.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Coordinates.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Coordinates.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Improvment/Improvement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Improvment/Improvement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Info/CityFood.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Info/CityFood.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Info/CityGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Info/CityGold.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Info/CityProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Info/CityProduct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Info/CityScience.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Info/CityScience.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Info/CivilizationGold.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Info/CivilizationGold.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Info/CivilizationHappiness.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Info/CivilizationHappiness.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Info/CivilizationScience.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Info/CivilizationScience.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Info/CivilizationTechnology.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Info/CivilizationTechnology.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Notification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/OriginalMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/OriginalMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Resources/Resource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Resources/Resource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Resources/ResourcesType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Resources/ResourcesType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Select.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Select.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Technology/Technology.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Technology/Technology.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Units/CivilianUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Units/CivilianUnit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Units/CombatType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Units/CombatType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Units/Combatble.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Units/Combatble.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Units/MilitaryUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Units/MilitaryUnit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Units/SettlerUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Units/SettlerUnit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Units/SiegeUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Units/SiegeUnit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Units/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Units/Unit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Units/UnitType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Units/UnitType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Units/Worker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Units/Worker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/War.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/War.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/GameView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/MainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/MainView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/ProfileMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/ProfileMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/CheatRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Regexes/CheatRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/GameRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Regexes/GameRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/InfoGameRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Regexes/InfoGameRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/LoginRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Regexes/LoginRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/MainMenuRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Regexes/MainMenuRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/MapMenuRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Regexes/MapMenuRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/ProfileMenuRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Regexes/ProfileMenuRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/SelectCityRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Regexes/SelectCityRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/SelectWorkerRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Regexes/SelectWorkerRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/TechnologyRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Regexes/TechnologyRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/selectMilitaryUnitRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Regexes/selectMilitaryUnitRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/selectSettlerMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Regexes/selectSettlerMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Regexes/selectSettlerRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Regexes/selectSettlerRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ControllerTest/MapControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ControllerTest/MapControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ExampleToWriteTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ExampleToWriteTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/users.json" afterDir="false" />
-    </list>
+    <list default="true" id="9672b754-62ef-4b03-bb0a-fe6efbf7c9b5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CoverageOptionsProvider">
-    <option name="myAddOrReplace" value="0" />
-  </component>
-  <component name="ExportToHTMLSettings">
-    <option name="OUTPUT_DIRECTORY" value="C:\Users\hossein\IdeaProjects\Civilization-group13" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -124,153 +16,48 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="28pLBCVqtjmtHnMfxfv4I04CsuW" />
+  <component name="ProjectId" id="2AFInRX6JuZNA6JmDWlu3wsUNNC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/hossein/IdeaProjects/Civilization-group13&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.All in Civilization">
-    <configuration name="All in Civilization" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Civilization" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Civilization" />
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.civilization.guicivilization.Main" />
+      <module name="GUICivilization" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ControllerTest.*" />
+          <option name="PATTERN" value="com.civilization.guicivilization.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ControllerTest" />
-      <option name="MAIN_CLASS_NAME" value="ControllerTest.LoginTest" />
-      <option name="METHOD_NAME" value="RegisterTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginTest.RegisterTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Civilization" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ControllerTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ControllerTest" />
-      <option name="MAIN_CLASS_NAME" value="ControllerTest.LoginTest" />
-      <option name="METHOD_NAME" value="RegisterTest2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MapControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Civilization" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ControllerTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ControllerTest" />
-      <option name="MAIN_CLASS_NAME" value="ControllerTest.MapControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MapControllerTest.RegisterTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Civilization" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ControllerTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ControllerTest" />
-      <option name="MAIN_CLASS_NAME" value="ControllerTest.MapControllerTest" />
-      <option name="METHOD_NAME" value="RegisterTest2" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in Civilization" />
-        <item itemvalue="JUnit.MapControllerTest" />
-        <item itemvalue="JUnit.MapControllerTest.RegisterTest2" />
-        <item itemvalue="JUnit.LoginTest.RegisterTest2" />
-        <item itemvalue="JUnit.LoginTest" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="25779730-4de1-4a8c-ad4e-eadfcfaacb57" name="Changes" comment="" />
-      <created>1651908445222</created>
+      <changelist id="9672b754-62ef-4b03-bb0a-fe6efbf7c9b5" name="Changes" comment="" />
+      <created>1654599072824</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1651908445222</updated>
-      <workItem from="1652900536689" duration="1837000" />
+      <updated>1654599072824</updated>
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Civilization_group13$LoginTest_RegisterTest.ic" NAME="LoginTest.RegisterTest Coverage Results" MODIFIED="1653143696217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>ControllerTest.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Civilization_group13$LoginTest_T.ic" NAME="LoginTest.T Coverage Results" MODIFIED="1653144298407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>ControllerTest.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Civilization_group13$ExampleToWriteTest.ic" NAME="ExampleToWriteTest Coverage Results" MODIFIED="1653142899892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Civilization_group13$LoginTest_RegisterTest2.ic" NAME="LoginTest.RegisterTest2 Coverage Results" MODIFIED="1653144335209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>ControllerTest.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Civilization_group13$PlayerDatabaseTest.ic" NAME="PlayerDatabaseTest Coverage Results" MODIFIED="1653143239371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>ControllerTest.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Civilization_group13$LoginTest.ic" NAME="LoginTest Coverage Results" MODIFIED="1653144319770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>ControllerTest.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Civilization_group13$MapControllerTest.ic" NAME="MapControllerTest Coverage Results" MODIFIED="1653144629996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>ControllerTest.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Civilization$ExampleToWriteTest_testFunction.ic" NAME="ExampleToWriteTest.testFunction Coverage Results" MODIFIED="1651912502961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Civilization_group13$All_in_Civilization.ic" NAME="All in Civilization Coverage Results" MODIFIED="1653211608331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
